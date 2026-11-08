@@ -1,12 +1,12 @@
 """Interactive practice: python -m pensionlab.lab.cli
-  load FILE | list | practice | stats | sources load FILE | sources list [P0|P1|P2] | sources recheck"""
+  load FILE | list | practice | stats | score YEAR | sources load FILE | sources list [P0|P1|P2] | sources recheck"""
 from __future__ import annotations
 
 import json
 import sys
 import time
 
-from . import db
+from . import db, scoring
 from .verifiers import CHOICE, DIGITS, KEYED, choices, truth_text
 
 ERROR_TYPES = ["", "timing(due/immediate)", "interest/discount", "mortality/survival", "arithmetic", "other"]
@@ -83,6 +83,11 @@ def main(argv):
             for r in db.list_sources(con, priority=argv[2] if len(argv) > 2 else None):
                 url = r["url"] or "URL未記入"
                 print(f"[{r['priority']}] {r['id']:<22} {r['verification']:<13} {r['license']:<11} {r['title']}  <{url}>")
+    elif cmd == "score":
+        r = scoring.year_score(con, int(argv[1]))
+        print(f"{argv[1]}年度: {r['total']} / {r['max']} 点（最新の解答で採点、完答は全問正解で得点）")
+        for sec, (e, m) in r["by_section"].items():
+            print(f"  {sec}: {e} / {m}")
     elif cmd == "stats":
         for r in db.stats_by_topic(con):
             print(f"{r['topic']}: {r['n']}回 正答率{r['pct']}% 正解だが低確信{r['correct_unsure']}")
