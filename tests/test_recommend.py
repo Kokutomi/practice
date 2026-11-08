@@ -36,3 +36,24 @@ def test_fresh_learner_gets_topic_coverage(con):
     recs = recommend(con, n=5, now=0)
     topics = [r["problem"]["topic"] for r in recs]
     assert len(set(topics)) == 5 and all(r["reason"].startswith("未着手の分野") for r in recs)
+
+
+def test_workbook_marks_drive_recommendations(monkeypatch):
+    from pensionlab.lab import db, recommend, wblink
+    con = db.connect(":memory:")
+    db.load_problems(con, "problems/iaj-2025.json")
+    mapping = {"IAJ-2025-1-1": [{"wb_id": "1.2", "match": "strong", "reason": "r"}],
+               "IAJ-2025-1-2": [{"wb_id": "1.2", "match": "related", "reason": "r"}],
+               "IAJ-2025-1-3": [{"wb_id": "2.12", "match": "strong", "reason": "r"}]}
+    index = {"1.2": {"wb_id": "1.2", "topic": "昇給率・給与指数", "page": 3, "solution_pages": [4]},
+             "2.12": {"wb_id": "2.12", "topic": "生命表・平均余命", "page": 33, "solution_pages": [34]}}
+    monkeypatch.setattr(wblink, "load_map", lambda *a: mapping)
+    monkeypatch.setattr(wblink, "index_by_id", lambda *a: index)
+    wblink.import_marks(con, {"marks": [{"wb_id": "1.2", "month": 11, "day": 3, "mark": "△"},
+                                        {"wb_id": "2.12", "month": 11, "day": 3, "mark": "△"}]})
+    recs = [r for r in recommend.recommend(con, n=10) if r["reason"].startswith("ワークブック")]
+    assert [r["problem"]["id"] for r in recs] == ["IAJ-2025-1-1", "IAJ-2025-1-3"] or \
+           [r["problem"]["id"] for r in recs] == ["IAJ-2025-1-3", "IAJ-2025-1-1"]     # one slot per workbook problem
+    db.record_attempt(con, "IAJ-2025-1-1", "A", 3, now=1)        # wrong answer -> redo the workbook problem
+    redo = recommend.workbook_review(con)
+    assert [r["entry"]["wb_id"] for r in redo] == ["1.2"]

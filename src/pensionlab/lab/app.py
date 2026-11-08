@@ -57,7 +57,7 @@ with st.sidebar:
     synced = db.sync_data(con, PROBLEMS_DIR, LEDGER)      # picks up updated problem files automatically
     if synced:
         st.caption(f"問題データを更新しました（{synced}欄）")
-    if wblink.sync_marks(con):                          # data/wb_marks.json (PC only; the phone gets it via backup)
+    if wblink.sync_marks(con, os.environ.get("LAB_WB_MARKS", str(wblink.MARKS_PATH))):                          # data/wb_marks.json (PC only; the phone gets it via backup)
         st.caption("ワークブックの◎/△記録を取り込みました")
     st.metric("復習期限の問題", len(db.due_reviews(con)))
     with st.expander("学習記録のバックアップ"):

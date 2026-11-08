@@ -62,8 +62,20 @@ def recommend(con, n: int = 10, now: float | None = None, exam_body: str | None 
                     t = canonical(by_id[sid]["topic"] or "")
                     cands.append((-freq.get(t, 0.0), h["mastery"], -by_id[sid]["year"], sid, r["wb_id"], h))
                     break
-        for _, _, _, sid, wb_id, h in sorted(cands):
-            add(sid, f"ワークブック問題{wb_id}が昨年△（{wblink.history_text(h)}）")
+        # one slot per workbook problem; alternate topics (most frequent topic first)
+        by_topic: dict[str, list] = {}
+        used_wb: set[str] = set()
+        for c in sorted(cands):
+            if c[4] in used_wb:
+                continue
+            used_wb.add(c[4])
+            by_topic.setdefault(canonical(by_id[c[3]]["topic"] or ""), []).append(c)
+        queues = sorted(by_topic.values(), key=lambda q: q[0][0])
+        while any(queues):
+            for q in queues:
+                if q:
+                    _, _, _, sid, wb_id, h = q.pop(0)
+                    add(sid, f"ワークブック問題{wb_id}が昨年△（{wblink.history_text(h)}）")
     weak = sorted((t for t, (c, k) in stats.items() if k >= MIN_ATTEMPTS and 100 * c / k < WEAK_PCT),
                   key=lambda t: stats[t][0] / stats[t][1])
     for t in weak:

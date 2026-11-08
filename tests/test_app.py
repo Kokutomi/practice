@@ -27,6 +27,8 @@ def make(tmp_path, monkeypatch, files):
     monkeypatch.setenv("LAB_DB", str(tmp_path / "t.sqlite"))
     monkeypatch.setenv("LAB_PROBLEMS", str(pdir))
     monkeypatch.setenv("LAB_LEDGER", str(ROOT / "sources/ledger.json"))
+    monkeypatch.setenv("LAB_WB_MARKS", str(tmp_path / "no_marks.json"))     # keep the learner's own marks out
+    monkeypatch.setenv("LAB_WORKBOOK", str(tmp_path / "no.pdf"))            # behave like the cloud (no PDF)
     at = AppTest.from_file(APP, default_timeout=20).run()      # data is loaded automatically
     assert not at.exception
     return at
@@ -161,3 +163,23 @@ def test_auto_sync_picks_up_changed_files(tmp_path, monkeypatch):
     at.run()
     c = sqlite3.connect(tmp_path / "t.sqlite")
     assert c.execute("SELECT statement FROM problems WHERE id='S-001'").fetchone()[0] == "更新後の問題文"
+
+
+def test_workbook_links_without_pdf(tmp_path, monkeypatch):
+    marks = tmp_path / "marks.json"
+    marks.write_text('{"marks": [{"wb_id": "1.2", "page": 3, "month": 11, "day": 3, "mark": "△"}],'
+                     ' "tags": [{"wb_id": "1.2", "tag": "2X"}]}', encoding="utf-8")
+    make(tmp_path, monkeypatch, ["iaj-2025.json"])
+    monkeypatch.setenv("LAB_WB_MARKS", str(marks))           # make() points it at an empty file
+    at = AppTest.from_file(APP, default_timeout=20).run()
+    assert not at.exception
+    text = " ".join(m.value for m in at.markdown)
+    assert "問題1.2" in text and "11/3△（誤答2回）" in text
+    assert any("PDF はこの端末にない" in c.value for c in at.caption)
+
+
+def test_dashboard_strengths(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
+    radio(at, "画面").set_value("ダッシュボード").run()
+    assert not at.exception
+    assert any("得意・不得意" in s.value for s in at.subheader)
