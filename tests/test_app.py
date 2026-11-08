@@ -125,3 +125,9 @@ def test_memo_saved(tmp_path, monkeypatch):
     import sqlite3
     c = sqlite3.connect(tmp_path / "t.sqlite")
     assert c.execute("SELECT text FROM notes").fetchone()[0] == "動態的昇給率の定義を確認"
+
+
+def test_recommend_status(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
+    at.sidebar.selectbox[0].select("recommend").run()
+    assert any("おすすめの理由: 未着手の分野" in i.value for i in at.info)

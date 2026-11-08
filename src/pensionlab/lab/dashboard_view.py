@@ -9,6 +9,7 @@ import os
 import tempfile
 
 from . import anki, dashboard, exam, notes
+from .recommend import recommend
 
 SERIES_1 = "#2a78d6"   # single series: one hue, no legend (the title names it)
 CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
@@ -16,6 +17,13 @@ CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
 
 def render(con):
     st.title("学習ダッシュボード")
+    recs = recommend(con, n=8)
+    if recs:
+        st.subheader("今日のおすすめ")
+        st.caption("演習画面の「状態」で「今日のおすすめ」を選ぶと、この順に出題します。")
+        st.dataframe(pd.DataFrame([{"問題": f"{r['problem']['year']} {r['problem']['question_no']}",
+                                    "分野": r["problem"]["topic"], "理由": r["reason"]} for r in recs]),
+                     hide_index=True)
     ys = dashboard.year_scores(con)
     if not ys:
         st.info("まだ公式過去問の解答がありません。演習画面で解くとここに集計されます。")

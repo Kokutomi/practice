@@ -134,7 +134,7 @@ def due_reviews(con, now: float | None = None):
     return con.execute("SELECT * FROM review_queue WHERE due_at<=? ORDER BY due_at", (now,)).fetchall()
 
 
-STATUSES = {"auto": "おまかせ（復習期限→未解答）", "due": "復習期限", "unattempted": "未解答",
+STATUSES = {"auto": "おまかせ（復習期限→未解答）", "recommend": "今日のおすすめ", "due": "復習期限", "unattempted": "未解答",
             "wrong": "前回誤答", "unsure": "前回自信なし", "all": "すべて"}
 
 
@@ -163,6 +163,10 @@ def candidates(con, years=None, topics=None, exam_body=None, status: str = "auto
         "unsure": lambda r: r["id"] in last and last[r["id"]]["confidence"] <= 1,
         "all": lambda r: True,
     }
+    if status == "recommend":
+        from .recommend import recommend
+        allowed = {r["id"] for r in rows}
+        return [r["problem"] for r in recommend(con, n=100, now=now, exam_body=None) if r["problem"]["id"] in allowed]
     if status == "auto":
         d = sorted((r for r in rows if r["id"] in due), key=lambda r: due[r["id"]])
         return d + [r for r in rows if r["id"] not in last]

@@ -101,6 +101,11 @@ extra += f" ｜ 配点 {p['points']}点" if p["points"] else ""
 st.caption(f"{p['id']} ｜ {p['exam_body']}{qno} ｜ {p['topic']}{extra} ｜ 出典: {where}")
 if src and src["verification"] in ("needs_recheck", "superseded"):
     st.warning("この問題の出典資料は差し替え・要確認です。正答を最新版と照合してください。")
+if f_status == "recommend":
+    from pensionlab.lab.recommend import recommend
+    why = next((r["reason"] for r in recommend(con, n=100, exam_body=None) if r["problem"]["id"] == p["id"]), None)
+    if why:
+        st.info(f"おすすめの理由: {why}")
 st.markdown(f"#### {p['statement']}")
 vid = p["verifier_id"]
 is_choice = vid in KEYED

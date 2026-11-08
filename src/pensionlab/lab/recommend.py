@@ -1,0 +1,62 @@
+"""今日のおすすめ: what to solve next, with the reason, from the learner's own history.
+
+Order of priority
+  1. 復習期限        review-queue items that are due
+  2. 自信ありで誤答  latest attempt wrong at confidence 3 (likely a misconception)
+  3. 弱点分野        unattempted problems in topics with accuracy below WEAK_PCT (>= MIN_ATTEMPTS tries)
+  4. 未着手分野      one unattempted problem from each topic never tried
+  5. 最新年度        remaining unattempted official problems, newest year first
+"""
+from __future__ import annotations
+
+import time
+
+from .topics import canonical
+
+WEAK_PCT = 70.0
+MIN_ATTEMPTS = 3
+
+
+def recommend(con, n: int = 10, now: float | None = None, exam_body: str | None = "IAJ"):
+    now = time.time() if now is None else now
+    probs = [r for r in con.execute("SELECT * FROM problems ORDER BY year DESC, rowid")
+             if exam_body is None or r["exam_body"] == exam_body]
+    by_id = {p["id"]: p for p in probs}
+    last = {r["problem_id"]: r for r in con.execute(
+        "SELECT a.* FROM attempts a JOIN (SELECT problem_id, MAX(id) mid FROM attempts GROUP BY problem_id) m"
+        " ON a.id=m.mid")}
+    stats: dict[str, list[int]] = {}
+    for r in con.execute("SELECT p.topic, a.is_correct FROM attempts a JOIN problems p ON p.id=a.problem_id"):
+        s = stats.setdefault(canonical(r["topic"] or ""), [0, 0])
+        s[0] += r["is_correct"]
+        s[1] += 1
+    out, seen = [], set()
+
+    def add(pid, reason):
+        if pid in by_id and pid not in seen and len(out) < n:
+            seen.add(pid)
+            out.append({"problem": by_id[pid], "reason": reason})
+
+    for r in con.execute("SELECT problem_id, due_at FROM review_queue WHERE due_at<=? ORDER BY due_at", (now,)):
+        add(r["problem_id"], "復習期限")
+    for pid, a in last.items():
+        if not a["is_correct"] and a["confidence"] >= 3:
+            add(pid, "自信ありで誤答（誤解の可能性）")
+    weak = sorted((t for t, (c, k) in stats.items() if k >= MIN_ATTEMPTS and 100 * c / k < WEAK_PCT),
+                  key=lambda t: stats[t][0] / stats[t][1])
+    for t in weak:
+        pct = round(100 * stats[t][0] / stats[t][1])
+        for p in probs:
+            if canonical(p["topic"] or "") == t and p["id"] not in last:
+                add(p["id"], f"弱点分野（{t} 正答率{pct}%）")
+                break
+    tried = set(stats)
+    for p in probs:
+        t = canonical(p["topic"] or "")
+        if t not in tried and p["id"] not in last:
+            tried.add(t)
+            add(p["id"], f"未着手の分野（{t}）")
+    for p in probs:
+        if p["id"] not in last:
+            add(p["id"], f"{p['year']}年度の未解答")
+    return out
