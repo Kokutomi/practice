@@ -138,3 +138,9 @@ def test_plan_page(tmp_path, monkeypatch):
     at.sidebar.radio[0].set_value("学習計画").run()
     assert not at.exception
     assert any("本番まで" in m.label for m in at.metric)
+
+
+def test_tools_page(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
+    at.sidebar.radio[0].set_value("計算ツール").run()
+    assert not at.exception and len(at.tabs) == 3
