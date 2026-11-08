@@ -1,0 +1,1321 @@
+[
+ {
+  "id": "IAJ-2023-1-1",
+  "year": 2023,
+  "section": "問題1",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "最終給与比例制の定常状態で4%ベースアップ後に保険料据え置き、積立金が95%を下回る年数 t",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(1)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 5,
+  "page": 1,
+  "answer_page": 25,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-1-2",
+  "year": 2023,
+  "section": "問題1",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "脱退率一律0.02の定常人口の制度A・Bで被保険者の平均年齢の差を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(2)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 5,
+  "page": 2,
+  "answer_page": 25,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-1-3",
+  "year": 2023,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "脱退・保険料・給付が連続的に起こる制度の単位時間あたり1人あたり標準保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(3)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 5,
+  "page": 3,
+  "answer_page": 26,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-1-4",
+  "year": 2023,
+  "section": "問題1",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "加入年齢方式の貸借対照表・損益計算書から当年度剰余金 α を求める（死差損益＝利差損益×2）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(4)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 5,
+  "page": 4,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-1-5",
+  "year": 2023,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度で支給要件のみ変えた制度A・Bの標準保険料率の比",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 5,
+  "page": 5,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-1-6",
+  "year": 2023,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "加入期間に応じた年金額を10年確定年金で支払う定年退職給付の制度の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(6)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 5,
+  "page": 7,
+  "answer_page": 28,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-1-7",
+  "year": 2023,
+  "section": "問題1",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "給付が5年間段階的に増加し、保険料2倍の払い込みで再び定常状態になる k を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(7)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 5,
+  "page": 8,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-1-8",
+  "year": 2023,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデル定常状態での各財政方式の積立金に関する記述の正誤の組み合わせ",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "K"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(8)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 5,
+  "page": 9,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-1-①",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の発足：標準保険料率と過去勤務債務に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 24
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)①",
+  "source_id": "IAJ-PAST-2023",
+  "points": 4,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-2-1-②",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の発足：標準保険料率と過去勤務債務に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 24
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)②",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-2-1-③",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の発足：標準保険料率と過去勤務債務に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 24
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)③",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-2-1-④",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の発足：標準保険料率と過去勤務債務に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 24
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)④",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-2-1-⑤",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の発足：標準保険料率と過去勤務債務に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 24
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑤",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-2-1-⑥",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の発足：標準保険料率と過去勤務債務に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "Q"
+   ],
+   "n_choices": 24
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑥",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": "2-1-⑥",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-2-1-⑦",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の発足：標準保険料率と過去勤務債務に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 24
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑦",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": "2-1-⑥",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-2-1-⑧",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の発足：標準保険料率と過去勤務債務に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "K"
+   ],
+   "n_choices": 24
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑧",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": "2-1-⑥",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-2-1-⑨",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の発足：標準保険料率と過去勤務債務に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "U"
+   ],
+   "n_choices": 24
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑨",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": "2-1-⑥",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-2-2-ア",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "x1 歳の毎年の新規加入者数 L_x1",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 8
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)(ア)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 3,
+  "page": 12,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-2-イ",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "特定年齢 x1 歳の加入年齢方式を採用した場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 8
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)(イ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 3,
+  "page": 12,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-3-ア",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "計算基礎率どおりに推移した場合のX+1年度末の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)(ア)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 3,
+  "page": 13,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-3-イ",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "実際の事象が発生した場合の剰余金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)(イ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 13,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-3-ウ",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "人員の推移が計算基礎率と異なった場合の剰余金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)(ウ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 1,
+  "page": 13,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-4-ア",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "第t年度末の積立金 F_t が満たす式",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)(ア)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 4,
+  "page": 15,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-4-イ",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "F_t が第15年度末に (α+1)/2 倍を下回るときの C/B",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)(イ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 15,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-5-ア",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "X年度に中途退職・死亡が発生しなかった場合の責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)(ア)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 16,
+  "answer_page": 35,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-5-イ",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "X年度末の積立金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)(イ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 16,
+  "answer_page": 35,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-2-5-ウ",
+  "year": 2023,
+  "section": "問題2",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "X+1年度が予定どおり推移した場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)(ウ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 16,
+  "answer_page": 35,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-3-1-①",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)①",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-②",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)②",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-③",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)③",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-④",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)④",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑤",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑤",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑥",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑥",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑦",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑦",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑧",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑧",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑨",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑨",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑩",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑩",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑪",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑪",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑪",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑫",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑫",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑪",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑬",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "M"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑬",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑪",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑭",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑭",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑮",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "R"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑮",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑯",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑯",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑰",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "M"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑰",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑱",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "R"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑱",
+  "source_id": "IAJ-PAST-2023",
+  "points": 1,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑱",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑲",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑲",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑱",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-⑳",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "M"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑳",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑱",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-㉑",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)㉑",
+  "source_id": "IAJ-PAST-2023",
+  "points": 0,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": "3-1-⑱",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2023-3-1-㉒",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで標準保険料を変えない制度変更と中途退職年金の変更に関する穴埋め（①〜㉒）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)㉒",
+  "source_id": "IAJ-PAST-2023",
+  "points": 1,
+  "page": 18,
+  "answer_page": 36,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-3-2-ア",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "分割前制度の年間保険料の額",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(ア)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 6,
+  "page": 21,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-3-2-イ",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度分割後の α",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(イ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 21,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-3-2-ウ",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度分割後の β",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(ウ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 2,
+  "page": 21,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-3-3-ア",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "1年間の給付費",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)(ア)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 3,
+  "page": 23,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-3-3-イ",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "標準保険料率",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)(イ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 3,
+  "page": 23,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-3-3-ウ",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "制度全体の責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)(ウ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 3,
+  "page": 23,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2023-3-3-エ",
+  "year": 2023,
+  "section": "問題3",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "積立剰余の状態での X年度末以降の扱い（(I)または(H)が正解）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I",
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2023年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)(エ)",
+  "source_id": "IAJ-PAST-2023",
+  "points": 1,
+  "page": 23,
+  "answer_page": 39,
+  "group_key": null
+ }
+]
