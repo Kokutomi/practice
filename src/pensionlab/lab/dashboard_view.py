@@ -5,7 +5,10 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-from . import dashboard, exam
+import os
+import tempfile
+
+from . import anki, dashboard, exam
 
 SERIES_1 = "#2a78d6"   # single series: one hue, no legend (the title names it)
 CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
@@ -66,3 +69,15 @@ def render(con):
     if et:
         st.subheader("誤りの種類")
         st.dataframe(pd.DataFrame(et).rename(columns={"error_type": "誤りの種類", "n": "件数"}), hide_index=True)
+
+    st.subheader("Anki に書き出す")
+    st.caption("最新の解答が誤答、または正解でも確信度1だった欄をカードにします（問題文は公式PDFへのリンク）。")
+    n = len(anki.select(con))
+    if n:
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "pensionlab_anki.txt")
+            anki.export(con, path)
+            data = open(path, "rb").read()
+        st.download_button(f"復習カード {n} 枚をダウンロード（.txt）", data, "pensionlab_anki.txt", "text/plain")
+    else:
+        st.caption("対象の欄はまだありません。")

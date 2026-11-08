@@ -65,6 +65,7 @@ def test_dashboard_page(tmp_path, monkeypatch):
     at.sidebar.radio[0].set_value("ダッシュボード").run()
     assert not at.exception
     assert any("2025年度" in m.label and "5 / 100" in m.value for m in at.metric)
+    assert any("対象の欄はまだありません" in c.value for c in at.caption)   # 1 correct, sure-ish answer only
 
 
 def test_choice_set_and_digits_inputs(tmp_path, monkeypatch):

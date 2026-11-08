@@ -55,4 +55,12 @@ python tools/import_iaj.py 2024 --fetch     # download + parse answer key, pages
 Answer types: `choice` (one letter, alternatives allowed), `choice_set` (select all), `digits` (fill-in digits).
 Years whose answer key is an image (e.g. 2018) are refused rather than guessed.
 
+Study modes:
+
+- **演習**: one slot at a time; due reviews first. Choice / select-all / digit answers.
+- **本番モード**: a whole year on one mark sheet with a time limit (default 180 min, as in the 2026 schedule),
+  scored by 配点 with 完答 groups; wrong slots go to the review queue. `python -m pensionlab.lab.cli score 2025`
+- **ダッシュボード**: year scores, topic accuracy (weakest first), confidence × correctness, exam history,
+  and an Anki export (`python -m pensionlab.lab.cli anki data/anki_review.txt`).
+
 Ideas: commutation functions, salary-scale accrued benefit (PUC), real mortality tables, Monte Carlo longevity.
