@@ -30,3 +30,13 @@ def test_dashboard_aggregates(con):
     assert dashboard.error_types(con) == [{"error_type": "arithmetic", "n": 1}]
     ys = dashboard.year_scores(con)
     assert ys == [{"year": 2025, "score": 5, "max": 100, "answered": 2, "slots": 36}]
+
+
+def test_pace_and_median(con):
+    db.record_attempt(con, "IAJ-2025-1-1", "C", 3, seconds=600, now=0)      # 5 points, 10 min -> 2.0 min/pt
+    db.record_attempt(con, "IAJ-2025-1-2", "I", 3, seconds=300, now=0)      # 5 points, 5 min -> 1.0
+    db.record_attempt(con, "IAJ-2025-1-5-ア", "B", 3, seconds=120, now=0)   # 1 point, 2 min -> 2.0
+    p = dashboard.pace(con)
+    assert p == {"median_min_per_point": 2.0, "budget_min_per_point": 1.8, "samples": 3}
+    acc = {r["topic"]: r for r in dashboard.topic_accuracy(con)}
+    assert acc["昇給率・給与指数"]["median_min"] == 10.0

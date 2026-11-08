@@ -7,8 +7,8 @@ from .topics import canonical
 
 def topic_accuracy(con):
     """Per canonical topic: attempts, accuracy %, distinct problems tried / available. Weakest first."""
-    rows = con.execute(
-        "SELECT p.topic, a.problem_id, a.is_correct FROM attempts a JOIN problems p ON p.id=a.problem_id").fetchall()
+    rows = con.execute("SELECT p.topic, a.problem_id, a.is_correct, a.seconds FROM attempts a"
+                       " JOIN problems p ON p.id=a.problem_id").fetchall()
     avail = {}
     for r in con.execute("SELECT topic, COUNT(*) n FROM problems GROUP BY topic"):
         t = canonical(r["topic"])
@@ -16,13 +16,31 @@ def topic_accuracy(con):
     agg: dict[str, dict] = {}
     for r in rows:
         t = canonical(r["topic"])
-        a = agg.setdefault(t, {"topic": t, "attempts": 0, "correct": 0, "tried": set()})
+        a = agg.setdefault(t, {"topic": t, "attempts": 0, "correct": 0, "tried": set(), "secs": []})
+        if r["seconds"]:
+            a["secs"].append(r["seconds"])
         a["attempts"] += 1
         a["correct"] += r["is_correct"]
         a["tried"].add(r["problem_id"])
     out = [{"topic": t, "attempts": a["attempts"], "accuracy": round(100 * a["correct"] / a["attempts"], 1),
-            "tried": len(a["tried"]), "available": avail.get(t, 0)} for t, a in agg.items()]
+            "tried": len(a["tried"]), "available": avail.get(t, 0),
+            "median_min": round(_median(a["secs"]) / 60, 1) if a["secs"] else None} for t, a in agg.items()]
     return sorted(out, key=lambda r: (r["accuracy"], -r["attempts"]))
+
+
+def _median(xs):
+    xs = sorted(xs)
+    n = len(xs)
+    return (xs[n // 2] if n % 2 else (xs[n // 2 - 1] + xs[n // 2]) / 2) if n else 0.0
+
+
+def pace(con, exam_minutes: int = 180):
+    """Median minutes per point on official slots vs. the exam budget (exam_minutes / 100 points)."""
+    rows = con.execute("SELECT a.seconds, p.points, p.group_key, p.year FROM attempts a JOIN problems p ON p.id=a.problem_id"
+                       " WHERE p.exam_body='IAJ' AND a.seconds IS NOT NULL AND p.points>0").fetchall()
+    per_point = [r["seconds"] / 60 / r["points"] for r in rows]
+    return {"median_min_per_point": round(_median(per_point), 2) if per_point else None,
+            "budget_min_per_point": round(exam_minutes / 100, 2), "samples": len(per_point)}
 
 
 def confidence_matrix(con):

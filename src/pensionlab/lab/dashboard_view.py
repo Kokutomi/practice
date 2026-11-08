@@ -61,7 +61,15 @@ def render(con):
         st.altair_chart(chart, use_container_width=True)
         with st.expander("表で見る"):
             st.dataframe(df.drop(columns="label").rename(columns={"topic": "分野", "attempts": "解答回数", "accuracy": "正答率%",
-                                            "tried": "解いた問題", "available": "登録問題"}), hide_index=True)
+                                            "tried": "解いた問題", "available": "登録問題",
+                                            "median_min": "解答時間の中央値(分)"}), hide_index=True)
+        pc = dashboard.pace(con)
+        if pc["median_min_per_point"] is not None:
+            over = pc["median_min_per_point"] > pc["budget_min_per_point"]
+            st.metric("1点あたりの解答時間（中央値）", f"{pc['median_min_per_point']} 分",
+                      help=f"本番は180分で100点 → 1点あたり {pc['budget_min_per_point']} 分。演習の配点付き {pc['samples']} 回から計算。")
+            st.caption(("⚠ 本番のペース（1点あたり1.8分）より遅めです。" if over else "本番のペースの範囲内です。")
+                       + " 確信度の低い問題に時間をかけすぎていないか確認しましょう。")
     else:
         st.caption("まだ解答がありません")
 
