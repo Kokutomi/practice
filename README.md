@@ -10,4 +10,13 @@ pip install -e . pytest
 pytest
 ```
 
+Practice screen (Streamlit):
+
+```
+pip install -e '.[app]'
+PYTHONPATH=src streamlit run src/pensionlab/lab/app.py
+```
+
+Sidebar: load sample problems, per-topic stats, due reviews. Main: problem, staged hints, answer + confidence, recomputed verdict, error-type log.
+
 Ideas: commutation functions, salary-scale accrued benefit (PUC), real mortality tables, Monte Carlo longevity.

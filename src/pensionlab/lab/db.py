@@ -105,3 +105,14 @@ def stats_by_topic(con):
         "SELECT p.topic, COUNT(*) n, ROUND(100.0*SUM(a.is_correct)/COUNT(*),1) pct,"
         " SUM(a.is_correct=1 AND a.confidence<=2) correct_unsure"
         " FROM attempts a JOIN problems p ON p.id=a.problem_id GROUP BY p.topic").fetchall()
+
+
+def set_last_error_type(con, problem_id: str, error_type: str) -> None:
+    con.execute("UPDATE attempts SET error_type=? WHERE id=(SELECT MAX(id) FROM attempts WHERE problem_id=?)",
+                (error_type, problem_id))
+    con.execute("UPDATE review_queue SET error_type=? WHERE problem_id=?", (error_type, problem_id))
+    con.commit()
+
+
+def get_problem(con, problem_id: str):
+    return con.execute("SELECT * FROM problems WHERE id=?", (problem_id,)).fetchone()

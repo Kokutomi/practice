@@ -5,6 +5,10 @@ description = "Pension math lab: life tables, commutation functions, annuities"
 requires-python = ">=3.9"
 dependencies = []
 
+[project.optional-dependencies]
+app = ["streamlit>=1.30"]
+dev = ["pytest", "streamlit>=1.30"]
+
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
