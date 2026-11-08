@@ -25,8 +25,11 @@
   "license": "link_only",
   "access": "free",
   "priority": "P0",
-  "notes": "過去問題集ページでリンクを確認（2026-11-08）。内容は未照合",
-  "url": "https://www.actuaries.jp/lib/collection/books/2024/2024D.pdf"
+  "notes": "正答・配点表を tools/import_iaj.py で抽出し problems/iaj-2024.json に登録（31解答欄、配点合計100点を確認）。",
+  "url": "https://www.actuaries.jp/lib/collection/books/2024/2024D.pdf",
+  "verification": "verified",
+  "retrieved_at": "2026-11-08T04:40:00Z",
+  "version": "HTTP Last-Modified: 2025-03-19 02:02:10 GMT"
  },
  {
   "id": "IAJ-PAST-2023",
@@ -40,6 +43,62 @@
   "priority": "P0",
   "notes": "過去問題集ページでリンクを確認（2026-11-08）。内容は未照合",
   "url": "https://www.actuaries.jp/lib/collection/books/2023/2023D.pdf"
+ },
+ {
+  "id": "IAJ-PAST-2022",
+  "title": "資格試験過去問題集 2022年度 年金数理（問題・解答）",
+  "publisher": "日本アクチュアリー会",
+  "kind": "past_exam",
+  "exam_body": "IAJ",
+  "year": 2022,
+  "url": "https://www.actuaries.jp/lib/collection/books/2022/2022D.pdf",
+  "license": "link_only",
+  "access": "free",
+  "priority": "P0",
+  "verification": "unverified",
+  "notes": "過去問題集ページでリンクを確認（2026-11-08）。内容は未照合"
+ },
+ {
+  "id": "IAJ-PAST-2021",
+  "title": "資格試験過去問題集 2021年度 年金数理（問題・解答）",
+  "publisher": "日本アクチュアリー会",
+  "kind": "past_exam",
+  "exam_body": "IAJ",
+  "year": 2021,
+  "url": "https://www.actuaries.jp/lib/collection/books/2021/2021D.pdf",
+  "license": "link_only",
+  "access": "free",
+  "priority": "P0",
+  "verification": "unverified",
+  "notes": "過去問題集ページでリンクを確認（2026-11-08）。内容は未照合"
+ },
+ {
+  "id": "IAJ-PAST-2020",
+  "title": "資格試験過去問題集 2020年度 年金数理（問題・解答）",
+  "publisher": "日本アクチュアリー会",
+  "kind": "past_exam",
+  "exam_body": "IAJ",
+  "year": 2020,
+  "url": "https://www.actuaries.jp/lib/collection/books/2020/2020D.pdf",
+  "license": "link_only",
+  "access": "free",
+  "priority": "P0",
+  "verification": "unverified",
+  "notes": "過去問題集ページでリンクを確認（2026-11-08）。内容は未照合"
+ },
+ {
+  "id": "IAJ-PAST-2019",
+  "title": "資格試験過去問題集 2019年度 年金数理（問題・解答）",
+  "publisher": "日本アクチュアリー会",
+  "kind": "past_exam",
+  "exam_body": "IAJ",
+  "year": 2019,
+  "url": "https://www.actuaries.jp/lib/collection/books/2019/2019D.pdf",
+  "license": "link_only",
+  "access": "free",
+  "priority": "P0",
+  "verification": "unverified",
+  "notes": "過去問題集ページでリンクを確認（2026-11-08）。内容は未照合"
  },
  {
   "id": "IAJ-PAST-ARCHIVE",
