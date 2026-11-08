@@ -32,4 +32,17 @@ year, url, retrieved_at, version, verification, license, access, priority.
 Problems link to it via `source_id` and carry `exam_body` / `question_no`.
 Only metadata and links are committed; PDFs and problem text from official sources stay in `data/` (git-ignored).
 
+Official past exams (`problems/iaj-2025.json`):
+
+2025年度 日本アクチュアリー会「年金数理」を小問（解答欄）単位で36件登録。
+各件は question_no・分野・配点・完答グループ・公式PDFの問題/解答例ページ・公式正答（2026-10-29 差替版）を持ち、
+問題文そのものは収録せず公式PDFへのリンクで参照する（`statement` は自作の一行要約）。
+問題2(4)(ア) は訂正により (F)(G) どちらも正解として判定する。
+
+```
+python -m pensionlab.lab.cli sources load sources/ledger.json
+python -m pensionlab.lab.cli load problems/iaj-2025.json
+python -m pensionlab.lab.cli practice      # 選択肢を A〜L で回答
+```
+
 Ideas: commutation functions, salary-scale accrued benefit (PUC), real mortality tables, Monte Carlo longevity.

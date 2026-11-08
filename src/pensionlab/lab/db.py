@@ -5,7 +5,7 @@ import json
 import sqlite3
 import time
 
-from .verifiers import is_correct
+from .verifiers import CHOICE, is_correct, normalize_choice
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS problems(
@@ -37,6 +37,11 @@ PROBLEM_EXTRA_COLUMNS = {
     "exam_body": "TEXT DEFAULT 'original'",
     "question_no": "TEXT",      # e.g. "問題1(3)"
     "source_id": "TEXT REFERENCES sources(id)",
+    "points": "INTEGER",
+    "page": "INTEGER",          # page of the problem in the source PDF
+    "answer_page": "INTEGER",   # page of the official worked answer
+    "group_key": "TEXT",        # items scored together (完答)
+    "note": "TEXT",
 }
 SOURCE_FIELDS = ["id", "title", "publisher", "kind", "exam_body", "year", "url", "retrieved_at",
                  "version", "verification", "license", "access", "priority", "notes"]
@@ -67,10 +72,12 @@ def load_problems(con, path: str) -> int:
     for p in items:
         con.execute(
             "INSERT OR REPLACE INTO problems(id,year,section,topic,difficulty,statement,verifier_id,params,"
-            "source,exam_body,question_no,source_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+            "source,exam_body,question_no,source_id,points,page,answer_page,group_key,note)"
+            " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (p["id"], p.get("year"), p.get("section"), p.get("topic"), p.get("difficulty"),
-             p["statement"], p["verifier_id"], json.dumps(p["params"]), p.get("source"),
-             p.get("exam_body", "original"), p.get("question_no"), p.get("source_id")))
+             p["statement"], p["verifier_id"], json.dumps(p["params"], ensure_ascii=False), p.get("source"),
+             p.get("exam_body", "original"), p.get("question_no"), p.get("source_id"),
+             p.get("points"), p.get("page"), p.get("answer_page"), p.get("group_key"), p.get("note")))
         con.execute("DELETE FROM hints WHERE problem_id=?", (p["id"],))
         for lvl, text in enumerate(p.get("hints", []), 1):
             con.execute("INSERT INTO hints VALUES(?,?,?)", (p["id"], lvl, text))
@@ -84,7 +91,7 @@ def search(con, year=None, topic=None, difficulty=None, exam_body=None):
         if v is not None:
             q += f" AND {col}=?"
             a.append(v)
-    return con.execute(q + " ORDER BY year, id", a).fetchall()
+    return con.execute(q + " ORDER BY year, rowid", a).fetchall()
 
 
 def get_hint(con, problem_id: str, level: int):
@@ -92,12 +99,15 @@ def get_hint(con, problem_id: str, level: int):
     return r["text"] if r else None
 
 
-def record_attempt(con, problem_id: str, answer: float, confidence: int,
+def record_attempt(con, problem_id: str, answer, confidence: int,
                    seconds: float | None = None, error_type: str | None = None, now: float | None = None) -> bool:
     """Judge by recomputation, log the attempt, update the review queue. Returns correctness."""
     now = time.time() if now is None else now
     p = con.execute("SELECT * FROM problems WHERE id=?", (problem_id,)).fetchone()
-    ok = is_correct(p["verifier_id"], json.loads(p["params"]), answer)
+    params = json.loads(p["params"])
+    if p["verifier_id"] == CHOICE:
+        answer = normalize_choice(answer)
+    ok = is_correct(p["verifier_id"], params, answer)
     con.execute("INSERT INTO attempts(problem_id,answered_at,answer,is_correct,confidence,seconds,error_type)"
                 " VALUES(?,?,?,?,?,?,?)", (problem_id, now, answer, int(ok), confidence, seconds, error_type))
     prev = con.execute("SELECT interval_days FROM review_queue WHERE problem_id=?", (problem_id,)).fetchone()
@@ -124,7 +134,7 @@ def next_problem(con, now: float | None = None):
     if due:
         return con.execute("SELECT * FROM problems WHERE id=?", (due[0]["problem_id"],)).fetchone()
     return con.execute("SELECT * FROM problems WHERE id NOT IN (SELECT problem_id FROM attempts)"
-                       " ORDER BY year, id LIMIT 1").fetchone()
+                       " ORDER BY year, rowid LIMIT 1").fetchone()
 
 
 def stats_by_topic(con):
@@ -179,3 +189,14 @@ def problems_needing_recheck(con):
         "SELECT p.id, p.year, p.question_no, s.id source_id, s.verification, s.version FROM problems p"
         " JOIN sources s ON s.id=p.source_id WHERE s.verification IN ('needs_recheck','superseded')"
         " ORDER BY p.year, p.id").fetchall()
+
+
+def source_url(con, problem, page_col: str = "page"):
+    """Link to the source PDF, at the problem's page when known."""
+    if not problem["source_id"]:
+        return None
+    r = con.execute("SELECT url FROM sources WHERE id=?", (problem["source_id"],)).fetchone()
+    if not r or not r["url"]:
+        return None
+    page = problem[page_col]
+    return f"{r['url']}#page={page}" if page else r["url"]

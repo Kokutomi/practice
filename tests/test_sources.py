@@ -38,14 +38,18 @@ def test_bad_values_rejected(tmp_path, con):
 
 
 def test_recheck_links_problem_to_superseded_source(tmp_path, con):
+    led = tmp_path / "l.json"
+    led.write_text(json.dumps([{"id": "IAJ-PAST-2099", "title": "t", "kind": "past_exam",
+                                "verification": "needs_recheck", "version": "v2"}]))
+    db.load_sources(con, str(led))
     probs = tmp_path / "p.json"
     probs.write_text(json.dumps([{
         "id": "IAJ-2025-Q1", "year": 2025, "topic": "life_annuity", "difficulty": 1, "statement": "s",
         "verifier_id": "annuity_due", "params": {"x": 65, "i": 0.03},
-        "exam_body": "IAJ", "question_no": "問題1(1)", "source_id": "IAJ-PAST-2025"}]))
+        "exam_body": "IAJ", "question_no": "問題1(1)", "source_id": "IAJ-PAST-2099"}]))
     db.load_problems(con, str(probs))
     rows = db.problems_needing_recheck(con)
-    assert [(r["id"], r["source_id"]) for r in rows] == [("IAJ-2025-Q1", "IAJ-PAST-2025")]
+    assert [(r["id"], r["source_id"]) for r in rows] == [("IAJ-2025-Q1", "IAJ-PAST-2099")]
     assert db.search(con, exam_body="IAJ")[0]["question_no"] == "問題1(1)"
 
 

@@ -1,0 +1,837 @@
+[
+ {
+  "id": "IAJ-2025-1-1",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "動態的昇給率の実績から、給与指数 b_x=1+k(x-25) と組み合わせてベースアップ率 r を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(1)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 5,
+  "page": 1,
+  "answer_page": 23,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-2",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "連続的な定常人口で最終年齢を60歳→70歳に引き上げたとき、40年後の平均年齢を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(2)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 5,
+  "page": 2,
+  "answer_page": 23,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-3",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "生命表・平均余命",
+  "difficulty": null,
+  "statement": "平均余命 e_x=(2/3)(80-x) から l_x=50,000 となる x を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(3)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 5,
+  "page": 3,
+  "answer_page": 24,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-4",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年一時金のみの制度（加入年齢方式・定常状態）で期初の制度全体の責任準備金を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(4)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 5,
+  "page": 4,
+  "answer_page": 24,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-5-ア",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "定常状態の積立金水準の正誤：加入時積立方式",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)(ア)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 1,
+  "page": 5,
+  "answer_page": 25,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-5-イ",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "定常状態の積立金水準の正誤：退職時年金現価積立方式",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)(イ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 1,
+  "page": 5,
+  "answer_page": 25,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-5-ウ",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "定常状態の積立金水準の正誤：単位積立方式",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)(ウ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 1,
+  "page": 5,
+  "answer_page": 25,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-5-エ",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "定常状態の積立金水準の正誤：平準積立方式",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)(エ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 1,
+  "page": 5,
+  "answer_page": 25,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-5-オ",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "定常状態の積立金水準の正誤：完全積立方式",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)(オ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 1,
+  "page": 5,
+  "answer_page": 25,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-6-①",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "未積立債務償却ルール下で加入年齢方式と開放基金方式を比較：①どちらの方式か",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(6)①",
+  "source_id": "IAJ-PAST-2025",
+  "points": 5,
+  "page": 6,
+  "answer_page": 26,
+  "group_key": "1-6",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2025-1-6-②",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "同上：②償却完了までの年数の差",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 5
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(6)②",
+  "source_id": "IAJ-PAST-2025",
+  "points": 0,
+  "page": 6,
+  "answer_page": 26,
+  "group_key": "1-6",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2025-1-6-③",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "同上：③特別保険料総額の差（百万円）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(6)③",
+  "source_id": "IAJ-PAST-2025",
+  "points": 0,
+  "page": 6,
+  "answer_page": 26,
+  "group_key": "1-6",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2025-1-7",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "開放型総合保険料方式で新規加入年齢を20歳→22歳にしたときの1人あたり保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(7)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 5,
+  "page": 7,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-1-8",
+  "year": 2025,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "給与比例制・加入年齢方式で新規加入者の定額換算標準保険料 B̄30 を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(8)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 5,
+  "page": 8,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-2-1-ア",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "定常状態の制度で運用利回り-2%が10年続いた後の積立金倍率 a",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)(ア)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 9,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-2-1-イ",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "収支相等を保つよう翌年度給付額を調整する場合の10年後の積立金倍率 b",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)(イ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 9,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-2-2-ア",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデル・特定年齢の加入年齢方式で毎年発生する後発債務の額",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)(ア)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-2-2-イ",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "閉鎖型総合保険料方式の定常状態での1人あたり保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)(イ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 10,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-2-3-ア",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "「加入年数×脱退時給与」一時金制度（加入年齢方式）の数値を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)(ア)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 11,
+  "answer_page": 31,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-2-3-イ",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "同制度の標準保険料率から定年年齢 x_r を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)(イ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 11,
+  "answer_page": 31,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-2-4-ア",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "計算基数・給付現価",
+  "difficulty": null,
+  "statement": "定額制（10年確定年金・一時金）で計算基数 C_x, D_x を用いて40歳の1人あたり標準保険料を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F",
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)(ア)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 12,
+  "answer_page": 32,
+  "group_key": null,
+  "note": "2026-10-29訂正：解答例(F)に加え、別解(G)も正解（与えられた基数を使わず直接計算した場合）"
+ },
+ {
+  "id": "IAJ-2025-2-4-イ①",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "計算基数・給付現価",
+  "difficulty": null,
+  "statement": "同制度の条件変更後の数値（①）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)(イ)①",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 12,
+  "answer_page": 32,
+  "group_key": "2-4-イ",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2025-2-4-イ②",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "計算基数・給付現価",
+  "difficulty": null,
+  "statement": "同制度の条件変更後の記載（②）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)(イ)②",
+  "source_id": "IAJ-PAST-2025",
+  "points": 0,
+  "page": 12,
+  "answer_page": 32,
+  "group_key": "2-4-イ",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2025-2-5-ア",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度統合（開放基金方式）：統合前の制度Bの標準保険料率",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)(ア)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 14,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-2-5-イ",
+  "year": 2025,
+  "section": "問題2",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度統合後の標準保険料率と特別保険料率の合計",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)(イ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 14,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-1-ア",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度分割後の制度Xで財政再計算した場合の特別保険料率",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)(ア)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 16,
+  "answer_page": 36,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-1-イ",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "予定利率を2.0%に引き下げた場合の初回特別保険料率の合計",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)(イ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 16,
+  "answer_page": 36,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-1-ウ",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "新制度Yで給付を一律N%削減した場合の N",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)(ウ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 4,
+  "page": 16,
+  "answer_page": 36,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-2-ア",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年退職者のみに年金（5年・20年確定）/一時金選択を支給する制度の数値（ア）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(ア)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 19,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-2-イ",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "同制度の標準保険料（イ）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(イ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 3,
+  "page": 19,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-2-ウ",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "同制度の条件変更後の数値（ウ）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(ウ)",
+  "source_id": "IAJ-PAST-2025",
+  "points": 4,
+  "page": 19,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-3-①",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの1年間の財政運営：責任準備金・積立金の推移①",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)①",
+  "source_id": "IAJ-PAST-2025",
+  "points": 2,
+  "page": 21,
+  "answer_page": 38,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-3-②",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "同上②",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)②",
+  "source_id": "IAJ-PAST-2025",
+  "points": 2,
+  "page": 21,
+  "answer_page": 38,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-3-③",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "同上③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)③",
+  "source_id": "IAJ-PAST-2025",
+  "points": 2,
+  "page": 21,
+  "answer_page": 38,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-3-④",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "同上④",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)④",
+  "source_id": "IAJ-PAST-2025",
+  "points": 2,
+  "page": 21,
+  "answer_page": 38,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2025-3-3-⑤",
+  "year": 2025,
+  "section": "問題3",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "同上⑤（期初積立金からの運用収益の予定額）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2025年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)⑤",
+  "source_id": "IAJ-PAST-2025",
+  "points": 2,
+  "page": 21,
+  "answer_page": 38,
+  "group_key": null
+ }
+]

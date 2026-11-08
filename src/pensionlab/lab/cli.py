@@ -7,7 +7,7 @@ import sys
 import time
 
 from . import db
-from .verifiers import compute
+from .verifiers import CHOICE, choices, truth_text
 
 ERROR_TYPES = ["", "timing(due/immediate)", "interest/discount", "mortality/survival", "arithmetic", "other"]
 
@@ -17,14 +17,24 @@ def practice(con):
     if not p:
         print("出題できる問題がありません（`load` で問題を読み込んでください）")
         return
-    print(f"\n[{p['id']}] {p['topic']} (難易度 {p['difficulty']})\n{p['statement']}\n")
+    params = json.loads(p["params"])
+    is_choice = p["verifier_id"] == CHOICE
+    print(f"\n[{p['id']}] {p['question_no'] or ''} {p['topic']}\n{p['statement']}")
+    url = db.source_url(con, p)
+    if url:
+        print("問題文:", url)
+    print()
     t0, level = time.time(), 0
+    prompt = f"答え（{'/'.join(choices(params))}）" if is_choice else "答え（数値）"
     while True:
-        s = input("答え（数値）／ h=ヒント: ").strip()
+        s = input(f"{prompt}／ h=ヒント: ").strip()
         if s == "h":
             level += 1
             print("ヒント:", db.get_hint(con, p["id"], level) or "（これ以上ヒントはありません）")
             continue
+        if is_choice:
+            ans = s
+            break
         try:
             ans = float(s)
             break
@@ -32,8 +42,10 @@ def practice(con):
             print("数値を入力してください")
     conf = int(input("確信度 1(低)-3(高): ") or 2)
     ok = db.record_attempt(con, p["id"], ans, conf, time.time() - t0)
-    truth = compute(p["verifier_id"], json.loads(p["params"]))
-    print("正解!" if ok else f"不正解。再計算値 = {truth:.4f}")
+    print("正解!" if ok else f"不正解。正答 = {truth_text(p['verifier_id'], params)}")
+    a_url = db.source_url(con, p, "answer_page")
+    if a_url and p["answer_page"]:
+        print("解答例:", a_url)
     if not ok:
         for i, e in enumerate(ERROR_TYPES[1:], 1):
             print(f"  {i}. {e}")

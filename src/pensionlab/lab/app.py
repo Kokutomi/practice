@@ -8,10 +8,11 @@ import time
 import streamlit as st
 
 from pensionlab.lab import db
-from pensionlab.lab.verifiers import compute
+from pensionlab.lab.verifiers import CHOICE, choices, truth_text
 
 DB_PATH = os.environ.get("LAB_DB", "data/lab.sqlite")
-SAMPLE = os.environ.get("LAB_SAMPLE", "problems/sample.json")
+PROBLEMS_DIR = os.environ.get("LAB_PROBLEMS", "problems")
+LEDGER = os.environ.get("LAB_LEDGER", "sources/ledger.json")
 ERROR_TYPES = ["timing(due/immediate)", "interest/discount", "mortality/survival", "arithmetic", "other"]
 CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
 
@@ -27,8 +28,12 @@ def start(problem_id):
 # ---- sidebar: data + stats
 with st.sidebar:
     st.header("📘 Learning Lab")
-    if os.path.exists(SAMPLE) and st.button("サンプル問題を読み込む"):
-        st.success(f"{db.load_problems(con, SAMPLE)}問を読み込みました")
+    if os.path.isdir(PROBLEMS_DIR) and st.button("問題と出典台帳を読み込む"):
+        if os.path.exists(LEDGER):
+            db.load_sources(con, LEDGER)
+        n = sum(db.load_problems(con, os.path.join(PROBLEMS_DIR, f))
+                for f in sorted(os.listdir(PROBLEMS_DIR)) if f.endswith(".json"))
+        st.success(f"{n}問を読み込みました")
     stats = db.stats_by_topic(con)
     st.subheader("分野別成績")
     if stats:
@@ -57,13 +62,22 @@ src = con.execute("SELECT title, version, verification FROM sources WHERE id=?",
     if p["source_id"] else None
 where = f"{src['title']}" + (f"（{src['version']}）" if src and src["version"] else "") if src else p["source"]
 qno = f" {p['question_no']}" if p["question_no"] else ""
-st.caption(f"{p['id']} ｜ {p['exam_body']}{qno} ｜ {p['topic']} ｜ 難易度 {p['difficulty']} ｜ 出典: {where}")
+extra = f" ｜ 難易度 {p['difficulty']}" if p["difficulty"] else ""
+extra += f" ｜ 配点 {p['points']}点" if p["points"] else ""
+st.caption(f"{p['id']} ｜ {p['exam_body']}{qno} ｜ {p['topic']}{extra} ｜ 出典: {where}")
 if src and src["verification"] in ("needs_recheck", "superseded"):
     st.warning("この問題の出典資料は差し替え・要確認です。正答を最新版と照合してください。")
 st.markdown(f"#### {p['statement']}")
+is_choice = p["verifier_id"] == CHOICE
+params = json.loads(p["params"])
+q_url = db.source_url(con, p)
+if q_url:
+    st.markdown(f"📄 [問題文を公式PDFで開く（p.{p['page']}）]({q_url})")
+if p["note"]:
+    st.caption(f"注: {p['note']}")
 
 # ---- hints
-if ss.result is None:
+if ss.result is None and db.get_hint(con, p["id"], 1):
     if st.button("💡 ヒントを見る"):
         ss.hint += 1
 for lvl in range(1, ss.hint + 1):
@@ -72,23 +86,34 @@ for lvl in range(1, ss.hint + 1):
 # ---- answer
 if ss.result is None:
     with st.form("answer"):
-        raw = st.text_input("答え（数値）")
+        if is_choice:
+            raw = st.radio("選択肢", choices(params), horizontal=True, index=None)
+        else:
+            raw = st.text_input("答え（数値）")
         conf = st.radio("確信度", list(CONF), format_func=CONF.get, index=1, horizontal=True)
         if st.form_submit_button("解答する"):
             try:
-                ans = float(raw)
+                if raw is None:
+                    raise ValueError
+                ans = raw if is_choice else float(raw)
             except ValueError:
-                st.error("数値で入力してください")
+                st.error("選択肢を選んでください" if is_choice else "数値で入力してください")
             else:
                 ok = db.record_attempt(con, p["id"], ans, conf, time.time() - ss.t0)
-                ss.result = {"ok": ok, "ans": ans, "truth": compute(p["verifier_id"], json.loads(p["params"]))}
+                shown = f"({ans})" if is_choice else f"{ans:.4f}"
+                ss.result = {"ok": ok, "ans": shown, "truth": truth_text(p["verifier_id"], params)}
                 st.rerun()
 else:
     r = ss.result
     if r["ok"]:
-        st.success(f"✅ 正解！（あなたの答え {r['ans']:.4f}）")
+        st.success(f"✅ 正解！（あなたの答え {r['ans']}）")
     else:
-        st.error(f"❌ 不正解。再計算値 = {r['truth']:.4f}（あなたの答え {r['ans']:.4f}）")
+        label = "正答" if is_choice else "再計算値"
+        st.error(f"❌ 不正解。{label} = {r['truth']}（あなたの答え {r['ans']}）")
+    a_url = db.source_url(con, p, "answer_page")
+    if a_url and p["answer_page"]:
+        st.markdown(f"📘 [公式の解答例を開く（p.{p['answer_page']}）]({a_url})")
+    if not r["ok"]:
         if not ss.saved:
             et = st.selectbox("誤りの種類", ERROR_TYPES)
             if st.button("誤りタイプを記録"):

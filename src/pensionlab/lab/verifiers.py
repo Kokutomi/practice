@@ -16,10 +16,31 @@ VERIFIERS = {
 }
 
 
+CHOICE = "choice"  # official multiple-choice answer key: params = {"answer": ["F", "G"], "n_choices": 10}
+LETTERS = "ABCDEFGHIJKLMN"
+
+
+def normalize_choice(answer) -> str:
+    import unicodedata
+    return unicodedata.normalize("NFKC", str(answer)).strip().strip("()（）").upper()
+
+
+def choices(params: dict) -> list[str]:
+    return list(LETTERS[: params.get("n_choices", 10)])
+
+
 def compute(verifier_id: str, params: dict) -> float:
     return VERIFIERS[verifier_id](params)
 
 
-def is_correct(verifier_id: str, params: dict, answer: float, rel_tol: float = 0.005) -> bool:
+def truth_text(verifier_id: str, params: dict) -> str:
+    if verifier_id == CHOICE:
+        return " または ".join(f"({a})" for a in params["answer"])
+    return f"{compute(verifier_id, params):.4f}"
+
+
+def is_correct(verifier_id: str, params: dict, answer, rel_tol: float = 0.005) -> bool:
+    if verifier_id == CHOICE:
+        return normalize_choice(answer) in params["answer"]
     truth = compute(verifier_id, params)
     return abs(answer - truth) <= rel_tol * abs(truth)
