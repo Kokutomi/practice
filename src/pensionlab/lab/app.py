@@ -135,6 +135,8 @@ if ss.result is None and db.get_hint(con, p["id"], 1):
         ss.hint += 1
 for lvl in range(1, ss.hint + 1):
     st.info(f"ヒント{lvl}: " + (db.get_hint(con, p["id"], lvl) or "これ以上ヒントはありません"))
+if ss.hint and p["exam_body"] != "original":
+    st.caption("ヒントは自作（公式解答例の解き方の方針を参考に要約）。数値は含めていません。")
 
 # ---- answer
 if ss.result is None:

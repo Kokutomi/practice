@@ -25,6 +25,8 @@ def test_problem_file(path):
         src = LEDGER[i["source_id"]]
         assert src["url"].endswith(f"{year}D.pdf") and src["verification"] == "verified"
         assert i["page"] and i["answer_page"] and i["page"] < i["answer_page"]
+        for h in i.get("hints", []):
+            assert h.strip() and len(h) < 200, i["id"]
     c = db.connect(":memory:")
     db.load_sources(c, str(ROOT / "sources/ledger.json"))
     assert db.load_problems(c, str(path)) == len(items)

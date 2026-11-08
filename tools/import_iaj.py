@@ -161,6 +161,8 @@ def build(year: int, pdf: str, annotations: dict) -> list[dict]:
              "group_key": group if (group and (group_start or r["points"] is None)) else None}
         if r["points"] is not None and not r["all_or_nothing"]:
             group = None
+        if ann.get("hints"):
+            e["hints"] = ann["hints"]
         notes = [ann["note"]] if ann.get("note") else []
         if e["group_key"]:
             notes.append("完答問題（同じ group_key の小問すべて正解で得点）")

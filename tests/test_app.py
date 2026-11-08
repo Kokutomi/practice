@@ -49,7 +49,8 @@ def test_choice_flow_with_official_links(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
     assert "IAJ-2025-1-1" in at.caption[0].value and "配点 5点" in at.caption[0].value
     assert any("2025D.pdf#page=1" in m.value for m in at.markdown)
-    assert not [b for b in at.button if "ヒント" in b.label]   # no hints for official items
+    btn(at, "ヒント").click().run()                             # 2025 has self-written approach hints
+    assert any("ヒント1" in i.value and "昇給" in i.value for i in at.info)
     btn(at, "解答").click().run()
     assert any("解答を入力" in e.value for e in at.error)
     at.main.radio[0].set_value("C"); btn(at, "解答").click().run()
