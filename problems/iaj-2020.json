@@ -1,0 +1,1483 @@
+[
+ {
+  "id": "IAJ-2020-1-1",
+  "year": 2020,
+  "section": "問題1",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "l_x=3a-x の定常人口で脱退時平均年齢42歳のときの数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(1)",
+  "source_id": "IAJ-PAST-2020",
+  "points": 5,
+  "page": 1,
+  "answer_page": 26,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-1-2",
+  "year": 2020,
+  "section": "問題1",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "三重脱退残存表の予定脱退率と単独脱退率の関係",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(2)",
+  "source_id": "IAJ-PAST-2020",
+  "points": 5,
+  "page": 2,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-1-3",
+  "year": 2020,
+  "section": "問題1",
+  "topic": "年金現価・計算基数",
+  "difficulty": null,
+  "statement": "年6回期末払い20年保証期間付終身年金と別の年金の60歳時点の現価が一致する条件",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(3)",
+  "source_id": "IAJ-PAST-2020",
+  "points": 5,
+  "page": 3,
+  "answer_page": 28,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-1-4",
+  "year": 2020,
+  "section": "問題1",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "責任準備金1,000・積立金700、運用利回り-10%で利差損が出た年度の保険料等（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "22"
+   ]
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(4)",
+  "source_id": "IAJ-PAST-2020",
+  "points": 5,
+  "page": 4,
+  "answer_page": 29,
+  "group_key": "1-4",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-1-5",
+  "year": 2020,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "給付現価・積立金等に関する記載のうち誤っているものをすべて選ぶ",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 6
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)",
+  "source_id": "IAJ-PAST-2020",
+  "points": 5,
+  "page": 5,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-1-6",
+  "year": 2020,
+  "section": "問題1",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "2制度統合時の「加入年齢方式の保険料合計÷開放基金方式の保険料合計」",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(6)",
+  "source_id": "IAJ-PAST-2020",
+  "points": 5,
+  "page": 6,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-1-7",
+  "year": 2020,
+  "section": "問題1",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "前年度末未積立債務の10%を特別保険料とする場合に積立金が回復する年度（数字穴埋め X+ab）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "19"
+   ]
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(7)",
+  "source_id": "IAJ-PAST-2020",
+  "points": 5,
+  "page": 7,
+  "answer_page": 31,
+  "group_key": "1-7",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-1-8",
+  "year": 2020,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "脱退・昇給・保険料・給付が連続的に起こる制度の標準保険料率",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(8)",
+  "source_id": "IAJ-PAST-2020",
+  "points": 5,
+  "page": 8,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-2-1-①",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年退職翌年度から「加入年数×1」の10年保証期間付終身年金を支給する制度①②",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)①",
+  "source_id": "IAJ-PAST-2020",
+  "points": 4,
+  "page": 10,
+  "answer_page": 33,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-2-1-②",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年退職翌年度から「加入年数×1」の10年保証期間付終身年金を支給する制度①②",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)②",
+  "source_id": "IAJ-PAST-2020",
+  "points": 3,
+  "page": 10,
+  "answer_page": 33,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-2-2-①",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "定年一時金100の制度を発足：未積立債務と特別保険料①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)①",
+  "source_id": "IAJ-PAST-2020",
+  "points": 4,
+  "page": 12,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-2-2-②",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "定年一時金100の制度を発足：未積立債務と特別保険料①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)②",
+  "source_id": "IAJ-PAST-2020",
+  "points": 2,
+  "page": 12,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-2-2-③",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "定年一時金100の制度を発足：未積立債務と特別保険料①〜③",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "08"
+   ]
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)③",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 12,
+  "answer_page": 34,
+  "group_key": "2-2-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-①a",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)①a",
+  "source_id": "IAJ-PAST-2020",
+  "points": 4,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-①a",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-①b",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)①b",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-①a",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-①c",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)①c",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-①a",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-②d",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)②d",
+  "source_id": "IAJ-PAST-2020",
+  "points": 2,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-②d",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-②e",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)②e",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-②d",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-②f",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)②f",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-②d",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-②g",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの空欄補充（②g）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B",
+    "M"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)②g",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-②d",
+  "note": "正答表に「gとhは順不同」とあるため、(B)(M)どちらも正解とする（g・hが同じ記号の場合も正解扱いになる簡略化） 完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-②h",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの空欄補充（②h）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B",
+    "M"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)②h",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-②d",
+  "note": "正答表に「gとhは順不同」とあるため、(B)(M)どちらも正解とする（g・hが同じ記号の場合も正解扱いになる簡略化） 完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-③i",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "M"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)③i",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-③i",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-③j",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "P"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)③j",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-③i",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-③k",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "R"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)③k",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-③i",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-3-③l",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの財政方式に関する空欄補充（①a〜③l）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)③l",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 14,
+  "answer_page": 36,
+  "group_key": "2-3-③i",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-2-4-①",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "加入3年以上の脱退者に一時金を支給する制度のX年度財政決算（損益の発生要因）①②",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)①",
+  "source_id": "IAJ-PAST-2020",
+  "points": 4,
+  "page": 16,
+  "answer_page": 38,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-2-4-②",
+  "year": 2020,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "加入3年以上の脱退者に一時金を支給する制度のX年度財政決算（損益の発生要因）①②",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)②",
+  "source_id": "IAJ-PAST-2020",
+  "points": 3,
+  "page": 16,
+  "answer_page": 38,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-3-1-①",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)①",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-3-1-②",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)②",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-3-1-③",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)③",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-3-1-④",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)④",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-3-1-⑤",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "K"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑤",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑤",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑥",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑥",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑤",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑦",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑦",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑦",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑧",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑧",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑦",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑨",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑨",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑨",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑩",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑩",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑨",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑪",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑪",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-3-1-⑫",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑫",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑫",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑬",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑬",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑫",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑭",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑭",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑮",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑮",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": "3-1-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-1-⑯",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "K"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑯",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-3-1-⑰",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度：給与指数どおり昇給した被保険者の給付現価・給与現価の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 12
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑰",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 19,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-3-2-⑱",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "既存制度からキャッシュバランス制度への変更時の給付現価・責任準備金の空欄補充（⑱〜㉖）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)⑱",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 20,
+  "answer_page": 40,
+  "group_key": "3-2-⑱",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-2-⑲",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "既存制度からキャッシュバランス制度への変更時の給付現価・責任準備金の空欄補充（⑱〜㉖）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "K"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)⑲",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 20,
+  "answer_page": 40,
+  "group_key": "3-2-⑱",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-2-⑳",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "既存制度からキャッシュバランス制度への変更時の給付現価・責任準備金の空欄補充（⑱〜㉖）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)⑳",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 20,
+  "answer_page": 40,
+  "group_key": "3-2-⑱",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-2-㉑",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "既存制度からキャッシュバランス制度への変更時の給付現価・責任準備金の空欄補充（⑱〜㉖）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)㉑",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 20,
+  "answer_page": 40,
+  "group_key": "3-2-⑱",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-2-㉒",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "既存制度からキャッシュバランス制度への変更時の給付現価・責任準備金の空欄補充（⑱〜㉖）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "N"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)㉒",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 20,
+  "answer_page": 40,
+  "group_key": "3-2-㉒",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-2-㉓",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "既存制度からキャッシュバランス制度への変更時の給付現価・責任準備金の空欄補充（⑱〜㉖）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)㉓",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 20,
+  "answer_page": 40,
+  "group_key": "3-2-㉒",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-2-㉔",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "既存制度からキャッシュバランス制度への変更時の給付現価・責任準備金の空欄補充（⑱〜㉖）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "N"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)㉔",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 20,
+  "answer_page": 40,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-3-2-㉕",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "既存制度からキャッシュバランス制度への変更時の給付現価・責任準備金の空欄補充（⑱〜㉖）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)㉕",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 20,
+  "answer_page": 40,
+  "group_key": "3-2-㉕",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-3-2-㉖",
+  "year": 2020,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "既存制度からキャッシュバランス制度への変更時の給付現価・責任準備金の空欄補充（⑱〜㉖）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)㉖",
+  "source_id": "IAJ-PAST-2020",
+  "points": 0,
+  "page": 20,
+  "answer_page": 40,
+  "group_key": "3-2-㉕",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2020-4-1-①",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "年金制度Aの財政再計算後の標準保険料・特別保険料①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)①",
+  "source_id": "IAJ-PAST-2020",
+  "points": 3,
+  "page": 23,
+  "answer_page": 41,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-4-1-②",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "年金制度Aの財政再計算後の標準保険料・特別保険料①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)②",
+  "source_id": "IAJ-PAST-2020",
+  "points": 3,
+  "page": 23,
+  "answer_page": 41,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-4-1-③",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "年金制度Aの財政再計算後の標準保険料・特別保険料①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)③",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 23,
+  "answer_page": 41,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-4-2-①",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "年金制度Bの財政再計算後の標準保険料・特別保険料①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)①",
+  "source_id": "IAJ-PAST-2020",
+  "points": 2,
+  "page": 24,
+  "answer_page": 42,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-4-2-②",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "年金制度Bの財政再計算後の標準保険料・特別保険料①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)②",
+  "source_id": "IAJ-PAST-2020",
+  "points": 2,
+  "page": 24,
+  "answer_page": 42,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-4-2-③",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "年金制度Bの財政再計算後の標準保険料・特別保険料①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)③",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 24,
+  "answer_page": 42,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-4-3-①",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "新規加入が見込みと異なった場合のX+1年度の損益①〜④",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)①",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 25,
+  "answer_page": 42,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-4-3-②",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "新規加入が見込みと異なった場合のX+1年度の損益①〜④",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)②",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 25,
+  "answer_page": 42,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-4-3-③",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "新規加入が見込みと異なった場合のX+1年度の損益①〜④",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)③",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 25,
+  "answer_page": 42,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2020-4-3-④",
+  "year": 2020,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "新規加入が見込みと異なった場合のX+1年度の損益①〜④",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2020年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)④",
+  "source_id": "IAJ-PAST-2020",
+  "points": 1,
+  "page": 25,
+  "answer_page": 42,
+  "group_key": null
+ }
+]

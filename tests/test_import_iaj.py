@@ -63,3 +63,17 @@ def test_keyed_verifiers():
     assert is_correct("digits", {"answer": ["050"]}, "０５０")
     assert not is_correct("digits", {"answer": ["050"]}, "50")
     assert truth_text("choice_set", {"answer": ["ABD"]}) == "(A)(B)(D)"
+
+
+def test_blank_letter_slots_and_answer_override(monkeypatch):
+    key = """        問題番号         正答            配点
+問題１．    （１）    ①           𝑎𝑎   (Ａ)   完答で４点
+                           𝑏𝑏   (Ｇ)
+               ②           𝑔𝑔   (Ｂ)   完答で２点
+                           ℎ    (Ｍ)
+"""
+    monkeypatch.setattr(imp, "pdf_pages", lambda pdf: [PROBLEM, ANSWER, key])
+    items = imp.build(2099, "x.pdf", {"1-1-②h": {"answer": ["B", "M"]}})
+    assert [i["id"] for i in items] == ["IAJ-2099-1-1-①a", "IAJ-2099-1-1-①b", "IAJ-2099-1-1-②g", "IAJ-2099-1-1-②h"]
+    assert [i["group_key"] for i in items] == ["1-1-①a"] * 2 + ["1-1-②g"] * 2
+    assert items[3]["params"]["answer"] == ["B", "M"]

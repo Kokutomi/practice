@@ -47,7 +47,7 @@ FOOTER = re.compile(r"^\s*(\d{4}\s*年度|年金数理[･・.]+\s*\d+)\s*$")
 def parse_key(pages: list[str]) -> list[dict]:
     text = "\f".join(pages)
     start = text.rfind("問題番号")
-    rows, big, sub = [], None, None
+    rows, big, sub, prefix = [], None, None, ""
     for raw in text[start:].splitlines()[1:]:
         line = ascii_fw(raw).replace("\f", "")
         if not line.strip() or FOOTER.match(line):
@@ -55,15 +55,21 @@ def parse_key(pages: list[str]) -> list[dict]:
         line = re.sub(r"\(\d+点\)", " ", line)            # (40点) under 問題１．
         m = re.search(r"問題(\d+)\.", line)
         if m:
-            big, sub = int(m.group(1)), None
+            big, sub, prefix = int(m.group(1)), None, ""
             line = line[m.end():]
         m = re.match(r"\s*\((\d+)\)", line)
         if m:
-            sub = int(m.group(1))
+            sub, prefix = int(m.group(1)), ""
             line = line[m.end():]
         m = re.match(rf"\s*(?:\(([{KANA}])\))?\s*([{CIRCLED}])?", line)
         item = (m.group(1) or "") + (m.group(2) or "")
+        if item:
+            prefix = item
         line = line[m.end():]
+        # blank-letter sub-slots: "① 𝑎𝑎 (A)" then "   𝑏𝑏 (A)" -> ①a, ①b
+        lm = re.match(r"\s*([\U0001D400-\U0001D7FF\u210E]+|[a-z])\s+\(", line)
+        if lm:
+            item = prefix + math_label(lm.group(1))
         pts = re.search(r"(完答で)?\s*(\d+)\s*点", line)
         body = line[: pts.start()] if pts else line
         letters = re.findall(r"\(\s*([A-Z])\s*\)", body)
@@ -136,6 +142,8 @@ def build(year: int, pdf: str, annotations: dict) -> list[dict]:
         ann = {**annotations.get(f"{big}-{sub}", {}), **annotations.get(key, {})}
         if "n_choices" in ann and vid != "digits":
             params["n_choices"] = ann["n_choices"]
+        if "answer" in ann:      # e.g. order-free pairs (順不同) documented in the key
+            params["answer"] = ann["answer"]
         qno = f"問題{big}" + (f"({sub})" if sub else "")
         if item:
             qno += (f"({item[0]}){item[1:]}" if item[0] in KANA else item)
@@ -155,6 +163,10 @@ def build(year: int, pdf: str, annotations: dict) -> list[dict]:
         if notes:
             e["note"] = " ".join(notes)
         out.append(e)
+    ids = [e["id"] for e in out]
+    dup = sorted({i for i in ids if ids.count(i) > 1})
+    if dup:
+        raise SystemExit(f"{year}: duplicate slot ids {dup} (unrecognised item labels in the answer key)")
     return out
 
 
