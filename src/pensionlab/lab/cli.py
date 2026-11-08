@@ -1,4 +1,5 @@
-"""Interactive practice: python -m pensionlab.lab.cli [load FILE | list | practice | stats]"""
+"""Interactive practice: python -m pensionlab.lab.cli
+  load FILE | list | practice | stats | sources load FILE | sources list [P0|P1|P2] | sources recheck"""
 from __future__ import annotations
 
 import json
@@ -51,6 +52,19 @@ def main(argv):
     elif cmd == "list":
         for r in db.search(con):
             print(r["id"], r["year"], r["topic"], r["difficulty"])
+    elif cmd == "sources":
+        sub = argv[1] if len(argv) > 1 else "list"
+        if sub == "load":
+            print(db.load_sources(con, argv[2]), "件の情報源を台帳に登録しました")
+        elif sub == "recheck":
+            rows = db.problems_needing_recheck(con)
+            for r in rows:
+                print(f"{r['id']} {r['year']} {r['question_no'] or ''} <- {r['source_id']} ({r['verification']}, {r['version']})")
+            print(f"{len(rows)}問の正答を最新版と照合してください" if rows else "照合が必要な問題はありません")
+        else:
+            for r in db.list_sources(con, priority=argv[2] if len(argv) > 2 else None):
+                url = r["url"] or "URL未記入"
+                print(f"[{r['priority']}] {r['id']:<22} {r['verification']:<13} {r['license']:<11} {r['title']}  <{url}>")
     elif cmd == "stats":
         for r in db.stats_by_topic(con):
             print(f"{r['topic']}: {r['n']}回 正答率{r['pct']}% 正解だが低確信{r['correct_unsure']}")

@@ -1,4 +1,4 @@
-"""SQLite storage: problems, hints, attempts, review_queue."""
+"""SQLite storage: sources (ledger), problems, hints, attempts, review_queue."""
 from __future__ import annotations
 
 import json
@@ -21,7 +21,27 @@ CREATE TABLE IF NOT EXISTS attempts(
 CREATE TABLE IF NOT EXISTS review_queue(
   problem_id TEXT PRIMARY KEY REFERENCES problems(id), topic TEXT, error_type TEXT,
   due_at REAL NOT NULL, interval_days REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS sources(
+  id TEXT PRIMARY KEY, title TEXT NOT NULL, publisher TEXT,
+  kind TEXT NOT NULL,          -- past_exam/textbook/exam_info/workbook/reference/course/blog/anki/community
+  exam_body TEXT,              -- IAJ (日本アクチュアリー会) / JSCPA (日本年金数理人会) / other
+  year INTEGER, url TEXT, retrieved_at TEXT, version TEXT,
+  verification TEXT NOT NULL DEFAULT 'unverified',  -- unverified/verified/needs_recheck/superseded
+  license TEXT NOT NULL DEFAULT 'unknown',          -- link_only/private_use/permitted/unknown
+  access TEXT,                 -- free/free_member/paid
+  priority TEXT, notes TEXT);
 """
+
+# columns added after v0.1; applied to existing DBs by connect()
+PROBLEM_EXTRA_COLUMNS = {
+    "exam_body": "TEXT DEFAULT 'original'",
+    "question_no": "TEXT",      # e.g. "問題1(3)"
+    "source_id": "TEXT REFERENCES sources(id)",
+}
+SOURCE_FIELDS = ["id", "title", "publisher", "kind", "exam_body", "year", "url", "retrieved_at",
+                 "version", "verification", "license", "access", "priority", "notes"]
+VERIFICATION = {"unverified", "verified", "needs_recheck", "superseded"}
+LICENSE = {"link_only", "private_use", "permitted", "unknown"}
 
 DAY = 86400.0
 
@@ -33,6 +53,11 @@ def connect(path: str = "data/lab.sqlite") -> sqlite3.Connection:
     con = sqlite3.connect(path)
     con.row_factory = sqlite3.Row
     con.executescript(SCHEMA)
+    have = {r["name"] for r in con.execute("PRAGMA table_info(problems)")}
+    for col, decl in PROBLEM_EXTRA_COLUMNS.items():
+        if col not in have:
+            con.execute(f"ALTER TABLE problems ADD COLUMN {col} {decl}")
+    con.commit()
     return con
 
 
@@ -41,9 +66,11 @@ def load_problems(con, path: str) -> int:
         items = json.load(f)
     for p in items:
         con.execute(
-            "INSERT OR REPLACE INTO problems VALUES(?,?,?,?,?,?,?,?,?)",
+            "INSERT OR REPLACE INTO problems(id,year,section,topic,difficulty,statement,verifier_id,params,"
+            "source,exam_body,question_no,source_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
             (p["id"], p.get("year"), p.get("section"), p.get("topic"), p.get("difficulty"),
-             p["statement"], p["verifier_id"], json.dumps(p["params"]), p.get("source")))
+             p["statement"], p["verifier_id"], json.dumps(p["params"]), p.get("source"),
+             p.get("exam_body", "original"), p.get("question_no"), p.get("source_id")))
         con.execute("DELETE FROM hints WHERE problem_id=?", (p["id"],))
         for lvl, text in enumerate(p.get("hints", []), 1):
             con.execute("INSERT INTO hints VALUES(?,?,?)", (p["id"], lvl, text))
@@ -51,9 +78,9 @@ def load_problems(con, path: str) -> int:
     return len(items)
 
 
-def search(con, year=None, topic=None, difficulty=None):
+def search(con, year=None, topic=None, difficulty=None, exam_body=None):
     q, a = "SELECT * FROM problems WHERE 1=1", []
-    for col, v in (("year", year), ("topic", topic), ("difficulty", difficulty)):
+    for col, v in (("year", year), ("topic", topic), ("difficulty", difficulty), ("exam_body", exam_body)):
         if v is not None:
             q += f" AND {col}=?"
             a.append(v)
@@ -116,3 +143,39 @@ def set_last_error_type(con, problem_id: str, error_type: str) -> None:
 
 def get_problem(con, problem_id: str):
     return con.execute("SELECT * FROM problems WHERE id=?", (problem_id,)).fetchone()
+
+
+# ---- source ledger
+def load_sources(con, path: str) -> int:
+    with open(path, encoding="utf-8") as f:
+        items = json.load(f)
+    for src in items:
+        unknown = set(src) - set(SOURCE_FIELDS)
+        if unknown:
+            raise ValueError(f"{src.get('id')}: unknown fields {sorted(unknown)}")
+        row = {k: src.get(k) for k in SOURCE_FIELDS}
+        row["verification"] = row["verification"] or "unverified"
+        row["license"] = row["license"] or "unknown"
+        if row["verification"] not in VERIFICATION or row["license"] not in LICENSE:
+            raise ValueError(f"{src['id']}: bad verification/license value")
+        con.execute(f"INSERT OR REPLACE INTO sources({','.join(SOURCE_FIELDS)}) "
+                    f"VALUES({','.join('?' * len(SOURCE_FIELDS))})", [row[k] for k in SOURCE_FIELDS])
+    con.commit()
+    return len(items)
+
+
+def list_sources(con, priority=None, exam_body=None, verification=None):
+    q, a = "SELECT * FROM sources WHERE 1=1", []
+    for col, v in (("priority", priority), ("exam_body", exam_body), ("verification", verification)):
+        if v is not None:
+            q += f" AND {col}=?"
+            a.append(v)
+    return con.execute(q + " ORDER BY priority, exam_body, year DESC, id", a).fetchall()
+
+
+def problems_needing_recheck(con):
+    """Problems whose source was replaced or flagged; their official answers must be re-checked."""
+    return con.execute(
+        "SELECT p.id, p.year, p.question_no, s.id source_id, s.verification, s.version FROM problems p"
+        " JOIN sources s ON s.id=p.source_id WHERE s.verification IN ('needs_recheck','superseded')"
+        " ORDER BY p.year, p.id").fetchall()

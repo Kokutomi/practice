@@ -37,6 +37,9 @@ with st.sidebar:
     else:
         st.caption("まだ解答がありません")
     st.metric("復習期限の問題", len(db.due_reviews(con)))
+    recheck = db.problems_needing_recheck(con)
+    if recheck:
+        st.warning(f"出典が差替・要確認の問題 {len(recheck)}問: " + ", ".join(r["id"] for r in recheck))
 
 # ---- pick problem
 if "pid" not in ss:
@@ -50,7 +53,13 @@ if "pid" not in ss:
 
 p = db.get_problem(con, ss.pid)
 st.title("年金数理 Learning Lab")
-st.caption(f"{p['id']} ｜ {p['topic']} ｜ 難易度 {p['difficulty']} ｜ 出典: {p['source']}")
+src = con.execute("SELECT title, version, verification FROM sources WHERE id=?", (p["source_id"],)).fetchone() \
+    if p["source_id"] else None
+where = f"{src['title']}" + (f"（{src['version']}）" if src and src["version"] else "") if src else p["source"]
+qno = f" {p['question_no']}" if p["question_no"] else ""
+st.caption(f"{p['id']} ｜ {p['exam_body']}{qno} ｜ {p['topic']} ｜ 難易度 {p['difficulty']} ｜ 出典: {where}")
+if src and src["verification"] in ("needs_recheck", "superseded"):
+    st.warning("この問題の出典資料は差し替え・要確認です。正答を最新版と照合してください。")
 st.markdown(f"#### {p['statement']}")
 
 # ---- hints
