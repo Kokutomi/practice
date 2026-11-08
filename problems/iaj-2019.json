@@ -1,0 +1,1174 @@
+[
+ {
+  "id": "IAJ-2019-1-1",
+  "year": 2019,
+  "section": "問題1",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "18歳で a 人・22歳で 2a 人が加入する定常人口の制度の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(1)",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 1,
+  "answer_page": 24,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-1-2",
+  "year": 2019,
+  "section": "問題1",
+  "topic": "年金現価・計算基数",
+  "difficulty": null,
+  "statement": "利力0.05、x歳支給開始の連続払い年金A・Bの現価の関係",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(2)",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 2,
+  "answer_page": 24,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-1-3",
+  "year": 2019,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルの各財政方式についての記載のうち誤っているものをすべて選ぶ",
+  "verifier_id": "choice_set",
+  "params": {
+   "answer": [
+    "ABD"
+   ],
+   "n_choices": 6
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(3)",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 3,
+  "answer_page": 25,
+  "group_key": "1-3",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-1-4",
+  "year": 2019,
+  "section": "問題1",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "運用利回りが予定を下回った後、5年間段階的に給付を減額して定常状態に戻す k",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(4)",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 4,
+  "answer_page": 26,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-1-5",
+  "year": 2019,
+  "section": "問題1",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "ポイント制の年金制度で標準保険料率・開放型総合保険料方式の保険料率を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 5,
+  "answer_page": 26,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-1-6",
+  "year": 2019,
+  "section": "問題1",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "貸借対照表・損益計算書・利源分析表から2019年度の積立金の運用利回りを求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(6)",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 6,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-1-7",
+  "year": 2019,
+  "section": "問題1",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "予定利率・給付・保険料の異なる定常状態の制度A・Bの比較",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 8
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(7)",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 7,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-1-8",
+  "year": 2019,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "中途退職一時金と定年後10年確定年金の制度で、58歳の被保険者1人の給付現価等",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(8)",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 8,
+  "answer_page": 28,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-2-1-①",
+  "year": 2019,
+  "section": "問題2",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "開放型総合保険料方式で運用利回り0%が続いた場合の積立金の推移（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "0737"
+   ]
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)①",
+  "source_id": "IAJ-PAST-2019",
+  "points": 4,
+  "page": 10,
+  "answer_page": 28,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-2-1-②",
+  "year": 2019,
+  "section": "問題2",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "開放型総合保険料方式で運用利回り0%が続いた場合の積立金の推移（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "0700"
+   ]
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)②",
+  "source_id": "IAJ-PAST-2019",
+  "points": 3,
+  "page": 10,
+  "answer_page": 28,
+  "group_key": "2-1-②",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-2-2-①",
+  "year": 2019,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "責任準備金450・積立金300、運用利回り-10%で利差損が出た年度の数値（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "30"
+   ]
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)①",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 11,
+  "answer_page": 29,
+  "group_key": "2-2-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-2-2-②",
+  "year": 2019,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "責任準備金450・積立金300、運用利回り-10%で利差損が出た年度の数値（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "36"
+   ]
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)②",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 11,
+  "answer_page": 29,
+  "group_key": "2-2-②",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-2-3-①",
+  "year": 2019,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年退職翌年度から「加入年数×3万円」の10年確定年金を支給する制度①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)①",
+  "source_id": "IAJ-PAST-2019",
+  "points": 1,
+  "page": 12,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-2-3-②",
+  "year": 2019,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年退職翌年度から「加入年数×3万円」の10年確定年金を支給する制度①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)②",
+  "source_id": "IAJ-PAST-2019",
+  "points": 3,
+  "page": 12,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-2-3-③",
+  "year": 2019,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年退職翌年度から「加入年数×3万円」の10年確定年金を支給する制度①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)③",
+  "source_id": "IAJ-PAST-2019",
+  "points": 3,
+  "page": 12,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-2-4-①",
+  "year": 2019,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "加入年齢方式の制度の標準保険料等①②",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)①",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 14,
+  "answer_page": 31,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-2-4-②",
+  "year": 2019,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "加入年齢方式の制度の標準保険料等①②",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)②",
+  "source_id": "IAJ-PAST-2019",
+  "points": 5,
+  "page": 14,
+  "answer_page": 31,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-3-1-①",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "予定どおり推移した場合の損益の空欄補充（①）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F",
+    "H"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)①",
+  "source_id": "IAJ-PAST-2019",
+  "points": 3,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-①",
+  "note": "正答表に「①と③は順不同」とあるため、(F)(H)どちらも正解とする（①③が同じ記号の場合も正解扱いになる簡略化） 完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-②",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "N"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)②",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-③",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "予定どおり推移した場合の損益の空欄補充（③）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F",
+    "H"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)③",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-①",
+  "note": "正答表に「①と③は順不同」とあるため、(F)(H)どちらも正解とする（①③が同じ記号の場合も正解扱いになる簡略化） 完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-④",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)④",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑤",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "N"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑤",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑥",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑥",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑦",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑦",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑦",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑧",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "P"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑧",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑦",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑨",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "V"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑨",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑦",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑩",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "P"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑩",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑦",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑪",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑪",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑦",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑫",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑫",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑫",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑬",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑬",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑫",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑭",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑭",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑫",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑮",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑮",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑫",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑯",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "T"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑯",
+  "source_id": "IAJ-PAST-2019",
+  "points": 1,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑯",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-1-⑰",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移した1年間の責任準備金・積立金の変動と損益の空欄補充（①〜⑰）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "T"
+   ],
+   "n_choices": 22
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)⑰",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 16,
+  "answer_page": 31,
+  "group_key": "3-1-⑯",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-3-2-⑱",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移しなかった場合の区分別の差損益（⑱〜㉑）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)⑱",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 18,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-3-2-⑲",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移しなかった場合の区分別の差損益（⑱〜㉑）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)⑲",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 18,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-3-2-⑳",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移しなかった場合の区分別の差損益（⑱〜㉑）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)⑳",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 18,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-3-2-㉑",
+  "year": 2019,
+  "section": "問題3",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで予定どおり推移しなかった場合の区分別の差損益（⑱〜㉑）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)㉑",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 18,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-4-1-①",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "給付利率3%の年金制度Aの財政再計算：標準保険料・責任準備金①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)①",
+  "source_id": "IAJ-PAST-2019",
+  "points": 1,
+  "page": 20,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-4-1-②",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "給付利率3%の年金制度Aの財政再計算：標準保険料・責任準備金①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)②",
+  "source_id": "IAJ-PAST-2019",
+  "points": 1,
+  "page": 20,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-4-1-③",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "給付利率3%の年金制度Aの財政再計算：標準保険料・責任準備金①〜③",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)③",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 20,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-4-2-①",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度Aを受給権者・被保険者とも40%/60%で制度B・Cに分割した場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)①",
+  "source_id": "IAJ-PAST-2019",
+  "points": 1,
+  "page": 22,
+  "answer_page": 33,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-4-2-②",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度Aを受給権者・被保険者とも40%/60%で制度B・Cに分割した場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)②",
+  "source_id": "IAJ-PAST-2019",
+  "points": 1,
+  "page": 22,
+  "answer_page": 33,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-4-2-③",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度Aを受給権者・被保険者とも40%/60%で制度B・Cに分割した場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)③",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 22,
+  "answer_page": 33,
+  "group_key": "4-2-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-4-2-④",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度Aを受給権者・被保険者とも40%/60%で制度B・Cに分割した場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)④",
+  "source_id": "IAJ-PAST-2019",
+  "points": 0,
+  "page": 22,
+  "answer_page": 33,
+  "group_key": "4-2-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-4-2-ab",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "制度Aを受給権者・被保険者とも40%/60%で制度B・Cに分割した場合の数値",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "13"
+   ]
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)ab",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 22,
+  "answer_page": 33,
+  "group_key": "4-2-ab",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2019-4-3-①",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "受給権者全員と被保険者60%を制度Cに移す分割の場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)①",
+  "source_id": "IAJ-PAST-2019",
+  "points": 1,
+  "page": 23,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-4-3-②",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "受給権者全員と被保険者60%を制度Cに移す分割の場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)②",
+  "source_id": "IAJ-PAST-2019",
+  "points": 1,
+  "page": 23,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-4-3-③",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "受給権者全員と被保険者60%を制度Cに移す分割の場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)③",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 23,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2019-4-3-cd",
+  "year": 2019,
+  "section": "問題4",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "受給権者全員と被保険者60%を制度Cに移す分割の場合の数値",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "07"
+   ]
+  },
+  "source": "日本アクチュアリー会 2019年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)cd",
+  "source_id": "IAJ-PAST-2019",
+  "points": 2,
+  "page": 23,
+  "answer_page": 34,
+  "group_key": "4-3-cd",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ }
+]

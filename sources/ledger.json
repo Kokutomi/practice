@@ -106,8 +106,10 @@
   "license": "link_only",
   "access": "free",
   "priority": "P0",
-  "verification": "unverified",
-  "notes": "過去問題集ページでリンクを確認（2026-11-08）。内容は未照合"
+  "verification": "verified",
+  "notes": "正答・配点表を tools/import_iaj.py で抽出し problems/iaj-2019.json に登録（50解答欄、配点合計100点を確認）。",
+  "retrieved_at": "2026-11-08T04:40:00Z",
+  "version": "HTTP Last-Modified: 2020-03-30 00:30:54 GMT"
  },
  {
   "id": "IAJ-PAST-ARCHIVE",

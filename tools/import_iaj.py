@@ -77,7 +77,11 @@ def parse_key(pages: list[str]) -> list[dict]:
         if not letters:
             dm = re.search(r"(\S+)?\s+(\d+)\s*$", body.rstrip())
             if dm:
-                digits = dm.group(2)   # the blank label before it (e.g. 'abc') is math glyphs; not used in ids
+                digits = dm.group(2)
+                # a plain-ASCII blank label ("ab 13") names the slot; math-glyph labels are often
+                # garbled by pdftotext, so they are not used in ids
+                if dm.group(1) and not item and re.fullmatch(r"[a-z]+", dm.group(1)):
+                    item = dm.group(1)
         if not letters and digits is None and not pts:
             continue
         rows.append({"big": big, "sub": sub, "item": item, "letters": letters, "alt": "または" in body,
