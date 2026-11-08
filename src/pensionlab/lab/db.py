@@ -5,7 +5,7 @@ import json
 import sqlite3
 import time
 
-from .verifiers import CHOICE, is_correct, normalize_choice
+from .verifiers import KEYED, is_correct, normalize
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS problems(
@@ -105,8 +105,8 @@ def record_attempt(con, problem_id: str, answer, confidence: int,
     now = time.time() if now is None else now
     p = con.execute("SELECT * FROM problems WHERE id=?", (problem_id,)).fetchone()
     params = json.loads(p["params"])
-    if p["verifier_id"] == CHOICE:
-        answer = normalize_choice(answer)
+    if p["verifier_id"] in KEYED:
+        answer = normalize(p["verifier_id"], answer)
     ok = is_correct(p["verifier_id"], params, answer)
     con.execute("INSERT INTO attempts(problem_id,answered_at,answer,is_correct,confidence,seconds,error_type)"
                 " VALUES(?,?,?,?,?,?,?)", (problem_id, now, answer, int(ok), confidence, seconds, error_type))

@@ -227,7 +227,7 @@
   "points": 5,
   "page": 6,
   "answer_page": 26,
-  "group_key": "1-6",
+  "group_key": "1-6-①",
   "note": "完答問題（同じ group_key の小問すべて正解で得点）"
  },
  {
@@ -251,7 +251,7 @@
   "points": 0,
   "page": 6,
   "answer_page": 26,
-  "group_key": "1-6",
+  "group_key": "1-6-①",
   "note": "完答問題（同じ group_key の小問すべて正解で得点）"
  },
  {
@@ -275,7 +275,7 @@
   "points": 0,
   "page": 6,
   "answer_page": 26,
-  "group_key": "1-6",
+  "group_key": "1-6-①",
   "note": "完答問題（同じ group_key の小問すべて正解で得点）"
  },
  {
@@ -508,7 +508,7 @@
   "points": 3,
   "page": 12,
   "answer_page": 32,
-  "group_key": "2-4-イ",
+  "group_key": "2-4-イ①",
   "note": "完答問題（同じ group_key の小問すべて正解で得点）"
  },
  {
@@ -532,7 +532,7 @@
   "points": 0,
   "page": 12,
   "answer_page": 32,
-  "group_key": "2-4-イ",
+  "group_key": "2-4-イ①",
   "note": "完答問題（同じ group_key の小問すべて正解で得点）"
  },
  {

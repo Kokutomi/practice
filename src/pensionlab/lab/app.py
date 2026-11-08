@@ -8,7 +8,7 @@ import time
 import streamlit as st
 
 from pensionlab.lab import db
-from pensionlab.lab.verifiers import CHOICE, choices, truth_text
+from pensionlab.lab.verifiers import CHOICE, CHOICE_SET, DIGITS, KEYED, choices, truth_text
 
 DB_PATH = os.environ.get("LAB_DB", "data/lab.sqlite")
 PROBLEMS_DIR = os.environ.get("LAB_PROBLEMS", "problems")
@@ -68,7 +68,8 @@ st.caption(f"{p['id']} ｜ {p['exam_body']}{qno} ｜ {p['topic']}{extra} ｜ 出
 if src and src["verification"] in ("needs_recheck", "superseded"):
     st.warning("この問題の出典資料は差し替え・要確認です。正答を最新版と照合してください。")
 st.markdown(f"#### {p['statement']}")
-is_choice = p["verifier_id"] == CHOICE
+vid = p["verifier_id"]
+is_choice = vid in KEYED
 params = json.loads(p["params"])
 q_url = db.source_url(con, p)
 if q_url:
@@ -86,8 +87,13 @@ for lvl in range(1, ss.hint + 1):
 # ---- answer
 if ss.result is None:
     with st.form("answer"):
-        if is_choice:
+        if vid == CHOICE:
             raw = st.radio("選択肢", choices(params), horizontal=True, index=None)
+        elif vid == CHOICE_SET:
+            picked = st.multiselect("当てはまるものをすべて選択", choices(params))
+            raw = "".join(picked) or None
+        elif vid == DIGITS:
+            raw = st.text_input("答え（数字をそのまま。例: 050）") or None
         else:
             raw = st.text_input("答え（数値）")
         conf = st.radio("確信度", list(CONF), format_func=CONF.get, index=1, horizontal=True)
@@ -97,10 +103,10 @@ if ss.result is None:
                     raise ValueError
                 ans = raw if is_choice else float(raw)
             except ValueError:
-                st.error("選択肢を選んでください" if is_choice else "数値で入力してください")
+                st.error("解答を入力してください" if is_choice else "数値で入力してください")
             else:
                 ok = db.record_attempt(con, p["id"], ans, conf, time.time() - ss.t0)
-                shown = f"({ans})" if is_choice else f"{ans:.4f}"
+                shown = (f"({ans})" if vid == CHOICE else ans) if is_choice else f"{ans:.4f}"
                 ss.result = {"ok": ok, "ans": shown, "truth": truth_text(p["verifier_id"], params)}
                 st.rerun()
 else:

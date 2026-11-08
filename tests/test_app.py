@@ -51,7 +51,7 @@ def test_choice_flow_with_official_links(tmp_path, monkeypatch):
     assert any("2025D.pdf#page=1" in m.value for m in at.markdown)
     assert not [b for b in at.button if "ヒント" in b.label]   # no hints for official items
     btn(at, "解答").click().run()
-    assert any("選択肢を選んで" in e.value for e in at.error)
+    assert any("解答を入力" in e.value for e in at.error)
     at.radio[0].set_value("C"); btn(at, "解答").click().run()
     assert any("正解" in s.value for s in at.success)
     assert any("2025D.pdf#page=23" in m.value for m in at.markdown)

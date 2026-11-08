@@ -45,4 +45,14 @@ python -m pensionlab.lab.cli load problems/iaj-2025.json
 python -m pensionlab.lab.cli practice      # 選択肢を A〜L で回答
 ```
 
+Importing another year (PDF is kept in git-ignored `data/sources/`):
+
+```
+python tools/import_iaj.py 2024 --fetch     # download + parse answer key, pages, groups
+# then add topic/summary per question in problems/annotations/iaj-2024.json and re-run
+```
+
+Answer types: `choice` (one letter, alternatives allowed), `choice_set` (select all), `digits` (fill-in digits).
+Years whose answer key is an image (e.g. 2018) are refused rather than guessed.
+
 Ideas: commutation functions, salary-scale accrued benefit (PUC), real mortality tables, Monte Carlo longevity.

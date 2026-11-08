@@ -7,7 +7,7 @@ import sys
 import time
 
 from . import db
-from .verifiers import CHOICE, choices, truth_text
+from .verifiers import CHOICE, DIGITS, KEYED, choices, truth_text
 
 ERROR_TYPES = ["", "timing(due/immediate)", "interest/discount", "mortality/survival", "arithmetic", "other"]
 
@@ -18,14 +18,20 @@ def practice(con):
         print("出題できる問題がありません（`load` で問題を読み込んでください）")
         return
     params = json.loads(p["params"])
-    is_choice = p["verifier_id"] == CHOICE
+    is_choice = p["verifier_id"] in KEYED
     print(f"\n[{p['id']}] {p['question_no'] or ''} {p['topic']}\n{p['statement']}")
     url = db.source_url(con, p)
     if url:
         print("問題文:", url)
     print()
     t0, level = time.time(), 0
-    prompt = f"答え（{'/'.join(choices(params))}）" if is_choice else "答え（数値）"
+    if p["verifier_id"] == DIGITS:
+        prompt = "答え（数字）"
+    elif is_choice:
+        multi = "" if p["verifier_id"] == CHOICE else "・複数可"
+        prompt = f"答え（{'/'.join(choices(params))}{multi}）"
+    else:
+        prompt = "答え（数値）"
     while True:
         s = input(f"{prompt}／ h=ヒント: ").strip()
         if s == "h":

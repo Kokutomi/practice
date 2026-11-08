@@ -38,4 +38,4 @@ def test_links_and_no_recheck_needed(con):
     assert db.source_url(con, p).endswith("2025D.pdf#page=21")
     assert db.source_url(con, p, "answer_page").endswith("#page=38")
     assert db.problems_needing_recheck(con) == []
-    assert db.search(con, exam_body="IAJ", topic="開放基金方式・未積立債務")[0]["group_key"] == "1-6"
+    assert db.search(con, exam_body="IAJ", topic="開放基金方式・未積立債務")[0]["group_key"] == "1-6-①"
