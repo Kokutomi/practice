@@ -61,6 +61,7 @@ with st.sidebar:
         st.caption("ワークブックの◎/△記録を取り込みました")
     if cards.sync(con, os.environ.get("LAB_ANKI_CARDS", str(cards.OUT))):  # data/anki/cards.json (PC)
         st.caption("公式カードを取り込みました")
+    cards.sync_extra(con)                                # own cards for topics the deck lacks (in the repo)
     st.metric("復習期限の問題", len(db.due_reviews(con)))
     with st.expander("学習記録のバックアップ"):
         st.download_button("バックアップをダウンロード", json.dumps(backup.dump(con), ensure_ascii=False),

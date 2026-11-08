@@ -216,11 +216,12 @@
   "publisher": "日本年金数理人会",
   "kind": "past_exam",
   "exam_body": "JSCPA",
-  "url": "https://general.jscpa.or.jp/",
+  "url": "https://general.jscpa.or.jp/become/test/past/index.html",
   "license": "link_only",
   "access": "free",
   "priority": "P1",
-  "notes": "IAJとは別の問題群として exam_body=JSCPA で管理。urlはドメインのみ"
+  "notes": "年金数理の問題・解答（2002〜2025年度、2006年度は実施なし。解答PDFは2013年度以降）を個人の学習用に資料フォルダへ保存。アクチュアリー試験の参考として扱い、アプリの出題対象には含めない。",
+  "retrieved_at": "2026-11-08T15:30:00Z"
  },
  {
   "id": "JSCPA-INFO-2026",

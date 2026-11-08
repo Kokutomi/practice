@@ -196,11 +196,12 @@ def test_formula_cards_page_and_panel(tmp_path, monkeypatch):
     monkeypatch.setenv("LAB_ANKI_CARDS", str(tmp_path / "cards.json"))
     at = AppTest.from_file(APP, default_timeout=20).run()
     assert not at.exception
-    assert any("公式カード：昇給率・給与指数（1枚）" in e.label for e in at.expander)   # IAJ-2025-1-1 is 昇給率
+    n = 1 + sum(c["topic"] == "昇給率・給与指数" for c in json.loads(cards.EXTRA.read_text(encoding="utf-8"))["cards"])
+    assert any(f"公式カード：昇給率・給与指数（{n}枚）" in e.label for e in at.expander)   # IAJ-2025-1-1 is 昇給率
     radio(at, "画面").set_value("公式カード").run()
     assert not at.exception
     sel = next(s for s in at.selectbox if s.label == "分野" and "今日の復習（0枚）" in s.options)
-    assert any(o.startswith("昇給率・給与指数（1枚") for o in sel.options)
+    assert any(o.startswith(f"昇給率・給与指数（{n}枚") for o in sel.options)
     sel.set_value("昇給率・給与指数").run()
     next(t for t in at.toggle if t.label == "答えを表示").set_value(True).run()
     btn(at, "△ 書けなかった").click().run()

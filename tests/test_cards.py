@@ -108,3 +108,24 @@ def test_card_grades_feed_weakness(tmp_path):
     row = next(r for r in wblink.topic_table(con, []) if r["topic"] == "年金現価・計算基数")
     assert row["card_mastery"] == 0.0 and row["weakness"] == 1.0 and row["cards_graded"] == 1
     assert wblink.combine(None, 0, 1.0, 0.0) == 0.5
+
+
+def test_extra_cards_load_and_survive_deck_reload(tmp_path):
+    con = db.connect(":memory:")
+    n = cards.sync_extra(con)
+    data = json.loads(cards.EXTRA.read_text(encoding="utf-8"))
+    assert n == len(data["cards"]) >= 20
+    assert {c["topic"] for c in data["cards"]} <= set(TOPICS)
+    assert cards.counts(con).get("制度変更（統合・分割・給付減額）", 0) >= 10
+    cards.store(con, cards.convert(str(make_apkg(tmp_path / "d.apkg")), {}))     # deck import keeps own cards
+    assert sum(cards.counts(con).values()) == n + 3
+    assert cards.sync_extra(con) == 0                                              # unchanged
+
+
+def test_extra_cards_anki_export():
+    tsv = cards.anki_tsv()
+    lines = tsv.splitlines()
+    assert lines[:3] == ["#separator:tab", "#html:true", "#tags column:3"]
+    body = lines[3:]
+    assert len(body) == len(json.loads(cards.EXTRA.read_text(encoding="utf-8"))["cards"])
+    assert all(l.count("	") == 2 for l in body) and "$" not in tsv and "\(" in tsv

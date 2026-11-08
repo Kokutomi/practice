@@ -2,9 +2,10 @@
 
 - Saturdays (and Sundays if more mocks remain): a full-year mock exam at the real exam time,
   newest year first, skipping years already taken in exam mode.
-- Weekday evenings: due reviews + new slots, topic chosen by remaining slots × weakness, where weakness
-  blends app accuracy with last year's workbook ◎/△ marks and is scaled by recent-exam frequency
-  (wblink.topic_table); the session also names workbook problems to redo for that topic.
+- Weekday evenings: due reviews + one topic per day, chosen by weakness × recent-exam frequency
+  (wblink.topic_table: app accuracy, last year's workbook ◎/△, formula-card grades); a topic's n-th day
+  counts 1/(n+1) so the days spread over the weak topics. The day lists unsolved past-exam slots of that
+  topic (years not used for weekend mocks), workbook problems to redo and formula cards.
 - Every study day also names formula cards to review: cards that are due first, then new cards of the
   day's topic (CARDS_PER_DAY in total).
 - The last two days before the exam: formula review only (cards still graded △, workbook problems with
@@ -24,11 +25,13 @@ EXAM_MIN = 180
 CARDS_PER_DAY = 15
 
 
-def _topic_load(con):
-    """Topic -> [unattempted official slots, accuracy or None]."""
+def _topic_load(con, skip_years=()):
+    """Topic -> [unattempted official slots, accuracy or None]. Years done as weekend mocks are left out."""
     load: dict[str, list] = {}
     tried = {r[0] for r in con.execute("SELECT DISTINCT problem_id FROM attempts")}
-    for p in con.execute("SELECT id, topic FROM problems WHERE exam_body='IAJ'"):
+    for p in con.execute("SELECT id, topic, year FROM problems WHERE exam_body='IAJ'"):
+        if p["year"] in skip_years:
+            continue
         t = canonical(p["topic"] or "")
         load.setdefault(t, [0, None])
         if p["id"] not in tried:
@@ -59,7 +62,7 @@ def build(con, today: date, exam_date: date = EXAM_DATE, weekday_time: str = "20
     mock_days = sorted(mock_days)[: len(mock_years)]
     mocks = dict(zip(mock_days, mock_years))
 
-    load = _topic_load(con)
+    load = _topic_load(con, set(mocks.values()))
     weekdays = [d for d in study if d not in mocks]
     remaining = sum(v[0] for v in load.values())
     per = slots_per_session or max(4, math.ceil(remaining / max(1, len(weekdays))))
@@ -68,12 +71,18 @@ def build(con, today: date, exam_date: date = EXAM_DATE, weekday_time: str = "20
     info = {r["topic"]: r for r in wblink.topic_table(con)}
     index = wblink.load_index()
 
-    def weight(t):
-        n, acc = load[t]
+    def priority(t):
+        """weakness × recent-exam frequency (wblink.topic_table); topics with no data count as half weak."""
         r = info.get(t)
+        acc = load.get(t, [0, None])[1]
         weak = r["weakness"] if r and r["weakness"] is not None else (1 - acc if acc is not None else 0.5)
-        freq = r["frequency"] if r else 0.0
-        return n * (1 + weak) * (1 + 4 * freq)
+        return weak * ((r["frequency"] if r else 0.0) + 0.01)
+
+    days_on: dict[str, int] = {}
+
+    def weight(t):
+        # spread repeats out: the n-th day on the same topic counts 1/(n+1)
+        return priority(t) / (1 + days_on.get(t, 0))
 
     from . import cards
     card_pool: dict[str, list[str]] = {}
@@ -112,12 +121,19 @@ def build(con, today: date, exam_date: date = EXAM_DATE, weekday_time: str = "20
                          "detail": f"Learning Lab の本番モードで {y}年度を通しで解く。終了後は誤答を復習キューへ。",
                          "start": mock_time, "minutes": EXAM_MIN})
         else:
-            cands = [t for t in load if load[t][0] > 0]
+            # a topic is worth a day if it still has unsolved past-exam slots, workbook problems to redo or new cards
+            cands = [t for t in info if load.get(t, [0])[0] > 0 or weak_wb.get(t) or card_pool.get(t)]
             if cands:
                 t = max(cands, key=weight)
-                k = min(per, load[t][0])
-                load[t][0] -= k
-                title, detail = f"演習：{t}（{k}欄）＋復習", f"復習期限の問題を先に。その後「分野」で {t} を絞り込み {k}欄。"
+                days_on[t] = days_on.get(t, 0) + 1
+                k = min(per, load.get(t, [0])[0])
+                if k:
+                    load[t][0] -= k
+                    title = f"演習：{t}（{k}欄）＋復習"
+                    detail = f"復習期限の問題を先に。その後「分野」で {t} を絞り込み {k}欄。"
+                else:
+                    title = f"演習：{t}（解き直し）＋復習"
+                    detail = f"復習期限の問題を先に。{t}は未解答の過去問が残っていないので、前回誤答・自信なしの欄を解き直す。"
                 redo = weak_wb.get(t, [])[:2]
                 if redo:
                     weak_wb[t] = weak_wb[t][2:]

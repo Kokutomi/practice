@@ -29,6 +29,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 TOPICS = ROOT / "problems" / "anki" / "topics.json"
 OUT = ROOT / "data" / "anki" / "cards.json"
+EXTRA = ROOT / "problems" / "anki" / "extra_cards.json"      # own cards for topics the deck lacks (committed)
 ZSTD_MAGIC = b"\x28\xb5\x2f\xfd"
 SCALE = 0.72                     # formula image size relative to how Anki rendered it
 
@@ -215,13 +216,54 @@ def store(con, data: dict) -> int:
         raise ValueError("not a formula-card file")
     ensure_schema(con)
     topics = json.loads(TOPICS.read_text(encoding="utf-8")) if TOPICS.is_file() else {}
-    con.execute("DELETE FROM formula_cards")
+    con.execute("DELETE FROM formula_cards WHERE guid NOT LIKE 'x-%'")      # keep the own (extra) cards
     for c in data["cards"]:
         con.execute("INSERT INTO formula_cards VALUES(?,?,?,?,?,?,?)",
                     (c["guid"], c["ord"], c.get("num", ""), c.get("kind", "basic"),
                      topics.get(c["guid"], c.get("topic")), c["front"], c["back"]))
     con.commit()
     return len(data["cards"])
+
+
+def sync_extra(con, path=EXTRA) -> int:
+    """Load problems/anki/extra_cards.json (own cards, plain Markdown + KaTeX) when it changed."""
+    ensure_schema(con)
+    path = Path(path)
+    if not path.is_file():
+        return 0
+    raw = path.read_bytes()
+    digest = hashlib.sha256(raw).hexdigest()
+    row = con.execute("SELECT value FROM meta WHERE key='extra_cards_hash'").fetchone()
+    if row and row[0] == digest:
+        return 0
+    data = json.loads(raw.decode("utf-8"))
+    if data.get("format") != "pensionlab-extra-cards/1":
+        raise ValueError("not an extra-card file")
+    con.execute("DELETE FROM formula_cards WHERE guid LIKE 'x-%'")
+    for n, c in enumerate(data["cards"], 1):
+        if not c["id"].startswith("x-"):
+            raise ValueError(f"extra card ids start with x-: {c['id']}")
+        con.execute("INSERT INTO formula_cards VALUES(?,?,?,?,?,?,?)",
+                    (c["id"], 100000 + n, "追加", "basic", c["topic"], c["front"], c["back"]))
+    con.execute("INSERT OR REPLACE INTO meta VALUES('extra_cards_hash', ?)", (digest,))
+    con.commit()
+    return len(data["cards"])
+
+
+def anki_tsv(path=EXTRA) -> str:
+    """The own cards as an Anki import file (File > Import; Basic note type, MathJax)."""
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+
+    def mathjax(s: str) -> str:
+        s = re.sub(r"\$\$(.+?)\$\$", lambda m: r"\[" + m.group(1) + r"\]", s, flags=re.S)
+        s = re.sub(r"\$(.+?)\$", lambda m: r"\(" + m.group(1) + r"\)", s, flags=re.S)
+        return html.escape(s, quote=False).replace("\n", "<br>").replace("\t", " ")
+
+    lines = ["#separator:tab", "#html:true", "#tags column:3"]
+    for c in data["cards"]:
+        tag = "年金数理::追加::" + re.sub(r"[（）・\s]", "_", c["topic"])
+        lines.append(f"{mathjax(c['front'])}\t{mathjax(c['back'])}\t{tag}")
+    return "\n".join(lines) + "\n"
 
 
 def load_upload(con, name: str, raw: bytes) -> int:
