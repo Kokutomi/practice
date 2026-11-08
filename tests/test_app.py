@@ -65,3 +65,20 @@ def test_dashboard_page(tmp_path, monkeypatch):
     at.sidebar.radio[0].set_value("ダッシュボード").run()
     assert not at.exception
     assert any("2025年度" in m.label and "5 / 100" in m.value for m in at.metric)
+
+
+def test_choice_set_and_digits_inputs(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2021.json"])
+    at.main.radio[0].set_value("C"); btn(at, "解答").click().run()          # 1(1)
+    btn(at, "次の問題").click().run()
+    assert "IAJ-2021-1-2" in at.caption[0].value                           # select-all question
+    at.multiselect[0].select("D").select("A").select("B"); btn(at, "解答").click().run()
+    assert any("正解" in s.value for s in at.success)
+    for _ in range(4):                                                      # skip to 1(6)
+        btn(at, "次の問題").click().run()
+        if "IAJ-2021-1-6" in at.caption[0].value:
+            break
+        at.main.radio[0].set_value("A"); btn(at, "解答").click().run()
+    assert "IAJ-2021-1-6" in at.caption[0].value
+    at.text_input[0].set_value("９９５"); btn(at, "解答").click().run()
+    assert any("正解" in s.value for s in at.success)

@@ -71,9 +71,7 @@ def parse_key(pages: list[str]) -> list[dict]:
         if not letters:
             dm = re.search(r"(\S+)?\s+(\d+)\s*$", body.rstrip())
             if dm:
-                digits = dm.group(2)
-                if dm.group(1) and not item:
-                    item = math_label(dm.group(1))
+                digits = dm.group(2)   # the blank label before it (e.g. 'abc') is math glyphs; not used in ids
         if not letters and digits is None and not pts:
             continue
         rows.append({"big": big, "sub": sub, "item": item, "letters": letters, "alt": "または" in body,
@@ -86,7 +84,7 @@ def locate(pages: list[str]):
     """Page (1-based) where each (big, sub) starts, in the problem part and the worked-answer part,
     and the highest choice letter seen inside each (big, sub) problem segment."""
     qpage, apage, maxletter = {}, {}, {}
-    answers, big = False, None
+    answers, big, last_sub = False, None, 0
     for n, pg in enumerate(pages, 1):
         for raw in pg.splitlines():
             line = ascii_fw(raw)
@@ -94,12 +92,14 @@ def locate(pages: list[str]):
                 answers, big = True, None
             m = re.search(r"問題(\d+)\.", line)
             if m:
-                big = int(m.group(1))
+                big, last_sub = int(m.group(1)), 0
                 cur = (big, None)
                 (apage if answers else qpage).setdefault(cur, n)
             m = re.match(r"\s*\((\d+)\)", line)
-            if m and big:
-                cur = (big, int(m.group(1)))
+            # accept (1), (2), ... only in sequence: a header like "次の(1)、\n(2)は…" must not start (2) early
+            if m and big and int(m.group(1)) == last_sub + 1:
+                last_sub = int(m.group(1))
+                cur = (big, last_sub)
                 (apage if answers else qpage).setdefault(cur, n)
             if big and not answers:
                 for L in re.findall(r"\(\s*([A-Z])\s*\)", line):
