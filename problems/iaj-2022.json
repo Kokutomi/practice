@@ -1,0 +1,907 @@
+[
+ {
+  "id": "IAJ-2022-1-1",
+  "year": 2022,
+  "section": "問題1",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "l_x=3a-x の定常人口（加入年齢 a）に関する数値を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(1)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 5,
+  "page": 1,
+  "answer_page": 26,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-1-2",
+  "year": 2022,
+  "section": "問題1",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "過去勤務債務20,000を2つの償却方法で償却したとき、第16年度末の未償却残高の関係から求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(2)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 5,
+  "page": 2,
+  "answer_page": 26,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-1-3",
+  "year": 2022,
+  "section": "問題1",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "定常状態（積立金10,000、予定利率5%）で運用利回り10%となった年度以降の積立金の推移",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(3)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 5,
+  "page": 3,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-1-4",
+  "year": 2022,
+  "section": "問題1",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "開放型総合保険料方式の定常状態（予定利率3%、期末払い）での第1年度の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(4)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 5,
+  "page": 4,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-1-5",
+  "year": 2022,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定額制の一時金給付4案（α・βの組み合わせ）の比較",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 5,
+  "page": 5,
+  "answer_page": 28,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-1-6",
+  "year": 2022,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "脱退・保険料・給付が連続的に起こる制度の単位時間あたり1人あたり標準保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(6)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 5,
+  "page": 6,
+  "answer_page": 28,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-1-7",
+  "year": 2022,
+  "section": "問題1",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "開放基金方式で将来加入見込みを10年間50%に減少させた場合の財政再計算の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(7)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 5,
+  "page": 7,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-1-8",
+  "year": 2022,
+  "section": "問題1",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "完全積立方式の定常状態から新規加入を停止し閉鎖型にした後の積立金の推移",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(8)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 5,
+  "page": 8,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-1-①",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "定常状態の制度でのベースアップと責任準備金・標準保険料率に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 21
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)①",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 9,
+  "answer_page": 31,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2022-2-1-②",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "定常状態の制度でのベースアップと責任準備金・標準保険料率に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 21
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)②",
+  "source_id": "IAJ-PAST-2022",
+  "points": 0,
+  "page": 9,
+  "answer_page": 31,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2022-2-1-③",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "定常状態の制度でのベースアップと責任準備金・標準保険料率に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 21
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)③",
+  "source_id": "IAJ-PAST-2022",
+  "points": 0,
+  "page": 9,
+  "answer_page": 31,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2022-2-1-④",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "定常状態の制度でのベースアップと責任準備金・標準保険料率に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 21
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)④",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 9,
+  "answer_page": 31,
+  "group_key": "2-1-④",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2022-2-1-⑤",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "定常状態の制度でのベースアップと責任準備金・標準保険料率に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 21
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑤",
+  "source_id": "IAJ-PAST-2022",
+  "points": 0,
+  "page": 9,
+  "answer_page": 31,
+  "group_key": "2-1-④",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2022-2-1-⑥",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "定常状態の制度でのベースアップと責任準備金・標準保険料率に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "M"
+   ],
+   "n_choices": 21
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑥",
+  "source_id": "IAJ-PAST-2022",
+  "points": 0,
+  "page": 9,
+  "answer_page": 31,
+  "group_key": "2-1-④",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2022-2-1-⑦",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "定常状態の制度でのベースアップと責任準備金・標準保険料率に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "O"
+   ],
+   "n_choices": 21
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑦",
+  "source_id": "IAJ-PAST-2022",
+  "points": 0,
+  "page": 9,
+  "answer_page": 31,
+  "group_key": "2-1-④",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2022-2-1-⑧",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "定常状態の制度でのベースアップと責任準備金・標準保険料率に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "M"
+   ],
+   "n_choices": 21
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑧",
+  "source_id": "IAJ-PAST-2022",
+  "points": 0,
+  "page": 9,
+  "answer_page": 31,
+  "group_key": "2-1-④",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2022-2-1-⑨",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "昇給率・給与指数",
+  "difficulty": null,
+  "statement": "定常状態の制度でのベースアップと責任準備金・標準保険料率に関する穴埋め（①〜⑨）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "U"
+   ],
+   "n_choices": 21
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)⑨",
+  "source_id": "IAJ-PAST-2022",
+  "points": 1,
+  "page": 9,
+  "answer_page": 31,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-2-ア",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "標準保険料率",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)(ア)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 13,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-2-イ",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "保証期間中と終了後の年金額を変更した場合の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)(イ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 13,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-3-ア",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "統合前の制度Aの標準保険料率",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)(ア)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 1,
+  "page": 14,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-3-イ",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "統合前の制度Bの責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)(イ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 14,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-3-ウ",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "統合後（年金額を制度Aの1.2倍の割合）の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)(ウ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 14,
+  "answer_page": 32,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-4-ア",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "受給者Yの60歳時点の仮想個人別勘定残高",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)(ア)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 16,
+  "answer_page": 33,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-4-イ",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "実際の運用利回り4%となった年度の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)(イ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 16,
+  "answer_page": 33,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-4-ウ",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "財政再計算で予定利率・給付利率を変更した後の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)(ウ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 16,
+  "answer_page": 33,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-5-ア",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "発足時の未積立債務を5年元利均等償却する特別保険料率",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)(ア)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 18,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-2-5-イ",
+  "year": 2022,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "事象発生後のX年度末の「積立金＋…」の額",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)(イ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 4,
+  "page": 18,
+  "answer_page": 34,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-1-ア",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "加入時積立方式の制度Aの期末積立金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 8
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)(ア)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 20,
+  "answer_page": 35,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-1-イ",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "単位積立方式の制度Aの期末積立金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 8
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)(イ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 20,
+  "answer_page": 35,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-1-ウ",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "退職時年金現価積立方式の制度Bの期末積立金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 8
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)(ウ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 20,
+  "answer_page": 35,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-1-エ",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "単位積立方式の制度Bの期末積立金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 8
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(1)(エ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 20,
+  "answer_page": 35,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-2-ア",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "1人あたりの標準保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(ア)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 22,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-2-イ",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "制度全体の責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(イ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 22,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-2-ウ",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "定年65歳・支給期間15年への変更後の数値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(ウ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 22,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-2-エ",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "変更前後で責任準備金が等しくなる α",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(2)(エ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 22,
+  "answer_page": 37,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-3-ア",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "財政再計算後のX年度末剰余金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)(ア)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 24,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-3-イ",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "将来期間分の給付を10%改善し剰余金を活用した後の標準保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)(イ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 2,
+  "page": 24,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-3-ウ",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "X+1年度の脱退差による剰余金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)(ウ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 24,
+  "answer_page": 39,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2022-3-3-エ",
+  "year": 2022,
+  "section": "問題3",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "X+1年度末の剰余金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2022年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3(3)(エ)",
+  "source_id": "IAJ-PAST-2022",
+  "points": 3,
+  "page": 24,
+  "answer_page": 39,
+  "group_key": null
+ }
+]
