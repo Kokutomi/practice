@@ -1,0 +1,2 @@
+# Streamlit Community Cloud installs this file. The app adds src/ to sys.path itself.
+streamlit>=1.40

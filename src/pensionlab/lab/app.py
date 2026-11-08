@@ -3,17 +3,24 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import time
+from pathlib import Path
 
 import streamlit as st
 
-from pensionlab.lab import backup, db, notes, textbook
-from pensionlab.lab.topics import TOPICS
+ROOT = Path(__file__).resolve().parents[3]          # repo root (src/pensionlab/lab/app.py)
+if str(ROOT / "src") not in sys.path:                # works without `pip install -e .` (e.g. Streamlit Cloud)
+    sys.path.insert(0, str(ROOT / "src"))
+
+from pensionlab.lab import backup, db, notes, textbook  # noqa: E402
+from pensionlab.lab.topics import TOPICS, canonical  # noqa: E402
 from pensionlab.lab.verifiers import CHOICE, CHOICE_SET, DIGITS, KEYED, choices, truth_text
 
-DB_PATH = os.environ.get("LAB_DB", "data/lab.sqlite")
-PROBLEMS_DIR = os.environ.get("LAB_PROBLEMS", "problems")
-LEDGER = os.environ.get("LAB_LEDGER", "sources/ledger.json")
+DB_PATH = os.environ.get("LAB_DB", str(ROOT / "data" / "lab.sqlite"))
+PROBLEMS_DIR = os.environ.get("LAB_PROBLEMS", str(ROOT / "problems"))
+LEDGER = os.environ.get("LAB_LEDGER", str(ROOT / "sources" / "ledger.json"))
+PAGES = ["演習", "本番モード", "ダッシュボード", "学習計画", "計算ツール"]
 ERROR_TYPES = ["timing(due/immediate)", "interest/discount", "mortality/survival", "arithmetic", "other"]
 CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
 
@@ -26,10 +33,22 @@ def start(problem_id):
     ss.update(pid=problem_id, hint=0, t0=time.time(), result=None, saved=False)
 
 
+# page switcher on top of the main area: on a phone the sidebar is hidden behind a button
+page = st.radio("画面", PAGES, horizontal=True, key="page", label_visibility="collapsed")
+
+# a fresh database (e.g. after the cloud app restarted) gets an obvious restore prompt
+if not con.execute("SELECT 1 FROM attempts LIMIT 1").fetchone() and page == "演習":
+    with st.expander("学習記録が空です。バックアップがあればここから復元できます", expanded=False):
+        up0 = st.file_uploader("バックアップ（.json）", type="json", key="restore_main")
+        if up0 is not None and st.button("復元する", key="restore_main_btn"):
+            try:
+                st.success(f"復元しました: {backup.restore(con, json.load(up0))}")
+            except (ValueError, KeyError, json.JSONDecodeError) as e:
+                st.error(f"復元できませんでした: {e}")
+
 # ---- sidebar: data + stats
 with st.sidebar:
     st.header("📘 Learning Lab")
-    page = st.radio("画面", ["演習", "本番モード", "ダッシュボード", "学習計画", "計算ツール"])
     synced = db.sync_data(con, PROBLEMS_DIR, LEDGER)      # picks up updated problem files automatically
     if synced:
         st.caption(f"問題データを更新しました（{synced}欄）")
@@ -91,14 +110,13 @@ if "pid" not in ss:
     if nxt:
         start(nxt["id"])
 if "pid" not in ss:
-    st.title("年金数理 Learning Lab")
+    st.subheader("年金数理 Learning Lab")
     has_any = con.execute("SELECT 1 FROM problems LIMIT 1").fetchone()
     st.info("条件に合う問題がありません。絞り込みを変えてください。" if has_any
             else "問題がありません。サイドバーから問題を読み込んでください。")
     st.stop()
 
 p = db.get_problem(con, ss.pid)
-st.title("年金数理 Learning Lab")
 src = con.execute("SELECT title, version, verification FROM sources WHERE id=?", (p["source_id"],)).fetchone() \
     if p["source_id"] else None
 short_ver = (src["version"] or "").split("（")[0] if src else ""
@@ -106,7 +124,7 @@ where = f"{src['title']}" + (f"（{short_ver}）" if short_ver else "") if src e
 qno = f" {p['question_no']}" if p["question_no"] else ""
 extra = f" ｜ 難易度 {p['difficulty']}" if p["difficulty"] else ""
 extra += f" ｜ 配点 {p['points']}点" if p["points"] else ""
-st.caption(f"{p['id']} ｜ {p['exam_body']}{qno} ｜ {p['topic']}{extra} ｜ 出典: {where}")
+st.caption(f"{p['id']} ｜ {p['exam_body']}{qno} ｜ {canonical(p['topic'] or '')}{extra} ｜ 出典: {where}")
 if src and src["verification"] in ("needs_recheck", "superseded"):
     st.warning("この問題の出典資料は差し替え・要確認です。正答を最新版と照合してください。")
 if f_status == "recommend":
@@ -114,7 +132,7 @@ if f_status == "recommend":
     why = next((r["reason"] for r in recommend(con, n=100, exam_body=None) if r["problem"]["id"] == p["id"]), None)
     if why:
         st.info(f"おすすめの理由: {why}")
-st.markdown(f"#### {p['statement']}")
+st.markdown(f"**{p['statement']}**")
 vid = p["verifier_id"]
 is_choice = vid in KEYED
 params = json.loads(p["params"])
@@ -140,7 +158,7 @@ if ss.hint and p["exam_body"] != "original":
 if ss.result is None:
     with st.form("answer"):
         if vid == CHOICE:
-            raw = st.radio("選択肢", choices(params), horizontal=True, index=None)
+            raw = st.radio("選択肢", choices(params), horizontal=True, index=None, key=f"ans-{p['id']}")
         elif vid == CHOICE_SET:
             picked = st.multiselect("当てはまるものをすべて選択", choices(params))
             raw = "".join(picked) or None
@@ -148,7 +166,7 @@ if ss.result is None:
             raw = st.text_input("答え（数字をそのまま。例: 050）") or None
         else:
             raw = st.text_input("答え（数値）")
-        conf = st.radio("確信度", list(CONF), format_func=CONF.get, index=1, horizontal=True)
+        conf = st.radio("確信度", list(CONF), format_func=CONF.get, index=1, horizontal=True, key=f"conf-{p['id']}")
         if st.form_submit_button("解答する"):
             try:
                 if raw is None:

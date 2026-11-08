@@ -16,7 +16,7 @@ CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
 
 
 def render(con):
-    st.title("学習ダッシュボード")
+    st.subheader("学習ダッシュボード")
     recs = recommend(con, n=8)
     if recs:
         st.subheader("今日のおすすめ")

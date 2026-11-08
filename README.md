@@ -12,6 +12,11 @@ PYTHONPATH=src streamlit run src/pensionlab/lab/app.py
 起動時に `problems/` の全問題と `sources/ledger.json` を自動で読み込みます（ファイルが更新されていれば再読み込み）。
 学習記録は作業ディレクトリの `data/lab.sqlite`（git 管理外）に保存されます。サイドバーからバックアップできます。
 
+## スマホで使う
+
+Streamlit Community Cloud に無料で公開できます（エントリーポイントは `streamlit_app.py`、依存関係は `requirements.txt`）。
+手順と注意点（学習記録はバックアップ必須、public リポジトリのアプリは既定で公開）は [docs/DEPLOY.md](docs/DEPLOY.md)。
+
 ## 画面
 
 | 画面 | できること |

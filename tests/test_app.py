@@ -10,6 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 APP = str(ROOT / "src/pensionlab/lab/app.py")
 
 
+def radio(at, label):
+    return next(r for r in at.radio if r.label == label)
+
+
 def btn(at, label):
     return next(b for b in at.button if label in b.label)
 
@@ -35,7 +39,7 @@ def test_numeric_flow(tmp_path, monkeypatch):
     assert any("ヒント1" in i.value for i in at.info)
     at.text_input[0].set_value("abc"); btn(at, "解答").click().run()
     assert at.error
-    at.text_input[0].set_value("1.0"); at.main.radio[0].set_value(3)
+    at.text_input[0].set_value("1.0"); radio(at, "確信度").set_value(3)
     btn(at, "解答").click().run()
     assert any("不正解" in e.value for e in at.error)
     at.selectbox[0].select("arithmetic"); btn(at, "記録").click().run()
@@ -52,7 +56,7 @@ def test_choice_flow_with_official_links(tmp_path, monkeypatch):
     assert any("ヒント1" in i.value and "昇給" in i.value for i in at.info)
     btn(at, "解答").click().run()
     assert any("解答を入力" in e.value for e in at.error)
-    at.main.radio[0].set_value("C"); btn(at, "解答").click().run()
+    radio(at, "選択肢").set_value("C"); btn(at, "解答").click().run()
     assert any("正解" in s.value for s in at.success)
     assert any("2025D.pdf#page=23" in m.value for m in at.markdown)
     btn(at, "次の問題").click().run()
@@ -61,8 +65,8 @@ def test_choice_flow_with_official_links(tmp_path, monkeypatch):
 
 def test_dashboard_page(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
-    at.main.radio[0].set_value("C"); btn(at, "解答").click().run()
-    at.sidebar.radio[0].set_value("ダッシュボード").run()
+    radio(at, "選択肢").set_value("C"); btn(at, "解答").click().run()
+    at.radio(key="page").set_value("ダッシュボード").run()
     assert not at.exception
     assert any("2025年度" in m.label and "5 / 100" in m.value for m in at.metric)
     assert any("対象の欄はまだありません" in c.value for c in at.caption)   # 1 correct, sure-ish answer only
@@ -70,7 +74,7 @@ def test_dashboard_page(tmp_path, monkeypatch):
 
 def test_choice_set_and_digits_inputs(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2021.json"])
-    at.main.radio[0].set_value("C"); btn(at, "解答").click().run()          # 1(1)
+    radio(at, "選択肢").set_value("C"); btn(at, "解答").click().run()          # 1(1)
     btn(at, "次の問題").click().run()
     assert "IAJ-2021-1-2" in at.caption[0].value                           # select-all question
     at.multiselect[0].select("D").select("A").select("B"); btn(at, "解答").click().run()
@@ -79,7 +83,7 @@ def test_choice_set_and_digits_inputs(tmp_path, monkeypatch):
         btn(at, "次の問題").click().run()
         if "IAJ-2021-1-6" in at.caption[0].value:
             break
-        at.main.radio[0].set_value("A"); btn(at, "解答").click().run()
+        radio(at, "選択肢").set_value("A"); btn(at, "解答").click().run()
     assert "IAJ-2021-1-6" in at.caption[0].value
     at.text_input[0].set_value("９９５"); btn(at, "解答").click().run()
     assert any("正解" in s.value for s in at.success)
@@ -87,14 +91,14 @@ def test_choice_set_and_digits_inputs(tmp_path, monkeypatch):
 
 def test_exam_mode_page(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
-    at.sidebar.radio[0].set_value("本番モード").run()
+    at.radio(key="page").set_value("本番モード").run()
     btn(at, "開始").click().run()
     assert not at.exception and len(at.selectbox) == 36
     at.selectbox[0].select("C")                         # 問題1(1) correct (form commits on submit)
     btn(at, "提出").click().run()
     assert not at.exception
     assert any("5 / 100 点" in s.value for s in at.success)
-    at.sidebar.radio[0].set_value("ダッシュボード").run()
+    at.radio(key="page").set_value("ダッシュボード").run()
     assert not at.exception
 
 
@@ -106,7 +110,7 @@ def test_backup_download_present(tmp_path, monkeypatch):
 
 def test_practice_filters(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json", "iaj-2024.json", "sample.json"])
-    assert "S-001" in at.caption[0].value                                   # newest year first (samples are 2026)
+    assert "IAJ-2025-1-1" in at.caption[0].value                            # past exams first, newest year first
     at.sidebar.multiselect[0].select(2024).run()
     assert "IAJ-2024-1-1-ア" in at.caption[0].value
     at.sidebar.multiselect[1].select("生命表・平均余命").run()
@@ -119,7 +123,7 @@ def test_practice_filters(tmp_path, monkeypatch):
 
 def test_memo_saved(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
-    at.main.radio[0].set_value("A"); btn(at, "解答").click().run()
+    radio(at, "選択肢").set_value("A"); btn(at, "解答").click().run()
     at.text_area[0].set_value("動態的昇給率の定義を確認")
     btn(at, "メモを保存").click().run()
     import sqlite3
@@ -135,14 +139,14 @@ def test_recommend_status(tmp_path, monkeypatch):
 
 def test_plan_page(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json", "iaj-2024.json"])
-    at.sidebar.radio[0].set_value("学習計画").run()
+    at.radio(key="page").set_value("学習計画").run()
     assert not at.exception
     assert any("本番まで" in m.label for m in at.metric)
 
 
 def test_tools_page(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
-    at.sidebar.radio[0].set_value("計算ツール").run()
+    at.radio(key="page").set_value("計算ツール").run()
     assert not at.exception and len(at.tabs) == 3
 
 

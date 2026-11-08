@@ -19,7 +19,7 @@ def _mortality():
 
 
 def render(con=None):
-    st.title("計算ツール")
+    st.subheader("計算ツール")
     st.caption("検算・理解用。死亡率は Gompertz–Makeham の仮定値で、試験の基数表とは異なります。")
     lt = _mortality()
     t1, t2, t3 = st.tabs(["計算基数表", "年金現価", "財政方式の比較（Trowbridge）"])

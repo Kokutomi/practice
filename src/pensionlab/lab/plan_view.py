@@ -13,7 +13,7 @@ WD = "月火水木金土日"
 
 
 def render(con):
-    st.title("学習計画")
+    st.subheader("学習計画")
     left = (plan.EXAM_DATE - date.today()).days
     st.metric("本番まで", f"{left}日" if left >= 0 else "終了", help="2026年度 年金数理：12月9日(水) 10:00〜180分")
     c1, c2, c3 = st.columns(3)

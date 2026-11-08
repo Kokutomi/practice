@@ -151,7 +151,8 @@ def candidates(con, years=None, topics=None, exam_body=None, status: str = "auto
     if exam_body:
         q += " AND exam_body=?"
         a.append(exam_body)
-    rows = [r for r in con.execute(q + " ORDER BY year DESC, rowid", a)
+    # official past exams first (newest year first), self-made samples last
+    rows = [r for r in con.execute(q + " ORDER BY exam_body='original', year DESC, rowid", a)
             if (not topics or canonical(r["topic"] or "") in topics) and r["id"] not in exclude]
     last = {r["problem_id"]: r for r in con.execute(
         "SELECT a.* FROM attempts a JOIN (SELECT problem_id, MAX(id) mid FROM attempts GROUP BY problem_id) m"

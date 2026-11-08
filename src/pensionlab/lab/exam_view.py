@@ -24,7 +24,7 @@ def _input(p):
 
 def render(con):
     ss = st.session_state
-    st.title("本番モード")
+    st.subheader("本番モード")
     years = [r["year"] for r in con.execute(
         "SELECT DISTINCT year FROM problems WHERE exam_body='IAJ' ORDER BY year DESC")]
     if not years:
