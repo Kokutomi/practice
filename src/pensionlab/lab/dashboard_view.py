@@ -8,7 +8,7 @@ import streamlit as st
 import os
 import tempfile
 
-from . import anki, dashboard, exam
+from . import anki, dashboard, exam, notes
 
 SERIES_1 = "#2a78d6"   # single series: one hue, no legend (the title names it)
 CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
@@ -81,3 +81,11 @@ def render(con):
         st.download_button(f"復習カード {n} 枚をダウンロード（.txt）", data, "pensionlab_anki.txt", "text/plain")
     else:
         st.caption("対象の欄はまだありません。")
+
+    st.subheader("Obsidian に書き出す")
+    st.caption("解いた問題・メモのある問題を1問1ファイルの Markdown にし、分野ごとの索引ページ（[[リンク]]）を付けます。")
+    if con.execute("SELECT 1 FROM attempts UNION SELECT 1 FROM notes LIMIT 1").fetchone():
+        st.download_button("ノート一式をダウンロード（.zip）", notes.export_zip(con), "pensionlab_obsidian.zip",
+                           "application/zip")
+    else:
+        st.caption("まだ書き出す内容がありません。")

@@ -115,3 +115,13 @@ def test_practice_filters(tmp_path, monkeypatch):
     assert "IAJ-2025-1-3" in at.caption[0].value                            # the 2025 life-table question
     at.sidebar.selectbox[0].select("wrong").run()
     assert any("条件に合う問題がありません" in i.value for i in at.info)
+
+
+def test_memo_saved(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
+    at.main.radio[0].set_value("A"); btn(at, "解答").click().run()
+    at.text_area[0].set_value("動態的昇給率の定義を確認")
+    btn(at, "メモを保存").click().run()
+    import sqlite3
+    c = sqlite3.connect(tmp_path / "t.sqlite")
+    assert c.execute("SELECT text FROM notes").fetchone()[0] == "動態的昇給率の定義を確認"

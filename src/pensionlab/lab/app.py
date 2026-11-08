@@ -7,7 +7,7 @@ import time
 
 import streamlit as st
 
-from pensionlab.lab import backup, db
+from pensionlab.lab import backup, db, notes
 from pensionlab.lab.topics import TOPICS
 from pensionlab.lab.verifiers import CHOICE, CHOICE_SET, DIGITS, KEYED, choices, truth_text
 
@@ -162,6 +162,11 @@ else:
                 st.rerun()
         else:
             st.caption("誤りタイプを記録しました")
+    with st.expander("✎ メモ（誤答ノート）", expanded=bool(notes.get(con, p["id"]))):
+        memo = st.text_area("気づき・間違えた理由・使った公式", notes.get(con, p["id"]), key=f"memo-{p['id']}")
+        if st.button("メモを保存"):
+            notes.save(con, p["id"], memo)
+            st.toast("メモを保存しました")
     if st.button("次の問題へ ▶"):
         nxt = db.next_problem(con, exclude={p["id"]}, **filters)
         if nxt:
