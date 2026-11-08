@@ -9,7 +9,7 @@ import time
 import zipfile
 from datetime import datetime
 
-from . import db
+from . import db, textbook
 from .topics import canonical
 from .verifiers import truth_text
 
@@ -59,6 +59,8 @@ def vault_files(con, only_with_activity: bool = True) -> dict[str, str]:
             lines.append(f"- 解答例: [公式PDF p.{p['answer_page']}]({a_url})")
         if p["note"]:
             lines.append(f"- 注: {p['note']}")
+        for t, pg, u in textbook.refs(topic):
+            lines.append(f"- 教科書: [{t}（p.{pg}）]({u})")
         note = get(con, p["id"])
         lines += ["", "## メモ", "", note or "（未記入）", ""]
         if atts:

@@ -133,7 +133,11 @@
   "license": "link_only",
   "access": "free",
   "priority": "P0",
-  "notes": "無料PDF（約4.6MB）。章・節・ページを問題の topic と対応づける"
+  "notes": "目次の章・節と印刷ページを src/pensionlab/lab/textbook.py に対応づけ（PDFページ＝印刷ページ＋13を4か所で確認）。",
+  "url": "https://www.actuaries.jp/examin/textbook/pdf/nenkin-suuri.pdf",
+  "retrieved_at": "2026-11-08T05:30:00Z",
+  "version": "平成26年度テキスト部会版（HTTP Last-Modified: 2024-02-08 07:43:20 GMT、334ページ）",
+  "verification": "verified"
  },
  {
   "id": "IAJ-INFO-2026",

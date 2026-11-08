@@ -7,7 +7,7 @@ import time
 
 import streamlit as st
 
-from pensionlab.lab import backup, db, notes
+from pensionlab.lab import backup, db, notes, textbook
 from pensionlab.lab.topics import TOPICS
 from pensionlab.lab.verifiers import CHOICE, CHOICE_SET, DIGITS, KEYED, choices, truth_text
 
@@ -125,6 +125,9 @@ if q_url:
     st.markdown(f"📄 [問題文を公式PDFで開く（p.{p['page']}）]({q_url})")
 if p["note"]:
     st.caption(f"注: {p['note']}")
+tb = textbook.refs(p["topic"] or "")
+if tb:
+    st.caption("📖 教科書: " + " ／ ".join(f"[{t}（p.{pg}）]({u})" for t, pg, u in tb))
 
 # ---- hints
 if ss.result is None and db.get_hint(con, p["id"], 1):
