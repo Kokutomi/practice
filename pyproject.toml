@@ -6,7 +6,7 @@ requires-python = ">=3.9"
 dependencies = []
 
 [project.optional-dependencies]
-app = ["streamlit>=1.30"]
+app = ["streamlit>=1.30", "pypdfium2>=4"]
 dev = ["pytest", "streamlit>=1.30"]
 
 [build-system]
