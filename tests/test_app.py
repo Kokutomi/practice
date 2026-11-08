@@ -102,3 +102,16 @@ def test_backup_download_present(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
     assert not at.exception
     assert any("バックアップ" in e.label for e in at.sidebar.expander)
+
+
+def test_practice_filters(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2025.json", "iaj-2024.json", "sample.json"])
+    assert "S-001" in at.caption[0].value                                   # newest year first (samples are 2026)
+    at.sidebar.multiselect[0].select(2024).run()
+    assert "IAJ-2024-1-1-ア" in at.caption[0].value
+    at.sidebar.multiselect[1].select("生命表・平均余命").run()
+    assert any("条件に合う問題がありません" in i.value for i in at.info)       # no 2024 life-table slot
+    at.sidebar.multiselect[0].unselect(2024).run()
+    assert "IAJ-2025-1-3" in at.caption[0].value                            # the 2025 life-table question
+    at.sidebar.selectbox[0].select("wrong").run()
+    assert any("条件に合う問題がありません" in i.value for i in at.info)

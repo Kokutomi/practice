@@ -8,6 +8,7 @@ import time
 import streamlit as st
 
 from pensionlab.lab import backup, db
+from pensionlab.lab.topics import TOPICS
 from pensionlab.lab.verifiers import CHOICE, CHOICE_SET, DIGITS, KEYED, choices, truth_text
 
 DB_PATH = os.environ.get("LAB_DB", "data/lab.sqlite")
@@ -59,14 +60,34 @@ if page == "ダッシュボード":
     dashboard_view.render(con)
     st.stop()
 
+# ---- filters (practice only)
+with st.sidebar:
+    st.subheader("出題の絞り込み")
+    years_all = [r[0] for r in con.execute("SELECT DISTINCT year FROM problems ORDER BY year DESC")]
+    f_status = st.selectbox("状態", list(db.STATUSES), format_func=db.STATUSES.get)
+    f_years = st.multiselect("年度", years_all)
+    f_topics = st.multiselect("分野", TOPICS)
+    f_body = st.selectbox("出題元", ["", "IAJ", "original"],
+                          format_func=lambda v: {"": "すべて", "IAJ": "アクチュアリー会過去問", "original": "自作問題"}[v])
+filters = {"status": f_status, "years": f_years, "topics": f_topics, "exam_body": f_body or None}
+n_cand = len(db.candidates(con, **filters))
+st.sidebar.caption(f"条件に合う問題: {n_cand}")
+sig = json.dumps(filters, sort_keys=True)
+if ss.get("filter_sig") != sig:
+    ss.filter_sig = sig
+    for k in ("pid", "result"):
+        ss.pop(k, None)
+
 # ---- pick problem
 if "pid" not in ss:
-    nxt = db.next_problem(con)
+    nxt = db.next_problem(con, **filters)
     if nxt:
         start(nxt["id"])
 if "pid" not in ss:
     st.title("年金数理 Learning Lab")
-    st.info("問題がありません。サイドバーから問題を読み込んでください。")
+    has_any = con.execute("SELECT 1 FROM problems LIMIT 1").fetchone()
+    st.info("条件に合う問題がありません。絞り込みを変えてください。" if has_any
+            else "問題がありません。サイドバーから問題を読み込んでください。")
     st.stop()
 
 p = db.get_problem(con, ss.pid)
@@ -142,7 +163,7 @@ else:
         else:
             st.caption("誤りタイプを記録しました")
     if st.button("次の問題へ ▶"):
-        nxt = db.next_problem(con)
+        nxt = db.next_problem(con, exclude={p["id"]}, **filters)
         if nxt:
             start(nxt["id"])
         else:

@@ -134,13 +134,48 @@ def due_reviews(con, now: float | None = None):
     return con.execute("SELECT * FROM review_queue WHERE due_at<=? ORDER BY due_at", (now,)).fetchall()
 
 
-def next_problem(con, now: float | None = None):
-    """Due reviews first; otherwise an unattempted problem."""
-    due = due_reviews(con, now)
-    if due:
-        return con.execute("SELECT * FROM problems WHERE id=?", (due[0]["problem_id"],)).fetchone()
-    return con.execute("SELECT * FROM problems WHERE id NOT IN (SELECT problem_id FROM attempts)"
-                       " ORDER BY year, rowid LIMIT 1").fetchone()
+STATUSES = {"auto": "おまかせ（復習期限→未解答）", "due": "復習期限", "unattempted": "未解答",
+            "wrong": "前回誤答", "unsure": "前回自信なし", "all": "すべて"}
+
+
+def candidates(con, years=None, topics=None, exam_body=None, status: str = "auto", now: float | None = None,
+               exclude=()):
+    """Problems matching the filters, in the order they should be offered."""
+    from .topics import canonical
+    now = time.time() if now is None else now
+    q, a = "SELECT * FROM problems WHERE 1=1", []
+    if years:
+        q += f" AND year IN ({','.join('?' * len(years))})"
+        a += list(years)
+    if exam_body:
+        q += " AND exam_body=?"
+        a.append(exam_body)
+    rows = [r for r in con.execute(q + " ORDER BY year DESC, rowid", a)
+            if (not topics or canonical(r["topic"] or "") in topics) and r["id"] not in exclude]
+    last = {r["problem_id"]: r for r in con.execute(
+        "SELECT a.* FROM attempts a JOIN (SELECT problem_id, MAX(id) mid FROM attempts GROUP BY problem_id) m"
+        " ON a.id=m.mid")}
+    due = {r["problem_id"]: r["due_at"] for r in con.execute("SELECT * FROM review_queue WHERE due_at<=?", (now,))}
+    pick = {
+        "due": lambda r: r["id"] in due,
+        "unattempted": lambda r: r["id"] not in last,
+        "wrong": lambda r: r["id"] in last and not last[r["id"]]["is_correct"],
+        "unsure": lambda r: r["id"] in last and last[r["id"]]["confidence"] <= 1,
+        "all": lambda r: True,
+    }
+    if status == "auto":
+        d = sorted((r for r in rows if r["id"] in due), key=lambda r: due[r["id"]])
+        return d + [r for r in rows if r["id"] not in last]
+    out = [r for r in rows if pick[status](r)]
+    if status == "due":
+        out.sort(key=lambda r: due[r["id"]])
+    return out
+
+
+def next_problem(con, now: float | None = None, exclude=(), **filters):
+    """Due reviews first; otherwise an unattempted problem (both within the filters)."""
+    c = candidates(con, now=now, exclude=exclude, **filters)
+    return c[0] if c else None
 
 
 def stats_by_topic(con):
