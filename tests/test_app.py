@@ -131,3 +131,10 @@ def test_recommend_status(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
     at.sidebar.selectbox[0].select("recommend").run()
     assert any("おすすめの理由: 未着手の分野" in i.value for i in at.info)
+
+
+def test_plan_page(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2025.json", "iaj-2024.json"])
+    at.sidebar.radio[0].set_value("学習計画").run()
+    assert not at.exception
+    assert any("本番まで" in m.label for m in at.metric)
