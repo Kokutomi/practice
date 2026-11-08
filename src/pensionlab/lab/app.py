@@ -13,14 +13,14 @@ ROOT = Path(__file__).resolve().parents[3]          # repo root (src/pensionlab/
 if str(ROOT / "src") not in sys.path:                # works without `pip install -e .` (e.g. Streamlit Cloud)
     sys.path.insert(0, str(ROOT / "src"))
 
-from pensionlab.lab import backup, db, notes, textbook, wblink, workbook  # noqa: E402
+from pensionlab.lab import backup, cards, cards_view, db, notes, textbook, wblink, workbook  # noqa: E402
 from pensionlab.lab.topics import TOPICS, canonical  # noqa: E402
 from pensionlab.lab.verifiers import CHOICE, CHOICE_SET, DIGITS, KEYED, choices, truth_text
 
 DB_PATH = os.environ.get("LAB_DB", str(ROOT / "data" / "lab.sqlite"))
 PROBLEMS_DIR = os.environ.get("LAB_PROBLEMS", str(ROOT / "problems"))
 LEDGER = os.environ.get("LAB_LEDGER", str(ROOT / "sources" / "ledger.json"))
-PAGES = ["演習", "本番モード", "ダッシュボード", "学習計画", "計算ツール"]
+PAGES = ["演習", "本番モード", "公式カード", "ダッシュボード", "学習計画", "計算ツール"]
 ERROR_TYPES = ["timing(due/immediate)", "interest/discount", "mortality/survival", "arithmetic", "other"]
 CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
 
@@ -59,6 +59,8 @@ with st.sidebar:
         st.caption(f"問題データを更新しました（{synced}欄）")
     if wblink.sync_marks(con, os.environ.get("LAB_WB_MARKS", str(wblink.MARKS_PATH))):                          # data/wb_marks.json (PC only; the phone gets it via backup)
         st.caption("ワークブックの◎/△記録を取り込みました")
+    if cards.sync(con, os.environ.get("LAB_ANKI_CARDS", str(cards.OUT))):  # data/anki/cards.json (PC)
+        st.caption("公式カードを取り込みました")
     st.metric("復習期限の問題", len(db.due_reviews(con)))
     with st.expander("学習記録のバックアップ"):
         st.download_button("バックアップをダウンロード", json.dumps(backup.dump(con), ensure_ascii=False),
@@ -69,9 +71,14 @@ with st.sidebar:
                 st.success(f"復元しました: {backup.restore(con, json.load(up))}")
             except (ValueError, KeyError, json.JSONDecodeError) as e:
                 st.error(f"復元できませんでした: {e}")
+    cards_view.uploader(con)
     recheck = db.problems_needing_recheck(con)
     if recheck:
         st.warning(f"出典が差替・要確認の問題 {len(recheck)}問: " + ", ".join(r["id"] for r in recheck))
+
+if page == "公式カード":
+    cards_view.render(con)
+    st.stop()
 
 if page == "計算ツール":
     from pensionlab.lab import tools_view
@@ -187,6 +194,8 @@ if wb and workbook.available():
         with t_sol:
             if pg + 1 <= workbook.LAST_PAGE:
                 st.image(wb_page(pg + 1))
+
+cards_view.practice_panel(con, p["topic"])
 
 # ---- hints
 if ss.result is None and db.get_hint(con, p["id"], 1):

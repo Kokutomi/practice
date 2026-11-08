@@ -1,3 +1,4 @@
+import json
 import shutil
 from pathlib import Path
 
@@ -29,6 +30,7 @@ def make(tmp_path, monkeypatch, files):
     monkeypatch.setenv("LAB_LEDGER", str(ROOT / "sources/ledger.json"))
     monkeypatch.setenv("LAB_WB_MARKS", str(tmp_path / "no_marks.json"))     # keep the learner's own marks out
     monkeypatch.setenv("LAB_WORKBOOK", str(tmp_path / "no.pdf"))            # behave like the cloud (no PDF)
+    monkeypatch.setenv("LAB_ANKI_CARDS", str(tmp_path / "no_cards.json"))   # and no formula cards
     at = AppTest.from_file(APP, default_timeout=20).run()      # data is loaded automatically
     assert not at.exception
     return at
@@ -183,3 +185,18 @@ def test_dashboard_strengths(tmp_path, monkeypatch):
     radio(at, "画面").set_value("ダッシュボード").run()
     assert not at.exception
     assert any("得意・不得意" in s.value for s in at.subheader)
+
+
+def test_formula_cards_page_and_panel(tmp_path, monkeypatch):
+    from test_cards import make_apkg
+    from pensionlab.lab import cards
+    data = cards.convert(str(make_apkg(tmp_path / "d.apkg")), {"g-basic": "昇給率・給与指数"})
+    (tmp_path / "cards.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    make(tmp_path, monkeypatch, ["iaj-2025.json"])
+    monkeypatch.setenv("LAB_ANKI_CARDS", str(tmp_path / "cards.json"))
+    at = AppTest.from_file(APP, default_timeout=20).run()
+    assert not at.exception
+    assert any("公式カード：昇給率・給与指数（1枚）" in e.label for e in at.expander)   # IAJ-2025-1-1 is 昇給率
+    radio(at, "画面").set_value("公式カード").run()
+    assert not at.exception
+    assert any("昇給率・給与指数（1枚）" in o for o in at.selectbox[-1].options)
