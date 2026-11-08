@@ -1,0 +1,14 @@
+[
+  {"id": "S-001", "year": 2026, "section": "sample", "topic": "life_annuity", "difficulty": 1,
+   "statement": "Gompertz-Makeham(A=0.0007,B=0.00005,c=1.10)の死亡率、利率3%。65歳の期初払い終身年金(年額1)の現価 ä65 を求めよ。",
+   "verifier_id": "annuity_due", "params": {"x": 65, "i": 0.03}, "source": "original",
+   "hints": ["ä_x = Σ v^t · tp_x (t=0,1,...)。支払は期初。", "t=0 の項は 1 になる。"]},
+  {"id": "S-002", "year": 2026, "section": "sample", "topic": "life_annuity", "difficulty": 1,
+   "statement": "同じ条件で、65歳の期末払い終身年金の現価 a65 を求めよ。",
+   "verifier_id": "annuity_immediate", "params": {"x": 65, "i": 0.03}, "source": "original",
+   "hints": ["a_x と ä_x の関係を考える。", "a_x = ä_x − 1。"]},
+  {"id": "S-003", "year": 2026, "section": "sample", "topic": "deferred_annuity", "difficulty": 2,
+   "statement": "同じ条件で、40歳の人の25年据置・65歳開始の期初払い終身年金(年額1)の現価を求めよ。",
+   "verifier_id": "deferred_annuity_due", "params": {"x": 40, "n": 25, "i": 0.03}, "source": "original",
+   "hints": ["n|ä_x = v^n · np_x · ä_{x+n}。", "割引と生存の両方を忘れない。"]}
+]
