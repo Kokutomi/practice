@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[3]          # repo root (src/pensionlab/
 if str(ROOT / "src") not in sys.path:                # works without `pip install -e .` (e.g. Streamlit Cloud)
     sys.path.insert(0, str(ROOT / "src"))
 
-from pensionlab.lab import backup, db, notes, textbook  # noqa: E402
+from pensionlab.lab import backup, db, notes, textbook, workbook  # noqa: E402
 from pensionlab.lab.topics import TOPICS, canonical  # noqa: E402
 from pensionlab.lab.verifiers import CHOICE, CHOICE_SET, DIGITS, KEYED, choices, truth_text
 
@@ -27,6 +27,11 @@ CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
 st.set_page_config(page_title="年金数理 Learning Lab", page_icon="📘")
 con = db.connect(DB_PATH)
 ss = st.session_state
+
+
+@st.cache_data(max_entries=64, show_spinner=False)
+def wb_page(page: int) -> bytes:
+    return workbook.render(page)
 
 
 def start(problem_id):
@@ -144,6 +149,21 @@ if p["note"]:
 tb = textbook.refs(p["topic"] or "")
 if tb:
     st.caption("📖 教科書: " + " ／ ".join(f"[{t}（p.{pg}）]({u})" for t, pg, u in tb))
+wb = workbook.refs(p["topic"] or "")
+if wb and workbook.available():
+    with st.expander("📒 ワークブック（手書き解答付き）の該当章"):
+        sec = st.selectbox("章・節", wb, format_func=lambda r: f"{r[1]}（PDF p.{r[2]}–{r[3]}）",
+                           key=f"wb-sec-{p['id']}")
+        _, _, first, last = sec
+        pg = st.number_input("問題ページ（奇数）", min_value=first, max_value=last, value=first, step=2,
+                             key=f"wb-pg-{p['id']}-{first}")
+        pg = int(pg) if (int(pg) - first) % 2 == 0 else int(pg) - 1
+        t_prob, t_sol = st.tabs([f"問題 p.{pg}", f"手書き解答 p.{pg + 1}"])
+        with t_prob:
+            st.image(wb_page(pg))
+        with t_sol:
+            if pg + 1 <= workbook.LAST_PAGE:
+                st.image(wb_page(pg + 1))
 
 # ---- hints
 if ss.result is None and db.get_hint(con, p["id"], 1):
