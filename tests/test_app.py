@@ -82,3 +82,16 @@ def test_choice_set_and_digits_inputs(tmp_path, monkeypatch):
     assert "IAJ-2021-1-6" in at.caption[0].value
     at.text_input[0].set_value("９９５"); btn(at, "解答").click().run()
     assert any("正解" in s.value for s in at.success)
+
+
+def test_exam_mode_page(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
+    at.sidebar.radio[0].set_value("本番モード").run()
+    btn(at, "開始").click().run()
+    assert not at.exception and len(at.selectbox) == 36
+    at.selectbox[0].select("C")                         # 問題1(1) correct (form commits on submit)
+    btn(at, "提出").click().run()
+    assert not at.exception
+    assert any("5 / 100 点" in s.value for s in at.success)
+    at.sidebar.radio[0].set_value("ダッシュボード").run()
+    assert not at.exception

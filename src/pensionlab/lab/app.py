@@ -28,7 +28,7 @@ def start(problem_id):
 # ---- sidebar: data + stats
 with st.sidebar:
     st.header("📘 Learning Lab")
-    page = st.radio("画面", ["演習", "ダッシュボード"], horizontal=True)
+    page = st.radio("画面", ["演習", "本番モード", "ダッシュボード"], horizontal=True)
     if os.path.isdir(PROBLEMS_DIR) and st.button("問題と出典台帳を読み込む"):
         if os.path.exists(LEDGER):
             db.load_sources(con, LEDGER)
@@ -39,6 +39,11 @@ with st.sidebar:
     recheck = db.problems_needing_recheck(con)
     if recheck:
         st.warning(f"出典が差替・要確認の問題 {len(recheck)}問: " + ", ".join(r["id"] for r in recheck))
+
+if page == "本番モード":
+    from pensionlab.lab import exam_view
+    exam_view.render(con)
+    st.stop()
 
 if page == "ダッシュボード":
     from pensionlab.lab import dashboard_view

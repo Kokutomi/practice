@@ -5,7 +5,7 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-from . import dashboard
+from . import dashboard, exam
 
 SERIES_1 = "#2a78d6"   # single series: one hue, no legend (the title names it)
 CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
@@ -23,6 +23,13 @@ def render(con):
         for c, y in zip(cols * (len(ys) // len(cols) + 1), ys):
             c.metric(f"{y['year']}年度", f"{y['score']} / {y['max']}点")
             c.caption(f"{y['answered']} / {y['slots']} 欄 解答済")
+
+    hist = exam.history(con)
+    if hist:
+        st.subheader("本番モードの履歴")
+        st.dataframe(pd.DataFrame([{"年度": h["year"], "得点": f"{h['score']} / {h['max_score']}",
+                                    "解答欄": h["answered"], "所要(分)": round((h["submitted_at"] - h["started_at"]) / 60),
+                                    "時間超過": "あり" if h["over_time"] else ""} for h in hist]), hide_index=True)
 
     acc = dashboard.topic_accuracy(con)
     st.subheader("分野別正答率（低い順）")
