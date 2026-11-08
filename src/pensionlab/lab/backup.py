@@ -4,7 +4,8 @@ from __future__ import annotations
 import json
 import time
 
-USER_TABLES = ["attempts", "review_queue", "exam_sessions", "notes", "wb_marks", "wb_tags"]
+USER_TABLES = ["attempts", "review_queue", "exam_sessions", "notes", "wb_marks", "wb_tags",
+               "card_reviews", "card_state"]
 FORMAT = "pensionlab-backup/1"
 
 
@@ -54,7 +55,8 @@ def restore(con, data: dict, mode: str = "merge") -> dict:
                     continue
                 r = {k: v for k, v in r.items() if k != "id"}
             keys = [k for k in r if k in cols]
-            verb = "INSERT OR REPLACE" if t in ("review_queue", "notes", "wb_marks", "wb_tags") else "INSERT"
+            verb = "INSERT OR REPLACE" if t in ("review_queue", "notes", "wb_marks", "wb_tags", "card_reviews",
+                                              "card_state") else "INSERT"
             con.execute(f"{verb} INTO {t}({','.join(keys)}) VALUES({','.join('?' * len(keys))})", [r[k] for k in keys])
             added += 1
         counts[t] = added

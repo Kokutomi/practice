@@ -23,7 +23,8 @@ def test_plan_until_exam(con):
     assert p[-1]["kind"] == "exam" and p[-1]["date"] == date(2026, 12, 9) and p[-1]["start"] == "10:00"
     assert [e["kind"] for e in p[-3:-1]] == ["review", "review"]
     mocks = [e for e in p if e["kind"] == "mock"]
-    assert [e["title"][5:9] for e in mocks] == ["2024", "2023", "2022", "2021", "2020", "2019"]
+    # 9 weekend days up to 12/6 (Saturdays first, then Sundays) for the 10 years not yet taken: newest first
+    assert [e["title"][5:9] for e in mocks] == ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016"]
     assert all(e["date"].weekday() in (5, 6) and e["date"] <= date(2026, 12, 6) for e in mocks)
     assert all(e["start"] == "10:00" and e["minutes"] == 180 for e in mocks)
     assert len({e["date"] for e in p}) == len(p) == (date(2026, 12, 9) - date(2026, 11, 8)).days + 1
@@ -42,3 +43,13 @@ def test_ics_is_wellformed(con):
 
 def test_after_exam_date(con):
     assert [e["kind"] for e in plan.build(con, date(2026, 12, 10))] == ["exam"]
+
+
+def test_plan_names_formula_cards(con):
+    from pensionlab.lab import cards
+    cards.store(con, {"format": "pensionlab-anki/1", "cards": [
+        {"guid": f"g{i}", "ord": i, "num": f"4.{i}", "topic": "加入年齢方式・標準保険料", "front": "q", "back": "a"}
+        for i in range(40)]})
+    p = plan.build(con, date(2026, 11, 8))
+    notes = [e["detail"] for e in p if e["kind"] == "practice" and "公式カード" in e["detail"]]
+    assert notes and "加入年齢方式・標準保険料の新規15枚" in notes[0]

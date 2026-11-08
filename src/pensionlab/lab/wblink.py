@@ -12,9 +12,11 @@ year": only the counts of each mark are used, never their order or a "latest" ma
 弱点度 (weakness, 0..1, higher = weaker) of a topic
   workbook mastery m_wb = (◎ + 0.5·○) / (◎ + ○ + △ + ×) over the topic's workbook problems
   app accuracy     m_app = correct / attempts on past-exam slots of the topic
-  mastery = (W_APP·k·m_app + W_WB·m_wb) / (W_APP·k + W_WB), k = min(attempts, APP_FULL) / APP_FULL
+  formula cards    m_card = mean of the latest self-grade of the topic's graded cards (◎1 ○0.5 △0)
+  mastery = (W_APP·k·m_app + W_WB·m_wb + W_CARD·m_card) / (W_APP·k + W_WB + W_CARD),
+            k = min(attempts, APP_FULL) / APP_FULL
             (current practice outweighs last year's marks once there are enough attempts;
-             a side with no data drops out; no data at all -> None)
+             a part with no data drops out; no data at all -> None)
   weakness = 1 - mastery
 優先度 (priority) = weakness × frequency, where frequency is the topic's share of points in the recent
 past exams (problems/iaj-*.json), newer years weighted more (RECENCY per year back).
@@ -36,7 +38,7 @@ MARKS_PATH = ROOT / "data" / "wb_marks.json"
 
 MARK_VALUE = {"◎": 1.0, "○": 0.5, "△": 0.0, "×": 0.0}
 MATCH = ("strong", "related", "none")
-W_APP, W_WB, APP_FULL = 2.0, 1.0, 10
+W_APP, W_WB, W_CARD, APP_FULL = 2.0, 1.0, 1.0, 10
 RECENCY = 0.85
 
 def ensure_schema(con) -> None:
@@ -173,19 +175,24 @@ def workbook_mastery_by_topic(con, index: list[dict] | None = None) -> dict[str,
     return {t: {"counts": c, "mastery": mastery(c)} for t, c in agg.items()}
 
 
-def combine(app_acc: float | None, attempts: int, wb_mastery: float | None) -> float | None:
+def combine(app_acc: float | None, attempts: int, wb_mastery: float | None,
+            card_mastery: float | None = None) -> float | None:
     """Weakness 0..1 (see module docstring)."""
     k = min(attempts, APP_FULL) / APP_FULL if app_acc is not None else 0.0
-    wa, ww = W_APP * k, (W_WB if wb_mastery is not None else 0.0)
-    if wa + ww == 0:
+    wa = W_APP * k
+    ww = W_WB if wb_mastery is not None else 0.0
+    wc = W_CARD if card_mastery is not None else 0.0
+    if wa + ww + wc == 0:
         return None
-    return 1 - ((wa * (app_acc or 0.0)) + ww * (wb_mastery or 0.0)) / (wa + ww)
+    return 1 - (wa * (app_acc or 0.0) + ww * (wb_mastery or 0.0) + wc * (card_mastery or 0.0)) / (wa + ww + wc)
 
 
 def topic_table(con, index: list[dict] | None = None) -> list[dict]:
     """Per topic: app accuracy, workbook marks, weakness, recent-exam frequency, priority. Highest priority first."""
+    from . import cards
     from .topics import TOPICS
     wb = workbook_mastery_by_topic(con, index)
+    cm = cards.mastery_by_topic(con)
     freq = frequency(con)
     app: dict[str, list[int]] = {}
     for r in con.execute("SELECT p.topic, a.is_correct FROM attempts a JOIN problems p ON p.id=a.problem_id"):
@@ -197,10 +204,12 @@ def topic_table(con, index: list[dict] | None = None) -> list[dict]:
         c, n = app.get(t, [0, 0])
         acc = c / n if n else None
         m = wb.get(t, {}).get("mastery")
-        weak = combine(acc, n, m)
+        ct = cm.get(t, {})
+        weak = combine(acc, n, m, ct.get("mastery"))
         f = freq.get(t, 0.0)
         out.append({"topic": t, "attempts": n, "app_accuracy": acc, "wb_counts": wb.get(t, {}).get("counts"),
-                    "wb_mastery": m, "weakness": weak, "frequency": f,
+                    "wb_mastery": m, "card_mastery": ct.get("mastery"), "cards_graded": ct.get("graded", 0),
+                    "cards_total": ct.get("total", 0), "weakness": weak, "frequency": f,
                     "priority": None if weak is None else weak * f})
     return sorted(out, key=lambda r: (r["priority"] is None, -(r["priority"] or 0), -r["frequency"]))
 

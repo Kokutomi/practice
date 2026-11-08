@@ -121,14 +121,16 @@ def render_strengths(con):
     """得意・不得意: app accuracy × last year's workbook marks × recent-exam frequency."""
     rows = wblink.topic_table(con)
     st.subheader("得意・不得意（アプリ × ワークブック × 出題頻度）")
-    st.caption("弱点度 = 1 − 習熟度。習熟度はアプリの正答率（解答10回以上で重み2）と、昨年のワークブック記録"
-               "（◎=1・○=0.5・△/×=0、重み1）の加重平均。優先度 = 弱点度 × 最近の過去問での出題比率"
-               "（新しい年度ほど重い）。「重要」などのラベルは数値に使っていません。")
+    st.caption("弱点度 = 1 − 習熟度。習熟度はアプリの正答率（解答10回以上で重み2）、昨年のワークブック記録"
+               "（◎=1・○=0.5・△/×=0、重み1）、公式カードの自己採点（最新の◎○△、重み1）の加重平均。"
+               "優先度 = 弱点度 × 最近の過去問での出題比率（新しい年度ほど重い）。「重要」などのラベルは数値に使っていません。")
     st.dataframe(pd.DataFrame([{
         "分野": r["topic"], "優先度": None if r["priority"] is None else round(100 * r["priority"], 1),
         "弱点度%": _pct(r["weakness"]), "出題比率%": _pct(r["frequency"]),
         "アプリ正答率%": _pct(r["app_accuracy"]), "解答数": r["attempts"],
         "WB習熟度%": _pct(r["wb_mastery"]),
+        "カード習熟度%": _pct(r["card_mastery"]),
+        "カード採点": f"{r['cards_graded']}/{r['cards_total']}" if r["cards_total"] else "",
         "WB ◎/○/△/×": "/".join(str((r["wb_counts"] or {}).get(k, 0)) for k in wblink.MARK_VALUE)
         if r["wb_counts"] else ""} for r in rows]), hide_index=True)
     redo = workbook_review(con, n=8)

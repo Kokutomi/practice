@@ -190,7 +190,18 @@ def convert(apkg: str, topics: dict[str, str]) -> dict:
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS formula_cards(
   guid TEXT PRIMARY KEY, ord INTEGER, num TEXT, kind TEXT, topic TEXT, front TEXT NOT NULL, back TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS card_reviews(        -- the learner's self-grading (kept in the backup)
+  guid TEXT NOT NULL, reviewed_at REAL NOT NULL, grade TEXT NOT NULL, PRIMARY KEY(guid, reviewed_at));
+CREATE TABLE IF NOT EXISTS card_state(
+  guid TEXT PRIMARY KEY, due_at REAL NOT NULL, interval_days REAL NOT NULL, last_grade TEXT NOT NULL);
 """
+
+# Self-grading of a formula card after revealing the answer, and the next review interval.
+#   ◎ すらすら書けた: interval ×2.5 (first time 3 days)
+#   ○ 思い出せたが迷った: interval ×1.2 (first time 2 days, at least 1 day)
+#   △ 書けなかった: back tomorrow
+GRADES = {"◎": 1.0, "○": 0.5, "△": 0.0}
+DAY = 86400.0
 
 
 def ensure_schema(con) -> None:
@@ -240,6 +251,60 @@ def sync(con, path=OUT) -> int:
     con.execute("INSERT OR REPLACE INTO meta VALUES('anki_cards_hash', ?)", (digest,))
     con.commit()
     return n
+
+
+def review(con, guid: str, grade: str, now: float | None = None) -> float:
+    """Record a self-grade and schedule the next review. Returns the new interval in days."""
+    import time
+    if grade not in GRADES:
+        raise ValueError(grade)
+    ensure_schema(con)
+    now = time.time() if now is None else now
+    prev = con.execute("SELECT interval_days FROM card_state WHERE guid=?", (guid,)).fetchone()
+    if grade == "◎":
+        interval = prev[0] * 2.5 if prev else 3.0
+    elif grade == "○":
+        interval = max(1.0, prev[0] * 1.2) if prev else 2.0
+    else:
+        interval = 1.0
+    con.execute("INSERT OR REPLACE INTO card_reviews VALUES(?,?,?)", (guid, now, grade))
+    con.execute("INSERT OR REPLACE INTO card_state VALUES(?,?,?,?)", (guid, now + interval * DAY, interval, grade))
+    con.commit()
+    return interval
+
+
+def due(con, topic: str | None = None, now: float | None = None):
+    """Cards whose review is due (graded before), most overdue first; optionally within one topic."""
+    import time
+    from .topics import canonical
+    ensure_schema(con)
+    now = time.time() if now is None else now
+    q = ("SELECT c.*, s.due_at, s.last_grade FROM formula_cards c JOIN card_state s ON s.guid=c.guid"
+         " WHERE s.due_at<=?")
+    a: list = [now]
+    if topic:
+        q += " AND c.topic=?"
+        a.append(canonical(topic))
+    return con.execute(q + " ORDER BY s.due_at", a).fetchall()
+
+
+def state(con, guid: str):
+    ensure_schema(con)
+    return con.execute("SELECT * FROM card_state WHERE guid=?", (guid,)).fetchone()
+
+
+def mastery_by_topic(con) -> dict[str, dict]:
+    """Topic -> {"graded": n, "total": n, "mastery": mean of the latest grade (◎1 ○0.5 △0) or None}."""
+    ensure_schema(con)
+    out: dict[str, dict] = {}
+    for r in con.execute("SELECT c.topic, s.last_grade FROM formula_cards c LEFT JOIN card_state s ON s.guid=c.guid"):
+        o = out.setdefault(r[0], {"graded": 0, "total": 0, "sum": 0.0})
+        o["total"] += 1
+        if r[1]:
+            o["graded"] += 1
+            o["sum"] += GRADES[r[1]]
+    return {t: {"graded": o["graded"], "total": o["total"],
+                "mastery": o["sum"] / o["graded"] if o["graded"] else None} for t, o in out.items()}
 
 
 def for_topic(con, topic: str | None):

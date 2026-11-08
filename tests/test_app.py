@@ -199,4 +199,10 @@ def test_formula_cards_page_and_panel(tmp_path, monkeypatch):
     assert any("公式カード：昇給率・給与指数（1枚）" in e.label for e in at.expander)   # IAJ-2025-1-1 is 昇給率
     radio(at, "画面").set_value("公式カード").run()
     assert not at.exception
-    assert any("昇給率・給与指数（1枚）" in o for o in at.selectbox[-1].options)
+    sel = next(s for s in at.selectbox if s.label == "分野" and "今日の復習（0枚）" in s.options)
+    assert any(o.startswith("昇給率・給与指数（1枚") for o in sel.options)
+    sel.set_value("昇給率・給与指数").run()
+    next(t for t in at.toggle if t.label == "答えを表示").set_value(True).run()
+    btn(at, "△ 書けなかった").click().run()
+    assert not at.exception
+    assert any("△ を記録しました（次回は1日後）" in s.value for s in at.success)

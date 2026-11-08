@@ -5,7 +5,10 @@
 - Weekday evenings: due reviews + new slots, topic chosen by remaining slots × weakness, where weakness
   blends app accuracy with last year's workbook ◎/△ marks and is scaled by recent-exam frequency
   (wblink.topic_table); the session also names workbook problems to redo for that topic.
-- The last two days before the exam: formula review only. Then the exam itself.
+- Every study day also names formula cards to review: cards that are due first, then new cards of the
+  day's topic (CARDS_PER_DAY in total).
+- The last two days before the exam: formula review only (cards still graded △, workbook problems with
+  △). Then the exam itself.
 """
 from __future__ import annotations
 
@@ -18,6 +21,7 @@ from .topics import canonical
 EXAM_DATE = date(2026, 12, 9)          # 2026年度 年金数理 12/9(水) 10:00〜 180分
 EXAM_START = "10:00"
 EXAM_MIN = 180
+CARDS_PER_DAY = 15
 
 
 def _topic_load(con):
@@ -71,6 +75,26 @@ def build(con, today: date, exam_date: date = EXAM_DATE, weekday_time: str = "20
         freq = r["frequency"] if r else 0.0
         return n * (1 + weak) * (1 + 4 * freq)
 
+    from . import cards
+    card_pool: dict[str, list[str]] = {}
+    seen_cards = {r[0] for r in con.execute("SELECT guid FROM card_state")}
+    for c in cards.for_topic(con, None):
+        if c["guid"] not in seen_cards and c["topic"]:
+            card_pool.setdefault(c["topic"], []).append(c["num"] or c["guid"])
+    n_due = len(cards.due(con, now=None)) if card_pool or seen_cards else 0
+
+    def card_note(t: str | None) -> str:
+        nonlocal n_due
+        if not card_pool and not seen_cards:
+            return ""
+        take_due = min(n_due, CARDS_PER_DAY)
+        n_due -= take_due
+        new = card_pool.get(t, [])[: CARDS_PER_DAY - take_due] if t else []
+        if t:
+            card_pool[t] = card_pool.get(t, [])[len(new):]
+        parts = ([f"復習期限{take_due}枚"] if take_due else []) + ([f"{t}の新規{len(new)}枚"] if new else [])
+        return (" 公式カード: " + "＋".join(parts) + "（「公式カード」画面で◎○△を付ける）。") if parts else ""
+
     weak_wb: dict[str, list[str]] = {}
     for w in wblink.weak_workbook_problems(con, index, n=200):
         weak_wb.setdefault(canonical(w["entry"]["topic"]), []).append(w["entry"]["wb_id"])
@@ -79,7 +103,8 @@ def build(con, today: date, exam_date: date = EXAM_DATE, weekday_time: str = "20
     for d in days:
         if d in review_days:
             plan.append({"date": d, "kind": "review", "title": "総復習：公式・誤答ノート",
-                         "detail": "新しい問題は解かず、誤答ノートと公式集を確認。前日は早めに休む。",
+                         "detail": "新しい問題は解かず、誤答ノート、△の公式カード（「公式カード」画面の「今日の復習」）、"
+                                   "ワークブックで△が残る問題の解き方を確認。前日は早めに休む。",
                          "start": weekday_time, "minutes": weekday_min})
         elif d in mocks:
             y = mocks[d]
@@ -97,8 +122,9 @@ def build(con, today: date, exam_date: date = EXAM_DATE, weekday_time: str = "20
                 if redo:
                     weak_wb[t] = weak_wb[t][2:]
                     detail += " ワークブックの解き直し: " + "、".join(f"問題{i}" for i in redo) + "（昨年△）。"
+                detail += card_note(t)
             else:
-                title, detail = "演習：復習と誤答の解き直し", "状態「前回誤答」「前回自信なし」で解き直し。"
+                title, detail = "演習：復習と誤答の解き直し", "状態「前回誤答」「前回自信なし」で解き直し。" + card_note(None)
             plan.append({"date": d, "kind": "practice", "title": title, "detail": detail,
                          "start": weekday_time, "minutes": weekday_min})
     plan.append({"date": exam_date, "kind": "exam", "title": "年金数理 本番",

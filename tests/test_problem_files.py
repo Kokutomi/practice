@@ -23,7 +23,8 @@ def test_problem_file(path):
         assert "要約未作成" not in i["statement"], i["id"]
         assert i["verifier_id"] in KEYED and i["year"] == year
         src = LEDGER[i["source_id"]]
-        assert src["url"].endswith(f"{year}D.pdf") and src["verification"] == "verified"
+        pdf = f"{year}D.pdf" if year >= 2018 else f"H{year - 1988}D.pdf"      # 2017年度以前は和暦のファイル名
+        assert src["url"].endswith(pdf) and src["verification"] == "verified"
         assert i["page"] and i["answer_page"] and i["page"] < i["answer_page"]
         for h in i.get("hints", []):
             assert h.strip() and len(h) < 200, i["id"]

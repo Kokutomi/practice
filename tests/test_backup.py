@@ -22,7 +22,8 @@ def test_roundtrip_merge_is_idempotent(tmp_path):
     a.execute("INSERT INTO notes VALUES('IAJ-2025-1-2','期初・期末を取り違え',50)"); a.commit()
     path = tmp_path / "b.json"
     counts = backup.save(a, str(path))
-    assert counts == {"attempts": 3, "review_queue": 3, "exam_sessions": 1, "notes": 1, "wb_marks": 0, "wb_tags": 0}
+    assert counts == {"attempts": 3, "review_queue": 3, "exam_sessions": 1, "notes": 1, "wb_marks": 0, "wb_tags": 0,
+                      "card_reviews": 0, "card_state": 0}
     b = fresh()
     assert backup.load(b, str(path)) == counts
     assert backup.load(b, str(path))["attempts"] == 0                  # merging twice adds nothing

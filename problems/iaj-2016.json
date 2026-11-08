@@ -1,0 +1,1514 @@
+[
+ {
+  "id": "IAJ-2016-1-1",
+  "year": 2016,
+  "section": "問題1",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "区分的な被保険者数で脱退時平均年齢57.0歳となるaを求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(1)",
+  "source_id": "IAJ-PAST-2016",
+  "points": 5,
+  "page": 1,
+  "answer_page": 20,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-1-2",
+  "year": 2016,
+  "section": "問題1",
+  "topic": "年金現価・計算基数",
+  "difficulty": null,
+  "statement": "累減年金・年金現価の算式4つの正しいものの組み合わせ",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(2)",
+  "source_id": "IAJ-PAST-2016",
+  "points": 5,
+  "page": 2,
+  "answer_page": 20,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-1-3",
+  "year": 2016,
+  "section": "問題1",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "賦課方式から保険料を引き上げて完全積立方式の定常状態へ移行する最小年数t",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(3)",
+  "source_id": "IAJ-PAST-2016",
+  "points": 5,
+  "page": 2,
+  "answer_page": 20,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-1-4",
+  "year": 2016,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "各財政方式の発足時・定常状態の1人あたり保険料の算式の誤りをすべて選ぶ",
+  "verifier_id": "choice_set",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 6
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(4)",
+  "source_id": "IAJ-PAST-2016",
+  "points": 5,
+  "page": 3,
+  "answer_page": 21,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-1-5",
+  "year": 2016,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "加入時積立方式から平準積立方式に変更し定常状態とするのに必要な積立金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)",
+  "source_id": "IAJ-PAST-2016",
+  "points": 5,
+  "page": 4,
+  "answer_page": 22,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-1-6",
+  "year": 2016,
+  "section": "問題1",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "運用利回りが予定を下回り続けるとき責任準備金に対する積立金の割合の収束値",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(6)",
+  "source_id": "IAJ-PAST-2016",
+  "points": 5,
+  "page": 4,
+  "answer_page": 22,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-2-1-①",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "年金現価・計算基数",
+  "difficulty": null,
+  "statement": "保証期間付年金と平均余命を年金額に含む終身年金の現価が等しくなるK（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "181"
+   ]
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 6,
+  "answer_page": 23,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-2-1-②",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "年金現価・計算基数",
+  "difficulty": null,
+  "statement": "保証期間付年金と平均余命を年金額に含む終身年金の現価が等しくなるK（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "0426"
+   ]
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 6,
+  "answer_page": 23,
+  "group_key": "2-1-②",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-2-2-①",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "定常状態の被保険者数・給与総額から新規加入者数と加入時給与の見込み",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 7,
+  "answer_page": 24,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-2-2-②",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "定常状態の被保険者数・給与総額から新規加入者数と加入時給与の見込み",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 7,
+  "answer_page": 24,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-2-3-①",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年時・中途退職時一時金の制度で給付を定年時のみにした場合の保険料率と給付倍率（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "450",
+    "441"
+   ]
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 8,
+  "answer_page": 24,
+  "group_key": "2-3-①",
+  "note": "平成29年7月14日の訂正により、解答例の45.0%に加え44.1%も正答 完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-2-3-②",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年時・中途退職時一時金の制度で給付を定年時のみにした場合の保険料率と給付倍率（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "072"
+   ]
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 8,
+  "answer_page": 24,
+  "group_key": "2-3-②",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-2-4-①",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "受給者の死亡が予定と異なる場合の損益と予定死亡率引下げ後の保険料比",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 9,
+  "answer_page": 25,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-2-4-②",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "受給者の死亡が予定と異なる場合の損益と予定死亡率引下げ後の保険料比",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 9,
+  "answer_page": 25,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-2-5-①",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "中途脱退一時金と定年年金の制度の標準保険料・給付総額・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 10,
+  "answer_page": 26,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-2-5-②",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "中途脱退一時金と定年年金の制度の標準保険料・給付総額・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 10,
+  "answer_page": 26,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-2-5-③",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "中途脱退一時金と定年年金の制度の標準保険料・給付総額・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(5)③",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 10,
+  "answer_page": 26,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-2-6-①",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "責任準備金・特別保険料率の計算と給付水準の異なる2制度の統合後の償却期間",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(6)①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 1,
+  "page": 12,
+  "answer_page": 28,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-2-6-②",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "責任準備金・特別保険料率の計算と給付水準の異なる2制度の統合後の償却期間",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "175"
+   ]
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(6)②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 12,
+  "answer_page": 28,
+  "group_key": "2-6-②",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-2-6-③",
+  "year": 2016,
+  "section": "問題2",
+  "topic": "制度変更（統合・分割・給付減額）",
+  "difficulty": null,
+  "statement": "責任準備金・特別保険料率の計算と給付水準の異なる2制度の統合後の償却期間",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "1001"
+   ]
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(6)③",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 12,
+  "answer_page": 28,
+  "group_key": "2-6-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-①",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-②",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-③",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 9
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3③",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-④",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3④",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑤",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑤",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑥",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 9
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑥",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑥",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑦",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑦",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑥",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑧",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑧",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑥",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑨",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑨",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑨",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑩",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑩",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑨",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑪",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 9
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑪",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑨",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑫",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑫",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑨",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑬",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑬",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑨",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑭",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑭",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑮",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑮",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑯",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 9
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑯",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑰",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑰",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑱",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑱",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑲",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "O"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑲",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-⑳",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑳",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑭",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉑",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 9
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉑",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉑",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉒",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉒",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉑",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉓",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉓",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉑",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉔",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉔",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉑",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉕",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉕",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉑",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉖",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉖",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉑",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉗",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉗",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉑",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉘",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉘",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉘",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉙",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉙",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉘",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉚",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 9
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉚",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉘",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉛",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 11
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉛",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-㉘",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-3-㉜",
+  "year": 2016,
+  "section": "問題3",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "加入年数比例年金の給付現価を将来・過去期間に分け加入年齢方式と開放基金方式の保険料を示す（空欄補充①〜㉜）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 4
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3㉜",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-4-1-①",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "制度発足時の責任準備金と3年元利均等償却の特別保険料率",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 16,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-4-1-②",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "制度発足時の責任準備金と3年元利均等償却の特別保険料率",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 16,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-4-2-①",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "新規加入が予定と異なった1年度末の責任準備金・積立金と特別保険料収入現価の差損益",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 17,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-4-2-②",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "新規加入が予定と異なった1年度末の責任準備金・積立金と特別保険料収入現価の差損益",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 17,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2016-4-2-③",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "新規加入が予定と異なった1年度末の責任準備金・積立金と特別保険料収入現価の差損益",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)③",
+  "source_id": "IAJ-PAST-2016",
+  "points": 3,
+  "page": 17,
+  "answer_page": 30,
+  "group_key": "4-2-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-4-2-④",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "新規加入が予定と異なった1年度末の責任準備金・積立金と特別保険料収入現価の差損益",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)④",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 17,
+  "answer_page": 30,
+  "group_key": "4-2-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-4-3-①",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "2年度目の利差・昇給差・新規加入差の損益と剰余・不足",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)①",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 18,
+  "answer_page": 31,
+  "group_key": "4-3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-4-3-②",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "2年度目の利差・昇給差・新規加入差の損益と剰余・不足",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)②",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 18,
+  "answer_page": 31,
+  "group_key": "4-3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-4-3-③",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "2年度目の利差・昇給差・新規加入差の損益と剰余・不足",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)③",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 18,
+  "answer_page": 31,
+  "group_key": "4-3-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-4-3-④",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "2年度目の利差・昇給差・新規加入差の損益と剰余・不足",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)④",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 18,
+  "answer_page": 31,
+  "group_key": "4-3-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-4-3-⑤",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "2年度目の利差・昇給差・新規加入差の損益と剰余・不足",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)⑤",
+  "source_id": "IAJ-PAST-2016",
+  "points": 2,
+  "page": 18,
+  "answer_page": 31,
+  "group_key": "4-3-⑤",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2016-4-3-⑥",
+  "year": 2016,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "2年度目の利差・昇給差・新規加入差の損益と剰余・不足",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 2
+  },
+  "source": "日本アクチュアリー会 2016年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)⑥",
+  "source_id": "IAJ-PAST-2016",
+  "points": 0,
+  "page": 18,
+  "answer_page": 31,
+  "group_key": "4-3-⑤",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ }
+]

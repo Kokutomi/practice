@@ -70,6 +70,8 @@ def connect(path: str = "data/lab.sqlite") -> sqlite3.Connection:
     con = sqlite3.connect(path)
     con.row_factory = sqlite3.Row
     con.executescript(SCHEMA)
+    from .cards import SCHEMA as CARD_SCHEMA        # formula cards + the learner's card reviews
+    con.executescript(CARD_SCHEMA)
     have = {r["name"] for r in con.execute("PRAGMA table_info(problems)")}
     for col, decl in PROBLEM_EXTRA_COLUMNS.items():
         if col not in have:

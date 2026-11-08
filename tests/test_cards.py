@@ -80,3 +80,31 @@ def test_upload_apkg(tmp_path):
 def test_committed_topics_are_canonical():
     t = json.loads(cards.TOPICS.read_text(encoding="utf-8"))
     assert t and set(t.values()) <= set(TOPICS)
+
+
+def test_review_schedule_and_mastery(tmp_path):
+    con = db.connect(":memory:")
+    cards.store(con, cards.convert(str(make_apkg(tmp_path / "d.apkg")), {"g-basic": "年金現価・計算基数",
+                                                                         "g-cloze": "加入年齢方式・標準保険料"}))
+    day = cards.DAY
+    assert cards.review(con, "g-basic", "◎", now=0) == 3.0
+    assert cards.review(con, "g-basic", "◎", now=3 * day) == 7.5
+    assert cards.review(con, "g-basic", "○", now=11 * day) == 9.0
+    assert cards.review(con, "g-cloze", "△", now=0) == 1.0
+    assert [r["guid"] for r in cards.due(con, now=1.5 * day)] == ["g-cloze"]
+    assert cards.due(con, "年金現価・計算基数", now=1.5 * day) == []
+    m = cards.mastery_by_topic(con)
+    assert m["年金現価・計算基数"]["mastery"] == 0.5 and m["加入年齢方式・標準保険料"]["mastery"] == 0.0
+    with pytest.raises(ValueError):
+        cards.review(con, "g-basic", "x")
+
+
+def test_card_grades_feed_weakness(tmp_path):
+    from pensionlab.lab import wblink
+    con = db.connect(":memory:")
+    db.load_problems(con, str(wblink.ROOT / "problems" / "iaj-2025.json"))
+    cards.store(con, cards.convert(str(make_apkg(tmp_path / "d.apkg")), {"g-basic": "年金現価・計算基数"}))
+    cards.review(con, "g-basic", "△", now=0)
+    row = next(r for r in wblink.topic_table(con, []) if r["topic"] == "年金現価・計算基数")
+    assert row["card_mastery"] == 0.0 and row["weakness"] == 1.0 and row["cards_graded"] == 1
+    assert wblink.combine(None, 0, 1.0, 0.0) == 0.5

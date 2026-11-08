@@ -176,6 +176,84 @@ def build(year: int, pdf: str, annotations: dict) -> list[dict]:
     return out
 
 
+def manual_rows(ann: dict) -> list[dict]:
+    """Answer key typed in from a scanned PDF (2018 and earlier have no text layer).
+
+    ann["_key"] is a list of [slot key, answer, points]:
+      slot key  "big-sub-item" as in the generated ids ("1-6", "2-1-①", "3-⑩", "4-3-abcde")
+      answer    "H" (one choice) | "C,E" (select all) | "C|E" (either is correct) | "=0919" (digits)
+                | "=450|441" (digits, either is correct: e.g. after an official correction)
+      points    5 | "完5" (all-or-nothing group of 5 points starting here) | null (same group as the row above)
+    """
+    rows = []
+    for key, ans, pts in ann["_key"]:
+        parts = key.split("-")
+        big = int(parts[0])
+        sub = int(parts[1]) if len(parts) > 1 and parts[1].isascii() and parts[1].isdigit() else None
+        item = "-".join(parts[2:] if sub is not None else parts[1:])
+        r = {"big": big, "sub": sub, "item": item, "letters": [], "alt": False, "digits": None,
+             "points": None, "all_or_nothing": False, "key": key}
+        if ans.startswith("="):
+            r["digits"] = ans[1:].split("|")
+        elif "|" in ans:
+            r["letters"], r["alt"] = ans.split("|"), True
+        else:
+            r["letters"] = ans.split(",")
+        if isinstance(pts, str) and pts.startswith("完"):
+            r["points"], r["all_or_nothing"] = int(pts[1:]), True
+        elif pts is not None:
+            r["points"] = int(pts)
+        rows.append(r)
+    return rows
+
+
+def build_manual(year: int, ann: dict) -> list[dict]:
+    pages, apages = ann.get("_pages", {}), ann.get("_answer_pages", {})
+
+    def page_of(table, big, sub):
+        return table.get(f"{big}-{sub}") or table.get(f"{big}")
+
+    out, group = [], None
+    for r in manual_rows(ann):
+        big, sub, item, key = r["big"], r["sub"], r["item"], r["key"]
+        group_start = r["points"] is not None
+        if group_start:
+            group = key if r["all_or_nothing"] else None
+        if r["digits"] is not None:
+            vid, params = "digits", {"answer": r["digits"]}
+        elif len(r["letters"]) > 1 and not r["alt"]:
+            vid, params = "choice_set", {"answer": ["".join(sorted(r["letters"]))]}
+        else:
+            vid, params = "choice", {"answer": r["letters"]}
+        a = {**ann.get(f"{big}", {}), **ann.get(f"{big}-{sub}", {}), **ann.get(key, {})}
+        if vid != "digits":
+            params["n_choices"] = max(a.get("n_choices", 10), *(LETTERS.index(x) + 1 for x in "".join(params["answer"])))
+            if a.get("select_all") and vid == "choice":
+                vid, params["answer"] = "choice_set", ["".join(params["answer"])]
+        qno = f"問題{big}" + (f"({sub})" if sub else "")
+        if item:
+            qno += (f"({item[0]}){item[1:]}" if item[0] in KANA else item)
+        e = {"id": f"IAJ-{year}-{key}", "year": year, "section": f"問題{big}", "topic": a.get("topic", "未分類"),
+             "difficulty": None, "statement": a.get("summary", f"{qno}（要約未作成）"),
+             "verifier_id": vid, "params": params, "source": f"日本アクチュアリー会 {year}年度 年金数理",
+             "exam_body": "IAJ", "question_no": qno, "source_id": f"IAJ-PAST-{year}",
+             "points": r["points"] if group_start else 0,
+             "page": page_of(pages, big, sub), "answer_page": page_of(apages, big, sub),
+             "group_key": group if (group and (group_start or r["points"] is None)) else None}
+        if group_start and not r["all_or_nothing"]:
+            group = None
+        notes = [a["note"]] if a.get("note") else []
+        if e["group_key"]:
+            notes.append("完答問題（同じ group_key の小問すべて正解で得点）")
+        if notes:
+            e["note"] = " ".join(notes)
+        out.append(e)
+    ids = [e["id"] for e in out]
+    if len(ids) != len(set(ids)):
+        raise SystemExit(f"{year}: duplicate slot ids")
+    return out
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("year", type=int)
@@ -189,7 +267,7 @@ def main(argv=None):
         urllib.request.urlretrieve(URL.format(y=a.year), pdf)
     ann_path = os.path.join(ROOT, "problems", "annotations", f"iaj-{a.year}.json")
     ann = json.load(open(ann_path, encoding="utf-8")) if os.path.exists(ann_path) else {}
-    items = build(a.year, pdf, ann)
+    items = build_manual(a.year, ann) if "_key" in ann else build(a.year, pdf, ann)
     out = a.out or os.path.join(ROOT, "problems", f"iaj-{a.year}.json")
     with open(out, "w", encoding="utf-8") as f:
         json.dump(items, f, ensure_ascii=False, indent=1)

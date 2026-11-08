@@ -1,0 +1,1318 @@
+[
+ {
+  "id": "IAJ-2018-1-1",
+  "year": 2018,
+  "section": "問題1",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "生存脱退率一定・死亡脱退数一定の二重脱退残存表の最終年齢",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(1)",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 1,
+  "answer_page": 21,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-1-2",
+  "year": 2018,
+  "section": "問題1",
+  "topic": "定常人口・脱退残存表",
+  "difficulty": null,
+  "statement": "中途脱退率の異なる2制度で被保険者数の比から新規加入者数の比を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "E"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(2)",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 2,
+  "answer_page": 21,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-1-3",
+  "year": 2018,
+  "section": "問題1",
+  "topic": "財政方式（Trowbridgeモデル）",
+  "difficulty": null,
+  "statement": "各財政方式の保険料と給付現価の関係式のうち誤っているものをすべて選ぶ",
+  "verifier_id": "choice_set",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 7
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(3)",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 3,
+  "answer_page": 22,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-1-4",
+  "year": 2018,
+  "section": "問題1",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "運用利回りが予定を上回り続けたとき積立金が定常状態のα倍以上になるnの条件",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(4)",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 4,
+  "answer_page": 22,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-1-5",
+  "year": 2018,
+  "section": "問題1",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "到達年齢・加入年齢・開放基金方式の保険料の比から G^f/G^a を表す",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(5)",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 4,
+  "answer_page": 23,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-1-6",
+  "year": 2018,
+  "section": "問題1",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "予定利率引下げ後の未積立債務を2つの特別保険料で償却する場合の比率（数字穴埋め ab）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "27"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(6)",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 5,
+  "answer_page": 23,
+  "group_key": "1-6",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-1-7",
+  "year": 2018,
+  "section": "問題1",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "定年給付を一時金から年金に変えて保険料が等しくなる年金額K",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(7)",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 6,
+  "answer_page": 23,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-1-8",
+  "year": 2018,
+  "section": "問題1",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "ファクラーの公式で発足後第2年度末の責任準備金を求める",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題1(8)",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 7,
+  "answer_page": 24,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-2-1-①",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "年金現価・計算基数",
+  "difficulty": null,
+  "statement": "死力・利力一定の連続払終身年金と平均余命年数の確定年金の現価（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "833"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)①",
+  "source_id": "IAJ-PAST-2018",
+  "points": 2,
+  "page": 8,
+  "answer_page": 25,
+  "group_key": "2-1-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-2-1-②",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "年金現価・計算基数",
+  "difficulty": null,
+  "statement": "死力・利力一定の連続払終身年金と平均余命年数の確定年金の現価（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "0919"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(1)②",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 8,
+  "answer_page": 25,
+  "group_key": "2-1-②",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-2-2-①",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "運用好調で積立金が給付現価の1.2倍になった後の保険料・給付改善（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "151"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)①",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 9,
+  "answer_page": 26,
+  "group_key": "2-2-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-2-2-②",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "運用好調で積立金が給付現価の1.2倍になった後の保険料・給付改善（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "14"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)②",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 9,
+  "answer_page": 26,
+  "group_key": "2-2-②",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-2-2-③",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "財政運営・積立金の推移",
+  "difficulty": null,
+  "statement": "運用好調で積立金が給付現価の1.2倍になった後の保険料・給付改善（数字穴埋め）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "301300"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(2)③",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 9,
+  "answer_page": 26,
+  "group_key": "2-2-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-2-3-①",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "中途脱退一時金と保証期間付終身年金の制度の標準保険料率と定年延長後の変更",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)①",
+  "source_id": "IAJ-PAST-2018",
+  "points": 2,
+  "page": 10,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-2-3-②",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "中途脱退一時金と保証期間付終身年金の制度の標準保険料率と定年延長後の変更",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 10
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(3)②",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 10,
+  "answer_page": 27,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-2-4-①",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "開放基金方式の標準保険料率と剰余金の扱い（加入年齢方式への見直し・給付改善率）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "021875"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)①",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 12,
+  "answer_page": 28,
+  "group_key": "2-4-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-2-4-②",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "開放基金方式の標準保険料率と剰余金の扱い（加入年齢方式への見直し・給付改善率）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "1110"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)②",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 12,
+  "answer_page": 28,
+  "group_key": "2-4-②",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-2-4-③",
+  "year": 2018,
+  "section": "問題2",
+  "topic": "開放基金方式・未積立債務",
+  "difficulty": null,
+  "statement": "開放基金方式の標準保険料率と剰余金の扱い（加入年齢方式への見直し・給付改善率）",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "389"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題2(4)③",
+  "source_id": "IAJ-PAST-2018",
+  "points": 5,
+  "page": 12,
+  "answer_page": 28,
+  "group_key": "2-4-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-①",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3①",
+  "source_id": "IAJ-PAST-2018",
+  "points": 3,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-②",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3②",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-③",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3③",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-④",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "P"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3④",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑤",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "P"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑤",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑥",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑥",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑦",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D",
+    "P"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑦",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "正答表に「⑦と⑨は順不同」とあるため、(D)(P)どちらも正解とする（簡略化） 完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑧",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑧",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑨",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "P",
+    "D"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑨",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-①",
+  "note": "正答表に「⑦と⑨は順不同」とあるため、(P)(D)どちらも正解とする（簡略化） 完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑩",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "I"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑩",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-3-⑪",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑪",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-3-⑫",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑫",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-3-⑬",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑬",
+  "source_id": "IAJ-PAST-2018",
+  "points": 4,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑬",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑭",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑭",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑬",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑮",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑮",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑬",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑯",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "G"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑯",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑬",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑰",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "D"
+   ],
+   "n_choices": 7
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑰",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-3-⑱",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "J"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑱",
+  "source_id": "IAJ-PAST-2018",
+  "points": 2,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑱",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑲",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "N"
+   ],
+   "n_choices": 16
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑲",
+  "source_id": "IAJ-PAST-2018",
+  "points": 3,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑲",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-3-⑳",
+  "year": 2018,
+  "section": "問題3",
+  "topic": "総合保険料方式",
+  "difficulty": null,
+  "statement": "Trowbridgeモデルで閉鎖型総合保険料方式の積立金の推移と収束を示す空欄補充（①〜⑳）",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 3
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題3⑳",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 14,
+  "answer_page": 29,
+  "group_key": "3-⑲",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-1-①",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の財政再計算：標準保険料率・責任準備金・特別保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "F"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)①",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 16,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-4-1-②",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "加入年齢方式・標準保険料",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の財政再計算：標準保険料率・責任準備金・特別保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "K"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)②",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 16,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-4-1-③",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の財政再計算：標準保険料率・責任準備金・特別保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "H"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)③",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 16,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-4-1-④",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "特別保険料・未積立債務の償却",
+  "difficulty": null,
+  "statement": "キャッシュバランス制度の財政再計算：標準保険料率・責任準備金・特別保険料",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 15
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(1)④",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 16,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-4-2-①",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "財政再計算翌期に剰余・不足が発生する事象をすべて選ぶ",
+  "verifier_id": "choice_set",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 6
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)①",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 18,
+  "answer_page": 30,
+  "group_key": null
+ },
+ {
+  "id": "IAJ-2018-4-2-②",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "財政再計算翌期に剰余・不足が発生する事象をすべて選ぶ",
+  "verifier_id": "choice_set",
+  "params": {
+   "answer": [
+    "CE"
+   ],
+   "n_choices": 6
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)②",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 18,
+  "answer_page": 30,
+  "group_key": "4-2-②",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-2-③",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "財政再計算翌期に剰余・不足が発生する事象をすべて選ぶ",
+  "verifier_id": "choice_set",
+  "params": {
+   "answer": [
+    "BD"
+   ],
+   "n_choices": 6
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(2)③",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 18,
+  "answer_page": 30,
+  "group_key": "4-2-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-①",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "Q"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)①",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-②",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 3
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)②",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-①",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-③",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)③",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-④",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 3
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)④",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-③",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-⑤",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "A"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)⑤",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-⑤",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-⑥",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "C"
+   ],
+   "n_choices": 3
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)⑥",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-⑤",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-⑦",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "L"
+   ],
+   "n_choices": 20
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)⑦",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-⑦",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-⑧",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "choice",
+  "params": {
+   "answer": [
+    "B"
+   ],
+   "n_choices": 3
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)⑧",
+  "source_id": "IAJ-PAST-2018",
+  "points": 0,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-⑦",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-abcde",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "13389"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)abcde",
+  "source_id": "IAJ-PAST-2018",
+  "points": 2,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-abcde",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-fghij",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "18590"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)fghij",
+  "source_id": "IAJ-PAST-2018",
+  "points": 2,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-fghij",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ },
+ {
+  "id": "IAJ-2018-4-3-klmno",
+  "year": 2018,
+  "section": "問題4",
+  "topic": "財政決算・損益（利差等）",
+  "difficulty": null,
+  "statement": "利差・昇給差・脱退差・利息付与差の損益と翌期末の積立金・責任準備金",
+  "verifier_id": "digits",
+  "params": {
+   "answer": [
+    "05251"
+   ]
+  },
+  "source": "日本アクチュアリー会 2018年度 年金数理",
+  "exam_body": "IAJ",
+  "question_no": "問題4(3)klmno",
+  "source_id": "IAJ-PAST-2018",
+  "points": 1,
+  "page": 19,
+  "answer_page": 31,
+  "group_key": "4-3-klmno",
+  "note": "完答問題（同じ group_key の小問すべて正解で得点）"
+ }
+]
