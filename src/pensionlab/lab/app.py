@@ -30,12 +30,9 @@ def start(problem_id):
 with st.sidebar:
     st.header("📘 Learning Lab")
     page = st.radio("画面", ["演習", "本番モード", "ダッシュボード", "学習計画", "計算ツール"])
-    if os.path.isdir(PROBLEMS_DIR) and st.button("問題と出典台帳を読み込む"):
-        if os.path.exists(LEDGER):
-            db.load_sources(con, LEDGER)
-        n = sum(db.load_problems(con, os.path.join(PROBLEMS_DIR, f))
-                for f in sorted(os.listdir(PROBLEMS_DIR)) if f.endswith(".json"))
-        st.success(f"{n}問を読み込みました")
+    synced = db.sync_data(con, PROBLEMS_DIR, LEDGER)      # picks up updated problem files automatically
+    if synced:
+        st.caption(f"問題データを更新しました（{synced}欄）")
     st.metric("復習期限の問題", len(db.due_reviews(con)))
     with st.expander("学習記録のバックアップ"):
         st.download_button("バックアップをダウンロード", json.dumps(backup.dump(con), ensure_ascii=False),
@@ -104,7 +101,8 @@ p = db.get_problem(con, ss.pid)
 st.title("年金数理 Learning Lab")
 src = con.execute("SELECT title, version, verification FROM sources WHERE id=?", (p["source_id"],)).fetchone() \
     if p["source_id"] else None
-where = f"{src['title']}" + (f"（{src['version']}）" if src and src["version"] else "") if src else p["source"]
+short_ver = (src["version"] or "").split("（")[0] if src else ""
+where = f"{src['title']}" + (f"（{short_ver}）" if short_ver else "") if src else p["source"]
 qno = f" {p['question_no']}" if p["question_no"] else ""
 extra = f" ｜ 難易度 {p['difficulty']}" if p["difficulty"] else ""
 extra += f" ｜ 配点 {p['points']}点" if p["points"] else ""

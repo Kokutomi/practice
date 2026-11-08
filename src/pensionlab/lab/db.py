@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS exam_sessions(
   score INTEGER, max_score INTEGER, answered INTEGER, over_time INTEGER);
 CREATE TABLE IF NOT EXISTS notes(
   problem_id TEXT PRIMARY KEY REFERENCES problems(id), text TEXT NOT NULL, updated_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS meta(key TEXT PRIMARY KEY, value TEXT);
 CREATE TABLE IF NOT EXISTS sources(
   id TEXT PRIMARY KEY, title TEXT NOT NULL, publisher TEXT,
   kind TEXT NOT NULL,          -- past_exam/textbook/exam_info/workbook/reference/course/blog/anki/community
@@ -245,3 +246,26 @@ def source_url(con, problem, page_col: str = "page"):
         return None
     page = problem[page_col]
     return f"{r['url']}#page={page}" if page else r["url"]
+
+
+def sync_data(con, problems_dir: str, ledger: str | None = None) -> int:
+    """Reload the ledger and every problems/*.json when their contents changed since the last load.
+    Returns the number of problems loaded (0 if already up to date)."""
+    import hashlib
+    import os
+    files = sorted(f for f in os.listdir(problems_dir) if f.endswith(".json")) if os.path.isdir(problems_dir) else []
+    h = hashlib.sha256()
+    for path in ([ledger] if ledger and os.path.exists(ledger) else []) + [os.path.join(problems_dir, f) for f in files]:
+        h.update(path.encode())
+        with open(path, "rb") as fh:
+            h.update(fh.read())
+    digest = h.hexdigest()
+    row = con.execute("SELECT value FROM meta WHERE key='data_hash'").fetchone()
+    if row and row["value"] == digest:
+        return 0
+    if ledger and os.path.exists(ledger):
+        load_sources(con, ledger)
+    n = sum(load_problems(con, os.path.join(problems_dir, f)) for f in files)
+    con.execute("INSERT OR REPLACE INTO meta VALUES('data_hash', ?)", (digest,))
+    con.commit()
+    return n

@@ -23,10 +23,9 @@ def make(tmp_path, monkeypatch, files):
     monkeypatch.setenv("LAB_DB", str(tmp_path / "t.sqlite"))
     monkeypatch.setenv("LAB_PROBLEMS", str(pdir))
     monkeypatch.setenv("LAB_LEDGER", str(ROOT / "sources/ledger.json"))
-    at = AppTest.from_file(APP, default_timeout=20).run()
-    assert not at.exception and at.info  # empty state
-    btn(at, "読み込む").click().run()
-    return at.run()
+    at = AppTest.from_file(APP, default_timeout=20).run()      # data is loaded automatically
+    assert not at.exception
+    return at
 
 
 def test_numeric_flow(tmp_path, monkeypatch):
@@ -145,3 +144,16 @@ def test_tools_page(tmp_path, monkeypatch):
     at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
     at.sidebar.radio[0].set_value("計算ツール").run()
     assert not at.exception and len(at.tabs) == 3
+
+
+def test_auto_sync_picks_up_changed_files(tmp_path, monkeypatch):
+    import json, sqlite3
+    at = make(tmp_path, monkeypatch, ["sample.json"])
+    assert "S-001" in at.caption[0].value
+    f = tmp_path / "problems" / "sample.json"
+    data = json.loads(f.read_text(encoding="utf-8"))
+    data[0]["statement"] = "更新後の問題文"
+    f.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    at.run()
+    c = sqlite3.connect(tmp_path / "t.sqlite")
+    assert c.execute("SELECT statement FROM problems WHERE id='S-001'").fetchone()[0] == "更新後の問題文"

@@ -9,7 +9,7 @@ pip install -e '.[app]'
 PYTHONPATH=src streamlit run src/pensionlab/lab/app.py
 ```
 
-サイドバーの「問題と出典台帳を読み込む」を押すと、`problems/` の全問題と `sources/ledger.json` を読み込みます。
+起動時に `problems/` の全問題と `sources/ledger.json` を自動で読み込みます（ファイルが更新されていれば再読み込み）。
 学習記録は作業ディレクトリの `data/lab.sqlite`（git 管理外）に保存されます。サイドバーからバックアップできます。
 
 ## 画面
