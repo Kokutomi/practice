@@ -9,7 +9,7 @@ import time
 import zipfile
 from datetime import datetime
 
-from . import db, textbook
+from . import db, textbook, workbook
 from .topics import canonical
 from .verifiers import truth_text
 
@@ -26,6 +26,16 @@ def save(con, problem_id: str, text: str, now: float | None = None) -> None:
     else:
         con.execute("DELETE FROM notes WHERE problem_id=?", (problem_id,))
     con.commit()
+
+
+USER_MARK = "<!-- ここから下は Obsidian で自由に書けます（アプリから再書き出ししても消えません） -->"
+
+
+def _merge_user_part(new: str, old: str) -> str:
+    """Keep whatever the learner wrote below USER_MARK in the existing file."""
+    if USER_MARK in old and USER_MARK in new:
+        return new.split(USER_MARK)[0] + USER_MARK + old.split(USER_MARK, 1)[1]
+    return new
 
 
 def _safe(name: str) -> str:
@@ -61,6 +71,10 @@ def vault_files(con, only_with_activity: bool = True) -> dict[str, str]:
             lines.append(f"- 注: {p['note']}")
         for t, pg, u in textbook.refs(topic):
             lines.append(f"- 教科書: [{t}（p.{pg}）]({u})")
+        wb_name = workbook.path().name
+        for _, t, first, _ in workbook.refs(topic):
+            # Obsidian opens a vault PDF at a page with [[file.pdf#page=N]]
+            lines.append(f"- ワークブック: [[{wb_name}#page={first}|{t}（問題 p.{first}／解答 p.{first + 1}）]]")
         note = get(con, p["id"])
         lines += ["", "## メモ", "", note or "（未記入）", ""]
         if atts:
@@ -69,6 +83,7 @@ def vault_files(con, only_with_activity: bool = True) -> dict[str, str]:
                 when = datetime.fromtimestamp(a["answered_at"]).strftime("%Y-%m-%d %H:%M")
                 lines.append(f"| {when} | {a['answer']} | {'○' if a['is_correct'] else '×'} | {a['confidence']} | "
                              f"{a['error_type'] or ''} |")
+        lines += ["", USER_MARK, ""]
         fname = f"年金数理/{p['year']}/{_safe(title)}.md"
         files[fname] = "\n".join(lines) + "\n"
         last_ok = atts[-1]["is_correct"] if atts else None
@@ -91,10 +106,16 @@ def export_zip(con) -> bytes:
 
 
 def export_dir(con, root: str) -> int:
-    files = vault_files(con)
-    for path, text in files.items():
+    """Write the notes under root (e.g. the Obsidian vault). Text below USER_MARK in existing notes is kept,
+    and unchanged files are not rewritten. Returns the number of files written."""
+    written = 0
+    for path, text in vault_files(con).items():
         full = os.path.join(root, path)
         os.makedirs(os.path.dirname(full), exist_ok=True)
-        with open(full, "w", encoding="utf-8") as f:
-            f.write(text)
-    return len(files)
+        old = open(full, encoding="utf-8").read() if os.path.exists(full) else ""
+        text = _merge_user_part(text, old)
+        if text != old:
+            with open(full, "w", encoding="utf-8") as f:
+                f.write(text)
+            written += 1
+    return written

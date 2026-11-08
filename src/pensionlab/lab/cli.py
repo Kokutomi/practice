@@ -1,12 +1,12 @@
 """Interactive practice: python -m pensionlab.lab.cli
-  load FILE | list | practice | stats | score YEAR | anki [OUT] | backup save|load FILE [replace] | notes DIR | sources load FILE | sources list [P0|P1|P2] | sources recheck"""
+  load FILE | list | practice | stats | score YEAR | anki [OUT] | backup save|load FILE [replace] | notes [DIR] | sources load FILE | sources list [P0|P1|P2] | sources recheck"""
 from __future__ import annotations
 
 import json
 import sys
 import time
 
-from . import anki, backup, db, notes, scoring
+from . import anki, backup, db, notes, scoring, workbook
 from .verifiers import CHOICE, DIGITS, KEYED, choices, truth_text
 
 ERROR_TYPES = ["", "timing(due/immediate)", "interest/discount", "mortality/survival", "arithmetic", "other"]
@@ -89,7 +89,11 @@ def main(argv):
         else:
             print("読み込み:", backup.load(con, argv[2], argv[3] if len(argv) > 3 else "merge"))
     elif cmd == "notes":
-        print(notes.export_dir(con, argv[1]), "ファイルを", argv[1], "に書き出しました（Obsidian の保管庫に置く）")
+        target = argv[1] if len(argv) > 1 else (str(workbook.vault()) if workbook.vault() else None)
+        if not target:
+            print("書き出し先を指定するか、環境変数 LAB_OBSIDIAN_VAULT に保管庫のフォルダを設定してください")
+        else:
+            print(notes.export_dir(con, target), "ファイルを", target, "に書き出しました")
     elif cmd == "anki":
         out = argv[1] if len(argv) > 1 else "data/anki_review.txt"
         print(anki.export(con, out), "枚のカードを", out, "に書き出しました（Anki: ファイル→読み込み）")

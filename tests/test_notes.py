@@ -36,3 +36,18 @@ def test_obsidian_vault(con, tmp_path):
     z = zipfile.ZipFile(io.BytesIO(notes.export_zip(con)))
     assert len(z.namelist()) == 4
     assert notes.export_dir(con, str(tmp_path)) == 4
+
+
+def test_workbook_links_and_user_part_survives(con, tmp_path, monkeypatch):
+    monkeypatch.delenv("LAB_WORKBOOK", raising=False)
+    db.record_attempt(con, "IAJ-2025-1-6-①", "A", 2, now=0)
+    md = notes.vault_files(con)["年金数理/2025/2025 問題1(6)①.md"]
+    assert "[[WBnamachu_.pdf#page=" in md and notes.USER_MARK in md
+    assert notes.export_dir(con, str(tmp_path)) == 2
+    f = tmp_path / "年金数理/2025/2025 問題1(6)①.md"
+    f.write_text(f.read_text(encoding="utf-8") + "\n自分で追記したメモ\n", encoding="utf-8")
+    notes.save(con, "IAJ-2025-1-6-①", "アプリ側のメモ")
+    assert notes.export_dir(con, str(tmp_path)) == 2            # note + topic index changed
+    text = f.read_text(encoding="utf-8")
+    assert "アプリ側のメモ" in text and "自分で追記したメモ" in text
+    assert notes.export_dir(con, str(tmp_path)) == 0            # nothing changed -> nothing rewritten

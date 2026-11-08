@@ -8,7 +8,7 @@ import streamlit as st
 import os
 import tempfile
 
-from . import anki, dashboard, exam, notes
+from . import anki, dashboard, exam, notes, workbook
 from .recommend import recommend
 
 SERIES_1 = "#2a78d6"   # single series: one hue, no legend (the title names it)
@@ -101,6 +101,11 @@ def render(con):
     st.subheader("Obsidian に書き出す")
     st.caption("解いた問題・メモのある問題を1問1ファイルの Markdown にし、分野ごとの索引ページ（[[リンク]]）を付けます。")
     if con.execute("SELECT 1 FROM attempts UNION SELECT 1 FROM notes LIMIT 1").fetchone():
+        v = workbook.vault()
+        if v:
+            if st.button(f"保管庫に直接書き出す（{v} / 年金数理）"):
+                st.success(f"{notes.export_dir(con, str(v))} ファイルを更新しました。"
+                           "ノート末尾の印より下に書いた内容は、再書き出しでも残ります。")
         st.download_button("ノート一式をダウンロード（.zip）", notes.export_zip(con), "pensionlab_obsidian.zip",
                            "application/zip")
     else:

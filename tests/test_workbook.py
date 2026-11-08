@@ -38,3 +38,20 @@ def test_render_page():
     assert png[:8] == b"\x89PNG\r\n\x1a\n"
     with pytest.raises(ValueError):
         workbook.render(0)
+
+
+def test_pdf_found_inside_obsidian_vault(monkeypatch, tmp_path):
+    vault = tmp_path / "Second Brain"
+    (vault / ".obsidian").mkdir(parents=True)
+    (vault / ".obsidian" / "WBnamachu_.pdf").write_bytes(b"ignored")     # config dir is skipped
+    (vault / "資料" / "アクチュアリー").mkdir(parents=True)
+    pdf = vault / "資料" / "アクチュアリー" / "WBnamachu_.pdf"
+    pdf.write_bytes(b"%PDF-1.4")
+    monkeypatch.delenv("LAB_WORKBOOK", raising=False)
+    monkeypatch.setattr(workbook, "DEFAULT_PATH", tmp_path / "nowhere.pdf")
+    monkeypatch.setenv("LAB_OBSIDIAN_VAULT", str(vault))
+    workbook._find_in_vault.cache_clear()
+    assert workbook.vault() == vault
+    assert workbook.path() == pdf and workbook.available()
+    monkeypatch.setenv("LAB_WORKBOOK", str(tmp_path / "explicit.pdf"))
+    assert workbook.path() == tmp_path / "explicit.pdf"                  # explicit setting wins

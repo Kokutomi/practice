@@ -14,6 +14,7 @@ import os
 import shutil
 import subprocess
 import tempfile
+from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -86,8 +87,37 @@ TOPIC_SECTIONS = {
 }
 
 
+PDF_NAME = DEFAULT_PATH.name
+SKIP_DIRS = {".obsidian", ".git", ".trash"}
+
+
+def vault() -> Path | None:
+    """The Obsidian vault folder given in LAB_OBSIDIAN_VAULT, if it exists."""
+    v = os.environ.get("LAB_OBSIDIAN_VAULT")
+    return Path(v) if v and Path(v).is_dir() else None
+
+
+@lru_cache(maxsize=8)
+def _find_in_vault(root: str, name: str) -> str | None:
+    for dirpath, dirnames, filenames in os.walk(root):
+        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+        if name in filenames:
+            return os.path.join(dirpath, name)
+    return None
+
+
 def path() -> Path:
-    return Path(os.environ.get("LAB_WORKBOOK", str(DEFAULT_PATH)))
+    """LAB_WORKBOOK, else data/sources/WBnamachu_.pdf, else the copy inside the Obsidian vault."""
+    if os.environ.get("LAB_WORKBOOK"):
+        return Path(os.environ["LAB_WORKBOOK"])
+    if DEFAULT_PATH.is_file():
+        return DEFAULT_PATH
+    v = vault()
+    if v:
+        found = _find_in_vault(str(v), PDF_NAME)
+        if found:
+            return Path(found)
+    return DEFAULT_PATH
 
 
 def available() -> bool:

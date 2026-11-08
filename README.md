@@ -17,6 +17,11 @@ PYTHONPATH=src streamlit run src/pensionlab/lab/app.py
 Streamlit Community Cloud に無料で公開できます（エントリーポイントは `streamlit_app.py`、依存関係は `requirements.txt`）。
 手順と注意点（学習記録はバックアップ必須、public リポジトリのアプリは既定で公開）は [docs/DEPLOY.md](docs/DEPLOY.md)。
 
+## PC と Obsidian
+
+Windows での起動と Obsidian 連携（保管庫内のワークブック PDF を自動検出、誤答ノートを保管庫へ直接書き出し、
+ノートからワークブックの該当ページへリンク）は [docs/PC_OBSIDIAN.md](docs/PC_OBSIDIAN.md)。
+
 ## 画面
 
 | 画面 | できること |
