@@ -96,3 +96,9 @@ def test_exam_mode_page(tmp_path, monkeypatch):
     assert any("5 / 100 点" in s.value for s in at.success)
     at.sidebar.radio[0].set_value("ダッシュボード").run()
     assert not at.exception
+
+
+def test_backup_download_present(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
+    assert not at.exception
+    assert any("バックアップ" in e.label for e in at.sidebar.expander)

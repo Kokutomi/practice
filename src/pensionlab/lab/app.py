@@ -7,7 +7,7 @@ import time
 
 import streamlit as st
 
-from pensionlab.lab import db
+from pensionlab.lab import backup, db
 from pensionlab.lab.verifiers import CHOICE, CHOICE_SET, DIGITS, KEYED, choices, truth_text
 
 DB_PATH = os.environ.get("LAB_DB", "data/lab.sqlite")
@@ -36,6 +36,15 @@ with st.sidebar:
                 for f in sorted(os.listdir(PROBLEMS_DIR)) if f.endswith(".json"))
         st.success(f"{n}問を読み込みました")
     st.metric("復習期限の問題", len(db.due_reviews(con)))
+    with st.expander("学習記録のバックアップ"):
+        st.download_button("バックアップをダウンロード", json.dumps(backup.dump(con), ensure_ascii=False),
+                           f"pensionlab-backup-{time.strftime('%Y%m%d')}.json", "application/json")
+        up = st.file_uploader("バックアップから復元（追加マージ）", type="json")
+        if up is not None and st.button("復元する"):
+            try:
+                st.success(f"復元しました: {backup.restore(con, json.load(up))}")
+            except (ValueError, KeyError, json.JSONDecodeError) as e:
+                st.error(f"復元できませんでした: {e}")
     recheck = db.problems_needing_recheck(con)
     if recheck:
         st.warning(f"出典が差替・要確認の問題 {len(recheck)}問: " + ", ".join(r["id"] for r in recheck))

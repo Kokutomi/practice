@@ -1,12 +1,12 @@
 """Interactive practice: python -m pensionlab.lab.cli
-  load FILE | list | practice | stats | score YEAR | anki [OUT] | sources load FILE | sources list [P0|P1|P2] | sources recheck"""
+  load FILE | list | practice | stats | score YEAR | anki [OUT] | backup save|load FILE [replace] | sources load FILE | sources list [P0|P1|P2] | sources recheck"""
 from __future__ import annotations
 
 import json
 import sys
 import time
 
-from . import anki, db, scoring
+from . import anki, backup, db, scoring
 from .verifiers import CHOICE, DIGITS, KEYED, choices, truth_text
 
 ERROR_TYPES = ["", "timing(due/immediate)", "interest/discount", "mortality/survival", "arithmetic", "other"]
@@ -83,6 +83,11 @@ def main(argv):
             for r in db.list_sources(con, priority=argv[2] if len(argv) > 2 else None):
                 url = r["url"] or "URL未記入"
                 print(f"[{r['priority']}] {r['id']:<22} {r['verification']:<13} {r['license']:<11} {r['title']}  <{url}>")
+    elif cmd == "backup":
+        if argv[1] == "save":
+            print("書き出し:", backup.save(con, argv[2]))
+        else:
+            print("読み込み:", backup.load(con, argv[2], argv[3] if len(argv) > 3 else "merge"))
     elif cmd == "anki":
         out = argv[1] if len(argv) > 1 else "data/anki_review.txt"
         print(anki.export(con, out), "枚のカードを", out, "に書き出しました（Anki: ファイル→読み込み）")

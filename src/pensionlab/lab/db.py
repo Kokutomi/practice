@@ -25,6 +25,8 @@ CREATE TABLE IF NOT EXISTS exam_sessions(
   id INTEGER PRIMARY KEY AUTOINCREMENT, year INTEGER NOT NULL, exam_body TEXT NOT NULL,
   started_at REAL NOT NULL, submitted_at REAL, limit_min INTEGER NOT NULL,
   score INTEGER, max_score INTEGER, answered INTEGER, over_time INTEGER);
+CREATE TABLE IF NOT EXISTS notes(
+  problem_id TEXT PRIMARY KEY REFERENCES problems(id), text TEXT NOT NULL, updated_at REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS sources(
   id TEXT PRIMARY KEY, title TEXT NOT NULL, publisher TEXT,
   kind TEXT NOT NULL,          -- past_exam/textbook/exam_info/workbook/reference/course/blog/anki/community
