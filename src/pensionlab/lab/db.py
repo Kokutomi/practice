@@ -28,6 +28,11 @@ CREATE TABLE IF NOT EXISTS exam_sessions(
 CREATE TABLE IF NOT EXISTS notes(
   problem_id TEXT PRIMARY KEY REFERENCES problems(id), text TEXT NOT NULL, updated_at REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS meta(key TEXT PRIMARY KEY, value TEXT);
+CREATE TABLE IF NOT EXISTS wb_marks(          -- learner's ◎/△ marks on workbook pages (data/wb_marks.json)
+  wb_id TEXT NOT NULL, seq INTEGER NOT NULL, page INTEGER, month INTEGER, day INTEGER,
+  mark TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'ok', PRIMARY KEY(wb_id, seq));
+CREATE TABLE IF NOT EXISTS wb_tags(           -- learner's labels on workbook problems (1X, 重要, ...)
+  wb_id TEXT NOT NULL, tag TEXT NOT NULL, PRIMARY KEY(wb_id, tag));
 CREATE TABLE IF NOT EXISTS sources(
   id TEXT PRIMARY KEY, title TEXT NOT NULL, publisher TEXT,
   kind TEXT NOT NULL,          -- past_exam/textbook/exam_info/workbook/reference/course/blog/anki/community

@@ -2,7 +2,9 @@
 
 - Saturdays (and Sundays if more mocks remain): a full-year mock exam at the real exam time,
   newest year first, skipping years already taken in exam mode.
-- Weekday evenings: due reviews + new slots from the weakest / least-covered topics.
+- Weekday evenings: due reviews + new slots, topic chosen by remaining slots × weakness, where weakness
+  blends app accuracy with last year's workbook ◎/△ marks and is scaled by recent-exam frequency
+  (wblink.topic_table); the session also names workbook problems to redo for that topic.
 - The last two days before the exam: formula review only. Then the exam itself.
 """
 from __future__ import annotations
@@ -58,9 +60,20 @@ def build(con, today: date, exam_date: date = EXAM_DATE, weekday_time: str = "20
     remaining = sum(v[0] for v in load.values())
     per = slots_per_session or max(4, math.ceil(remaining / max(1, len(weekdays))))
 
+    from . import wblink
+    info = {r["topic"]: r for r in wblink.topic_table(con)}
+    index = wblink.load_index()
+
     def weight(t):
         n, acc = load[t]
-        return n * (2 - (acc if acc is not None else 0.5))
+        r = info.get(t)
+        weak = r["weakness"] if r and r["weakness"] is not None else (1 - acc if acc is not None else 0.5)
+        freq = r["frequency"] if r else 0.0
+        return n * (1 + weak) * (1 + 4 * freq)
+
+    weak_wb: dict[str, list[str]] = {}
+    for w in wblink.weak_workbook_problems(con, index, n=200):
+        weak_wb.setdefault(canonical(w["entry"]["topic"]), []).append(w["entry"]["wb_id"])
 
     plan = []
     for d in days:
@@ -80,6 +93,10 @@ def build(con, today: date, exam_date: date = EXAM_DATE, weekday_time: str = "20
                 k = min(per, load[t][0])
                 load[t][0] -= k
                 title, detail = f"演習：{t}（{k}欄）＋復習", f"復習期限の問題を先に。その後「分野」で {t} を絞り込み {k}欄。"
+                redo = weak_wb.get(t, [])[:2]
+                if redo:
+                    weak_wb[t] = weak_wb[t][2:]
+                    detail += " ワークブックの解き直し: " + "、".join(f"問題{i}" for i in redo) + "（昨年△）。"
             else:
                 title, detail = "演習：復習と誤答の解き直し", "状態「前回誤答」「前回自信なし」で解き直し。"
             plan.append({"date": d, "kind": "practice", "title": title, "detail": detail,

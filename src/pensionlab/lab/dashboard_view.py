@@ -8,8 +8,8 @@ import streamlit as st
 import os
 import tempfile
 
-from . import anki, dashboard, exam, notes, workbook
-from .recommend import recommend
+from . import anki, dashboard, exam, notes, wblink, workbook
+from .recommend import recommend, workbook_review
 
 SERIES_1 = "#2a78d6"   # single series: one hue, no legend (the title names it)
 CONF = {1: "1 自信なし", 2: "2 まあまあ", 3: "3 自信あり"}
@@ -24,6 +24,7 @@ def render(con):
         st.dataframe(pd.DataFrame([{"問題": f"{r['problem']['year']} {r['problem']['question_no']}",
                                     "分野": r["problem"]["topic"], "理由": r["reason"]} for r in recs]),
                      hide_index=True)
+    render_strengths(con)
     ys = dashboard.year_scores(con)
     if not ys:
         st.info("まだ公式過去問の解答がありません。演習画面で解くとここに集計されます。")
@@ -110,3 +111,37 @@ def render(con):
                            "application/zip")
     else:
         st.caption("まだ書き出す内容がありません。")
+
+
+def _pct(v):
+    return None if v is None else round(100 * v)
+
+
+def render_strengths(con):
+    """得意・不得意: app accuracy × last year's workbook marks × recent-exam frequency."""
+    rows = wblink.topic_table(con)
+    st.subheader("得意・不得意（アプリ × ワークブック × 出題頻度）")
+    st.caption("弱点度 = 1 − 習熟度。習熟度はアプリの正答率（解答10回以上で重み2）と、昨年のワークブック記録"
+               "（◎=1・○=0.5・△/×=0、重み1）の加重平均。優先度 = 弱点度 × 最近の過去問での出題比率"
+               "（新しい年度ほど重い）。「重要」などのラベルは数値に使っていません。")
+    st.dataframe(pd.DataFrame([{
+        "分野": r["topic"], "優先度": None if r["priority"] is None else round(100 * r["priority"], 1),
+        "弱点度%": _pct(r["weakness"]), "出題比率%": _pct(r["frequency"]),
+        "アプリ正答率%": _pct(r["app_accuracy"]), "解答数": r["attempts"],
+        "WB習熟度%": _pct(r["wb_mastery"]),
+        "WB ◎/○/△/×": "/".join(str((r["wb_counts"] or {}).get(k, 0)) for k in wblink.MARK_VALUE)
+        if r["wb_counts"] else ""} for r in rows]), hide_index=True)
+    redo = workbook_review(con, n=8)
+    weak = wblink.weak_workbook_problems(con, n=10)
+    if redo or weak:
+        st.subheader("ワークブックで解き直す問題")
+        items = [{"問題": f"問題{r['entry']['wb_id']}", "ページ": f"p.{r['entry']['page']}／解答p.{r['entry']['solution_pages'][0]}",
+                  "分野": r["entry"]["topic"], "理由": r["reason"], "昨年の記録": wblink.history_text(r["history"])}
+                 for r in redo]
+        seen = {r["entry"]["wb_id"] for r in redo}
+        items += [{"問題": f"問題{w['entry']['wb_id']}", "ページ": f"p.{w['entry']['page']}／解答p.{w['entry']['solution_pages'][0]}",
+                   "分野": w["entry"]["topic"],
+                   "理由": "昨年△が残る・出題の多い分野" + (f"（過去問{len(w['slots'])}欄と対応）" if w["slots"] else ""),
+                   "昨年の記録": wblink.history_text(w["history"])}
+                  for w in weak if w["entry"]["wb_id"] not in seen]
+        st.dataframe(pd.DataFrame(items), hide_index=True)

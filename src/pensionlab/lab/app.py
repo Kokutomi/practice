@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[3]          # repo root (src/pensionlab/
 if str(ROOT / "src") not in sys.path:                # works without `pip install -e .` (e.g. Streamlit Cloud)
     sys.path.insert(0, str(ROOT / "src"))
 
-from pensionlab.lab import backup, db, notes, textbook, workbook  # noqa: E402
+from pensionlab.lab import backup, db, notes, textbook, wblink, workbook  # noqa: E402
 from pensionlab.lab.topics import TOPICS, canonical  # noqa: E402
 from pensionlab.lab.verifiers import CHOICE, CHOICE_SET, DIGITS, KEYED, choices, truth_text
 
@@ -57,6 +57,8 @@ with st.sidebar:
     synced = db.sync_data(con, PROBLEMS_DIR, LEDGER)      # picks up updated problem files automatically
     if synced:
         st.caption(f"問題データを更新しました（{synced}欄）")
+    if wblink.sync_marks(con):                          # data/wb_marks.json (PC only; the phone gets it via backup)
+        st.caption("ワークブックの◎/△記録を取り込みました")
     st.metric("復習期限の問題", len(db.due_reviews(con)))
     with st.expander("学習記録のバックアップ"):
         st.download_button("バックアップをダウンロード", json.dumps(backup.dump(con), ensure_ascii=False),
@@ -149,6 +151,27 @@ if p["note"]:
 tb = textbook.refs(p["topic"] or "")
 if tb:
     st.caption("📖 教科書: " + " ／ ".join(f"[{t}（p.{pg}）]({u})" for t, pg, u in tb))
+MATCH_JA = {"strong": "同型", "related": "同じ論点"}
+rel = wblink.related(p["id"])
+if rel:
+    with st.expander(f"📒 ワークブックの対応問題（{len(rel)}問）", expanded=False):
+        for r in rel:
+            e, h = r["entry"], wblink.history(con, r["wb_id"])
+            sol = "・".join(str(x) for x in e["solution_pages"])
+            tags = f" ｜ {'・'.join(h['tags'])}" if h["tags"] else ""
+            st.markdown(f"**問題{e['wb_id']}**（{MATCH_JA[r['match']]}）{e.get('summary', '')}  \n"
+                        f"p.{e['page']}／手書き解答 p.{sol} ｜ {r['reason']}  \n"
+                        f"昨年の記録: {wblink.history_text(h)}{tags}")
+        if workbook.available():
+            pick = st.selectbox("ページを表示", rel, format_func=lambda r: f"問題{r['wb_id']}（p.{r['entry']['page']}）",
+                                key=f"wb-rel-{p['id']}")
+            e = pick["entry"]
+            tabs = st.tabs([f"問題 p.{x}" for x in e["pages"]] + [f"手書き解答 p.{x}" for x in e["solution_pages"]])
+            for tab, pg in zip(tabs, e["pages"] + e["solution_pages"]):
+                with tab:
+                    st.image(wb_page(pg))
+        else:
+            st.caption("PDF はこの端末にないため、問題番号とページだけを表示しています。")
 wb = workbook.refs(p["topic"] or "")
 if wb and workbook.available():
     with st.expander("📒 ワークブック（手書き解答付き）の該当章"):

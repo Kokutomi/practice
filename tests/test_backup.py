@@ -22,7 +22,7 @@ def test_roundtrip_merge_is_idempotent(tmp_path):
     a.execute("INSERT INTO notes VALUES('IAJ-2025-1-2','期初・期末を取り違え',50)"); a.commit()
     path = tmp_path / "b.json"
     counts = backup.save(a, str(path))
-    assert counts == {"attempts": 3, "review_queue": 3, "exam_sessions": 1, "notes": 1}
+    assert counts == {"attempts": 3, "review_queue": 3, "exam_sessions": 1, "notes": 1, "wb_marks": 0, "wb_tags": 0}
     b = fresh()
     assert backup.load(b, str(path)) == counts
     assert backup.load(b, str(path))["attempts"] == 0                  # merging twice adds nothing
@@ -48,3 +48,19 @@ def test_unknown_problems_are_skipped():
     data = backup.dump(a)
     empty = db.connect(":memory:")
     assert backup.restore(empty, data)["attempts"] == 0
+
+
+def test_workbook_marks_travel_in_backup():
+    from pensionlab.lab import wblink
+    a = fresh()
+    wblink.import_marks(a, {"marks": [{"wb_id": "1.1", "page": 1, "month": 10, "day": 22, "mark": "◎"},
+                                      {"wb_id": "1.1", "page": 1, "month": 11, "day": 3, "mark": "△"}],
+                            "tags": [{"wb_id": "1.1", "tag": "2X"}, {"wb_id": "1.1", "tag": "重要"}]})
+    data = backup.dump(a)
+    b = fresh()
+    counts = backup.restore(b, data)
+    assert counts["wb_marks"] == 2 and counts["wb_tags"] == 2
+    assert backup.restore(b, data)["wb_marks"] == 2                    # same keys: replaced, not duplicated
+    assert b.execute("SELECT COUNT(*) FROM wb_marks").fetchone()[0] == 2
+    h = wblink.history(b, "1.1")
+    assert h["misses"] == 2 and h["tags"] == ["重要"] and h["mastery"] == 0.5

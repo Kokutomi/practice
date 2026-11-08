@@ -9,7 +9,7 @@ import time
 import zipfile
 from datetime import datetime
 
-from . import db, textbook, workbook
+from . import db, textbook, wblink, workbook
 from .topics import canonical
 from .verifiers import truth_text
 
@@ -72,6 +72,13 @@ def vault_files(con, only_with_activity: bool = True) -> dict[str, str]:
         for t, pg, u in textbook.refs(topic):
             lines.append(f"- 教科書: [{t}（p.{pg}）]({u})")
         wb_name = workbook.path().name
+        mapping, index = wblink.load_map(), wblink.index_by_id()
+        for r in wblink.related(p["id"], mapping, index):
+            e, h = r["entry"], wblink.history(con, r["wb_id"])
+            kind = "同型" if r["match"] == "strong" else "同じ論点"
+            lines.append(f"- ワークブック対応: [[{wb_name}#page={e['page']}|問題{e['wb_id']}]]（{kind}）"
+                         f" 解答 [[{wb_name}#page={e['solution_pages'][0]}|p.{e['solution_pages'][0]}]]"
+                         f" ／ 昨年 {wblink.history_text(h)}")
         for _, t, first, _ in workbook.refs(topic):
             # Obsidian opens a vault PDF at a page with [[file.pdf#page=N]]
             lines.append(f"- ワークブック: [[{wb_name}#page={first}|{t}（問題 p.{first}／解答 p.{first + 1}）]]")
