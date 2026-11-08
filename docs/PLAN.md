@@ -1,0 +1,40 @@
+# 年金数理 Learning Lab 実装計画
+
+## 対象機能（仮選定の5つ）
+1. 年度別過去問（検索・公式解答の並列表示）
+2. 途中式の段階的ヒント
+3. 数式・数値の検証（既存 `pensionlab` を検算エンジンとして利用）
+4. 弱点の自動再出題（誤りタイプ＋確信度）
+5. 学習ダッシュボード
+
+後回し: Anki連携（タグ付き履歴から後でCSV出力可能）、本番モード（タイマー・部分点）
+
+## アーキテクチャ（最小構成）
+- 言語: Python。UIは Streamlit（または FastAPI+簡易HTML）、保存は SQLite。
+- `pensionlab`（既存）: 年金現価・生命表の検算関数。問題ごとに「検証関数」を紐付ける。
+- AI（Claude/ChatGPT）はヒント・誤り分類のみ担当。**数値の正否は必ず決定論的に検証**（AIの計算ミス対策）。
+
+## データモデル（SQLite）
+| テーブル | 主な列 |
+|---|---|
+| problems | id, year, section, topic, difficulty, statement, official_answer, source, verifier_id |
+| hints | problem_id, level(1-3), text |
+| attempts | id, problem_id, answered_at, answer, is_correct, confidence(1-3), seconds, error_type |
+| review_queue | problem_id, topic, error_type, due_at, interval_days |
+
+## フェーズ
+**Phase 1: データ基盤（1〜2週）** problems のスキーマと取り込みスクリプト(YAML/CSV→SQLite)。年度・分野・難易度での検索CLI。
+**Phase 2: 演習UI＋検証（1〜2週）** 解答入力（数値/式）。数値は許容誤差で、式は SymPy で同値判定。`verifier_id` から `pensionlab` の関数で再計算し公式解答と照合。ヒントは level 1→3 を段階表示。
+**Phase 3: 履歴と再出題（1週）** attempts に確信度・誤りタイプ（例: 期初/期末の取り違え）を記録。簡易間隔反復（正解かつ高確信→間隔×2、誤答/低確信→翌日）で review_queue を更新。同トピックの条件違い問題を優先。
+**Phase 4: ダッシュボード（1週）** 分野別正答率、確信度×正誤のマトリクス（「正解だが低確信」を可視化）、解答時間推移、復習期限の件数。
+**Phase 5: AI連携** 誤りタイプ自動分類と類題の文章生成（数値は検証関数で再計算して整合を確認）。
+
+## 注意点
+- 過去問・解答の著作権: 公式資料は自分用にローカル保存し、リポジトリにはコミットしない（`data/` を .gitignore、スキーマとサンプルのみ公開）。
+- NotebookLMは概念理解の補助。問題データの正は自前DBに置く。
+- 最初の検証対象は既存コードで即テスト可能な「生命年金現価・据置年金」から。
+
+## 次のアクション
+1. `src/pensionlab` に `problems` スキーマと取り込みスクリプトを追加
+2. 検証関数レジストリ（verifier_id → 関数）を実装し、現価問題を3問サンプル投入
+3. Streamlit で1問演習→判定→確信度記録まで通す
