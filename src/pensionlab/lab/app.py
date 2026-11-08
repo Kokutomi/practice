@@ -28,23 +28,22 @@ def start(problem_id):
 # ---- sidebar: data + stats
 with st.sidebar:
     st.header("📘 Learning Lab")
+    page = st.radio("画面", ["演習", "ダッシュボード"], horizontal=True)
     if os.path.isdir(PROBLEMS_DIR) and st.button("問題と出典台帳を読み込む"):
         if os.path.exists(LEDGER):
             db.load_sources(con, LEDGER)
         n = sum(db.load_problems(con, os.path.join(PROBLEMS_DIR, f))
                 for f in sorted(os.listdir(PROBLEMS_DIR)) if f.endswith(".json"))
         st.success(f"{n}問を読み込みました")
-    stats = db.stats_by_topic(con)
-    st.subheader("分野別成績")
-    if stats:
-        st.dataframe([{"分野": r["topic"], "回数": r["n"], "正答率%": r["pct"], "正解だが低確信": r["correct_unsure"]}
-                      for r in stats], hide_index=True)
-    else:
-        st.caption("まだ解答がありません")
     st.metric("復習期限の問題", len(db.due_reviews(con)))
     recheck = db.problems_needing_recheck(con)
     if recheck:
         st.warning(f"出典が差替・要確認の問題 {len(recheck)}問: " + ", ".join(r["id"] for r in recheck))
+
+if page == "ダッシュボード":
+    from pensionlab.lab import dashboard_view
+    dashboard_view.render(con)
+    st.stop()
 
 # ---- pick problem
 if "pid" not in ss:

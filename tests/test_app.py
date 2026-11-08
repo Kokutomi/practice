@@ -36,7 +36,7 @@ def test_numeric_flow(tmp_path, monkeypatch):
     assert any("ヒント1" in i.value for i in at.info)
     at.text_input[0].set_value("abc"); btn(at, "解答").click().run()
     assert at.error
-    at.text_input[0].set_value("1.0"); at.radio[0].set_value(3)
+    at.text_input[0].set_value("1.0"); at.main.radio[0].set_value(3)
     btn(at, "解答").click().run()
     assert any("不正解" in e.value for e in at.error)
     at.selectbox[0].select("arithmetic"); btn(at, "記録").click().run()
@@ -52,8 +52,16 @@ def test_choice_flow_with_official_links(tmp_path, monkeypatch):
     assert not [b for b in at.button if "ヒント" in b.label]   # no hints for official items
     btn(at, "解答").click().run()
     assert any("解答を入力" in e.value for e in at.error)
-    at.radio[0].set_value("C"); btn(at, "解答").click().run()
+    at.main.radio[0].set_value("C"); btn(at, "解答").click().run()
     assert any("正解" in s.value for s in at.success)
     assert any("2025D.pdf#page=23" in m.value for m in at.markdown)
     btn(at, "次の問題").click().run()
     assert "IAJ-2025-1-2" in at.caption[0].value
+
+
+def test_dashboard_page(tmp_path, monkeypatch):
+    at = make(tmp_path, monkeypatch, ["iaj-2025.json"])
+    at.main.radio[0].set_value("C"); btn(at, "解答").click().run()
+    at.sidebar.radio[0].set_value("ダッシュボード").run()
+    assert not at.exception
+    assert any("2025年度" in m.label and "5 / 100" in m.value for m in at.metric)
